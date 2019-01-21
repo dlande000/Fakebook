@@ -1,0 +1,2 @@
+class StaticPagesController < ApplicationRecord
+end
