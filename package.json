@@ -23,7 +23,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "./node_modules/.bin/webpack --mode=production",
+    "start": "./node_modules/.bin/webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -36,5 +38,9 @@
     "url": "https://github.com/dlande000/Fakebook/issues"
   },
   "homepage": "https://github.com/dlande000/Fakebook#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.6.0"
+  }
 }
