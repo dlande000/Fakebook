@@ -7,6 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% if current_user %>
+      <script>
+        window.current_user = {
+          "id": <%= current_user.id %>,
+          "firstName": "<%= current_user.first_name %>"",
+          "lastName": "<%= current_user.last_name %>""
+        };
+      </script>
+    <% end %>
   </head>
 
   <body>
