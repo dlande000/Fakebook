@@ -9,7 +9,7 @@ const usersReducer = (oldState = {}, action) => {
       newState = merge({}, oldState, { [action.currentUser.id]: action.currentUser });
       return newState;
     default:
-      return state;
+      return oldState;
   }
 };
 

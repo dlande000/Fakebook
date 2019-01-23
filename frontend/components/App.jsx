@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => (
   <div>
-    <h1>Welcome to Fakebook</h1>
+    <h1>This has updated correctly</h1>
   </div>
 );
 
