@@ -1,13 +1,11 @@
 import React from 'react';
-import Navbar from './login_signup/navbar';
-import LoginSignupBody from './login_signup/login_signup_body';
-import Footer from './login_signup/footer';
+import LoginSignup from './login_signup/login_signup';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { Route } from 'react-router-dom';
 
 const App = () => (
   <div>
-      <Navbar/>
-      <LoginSignupBody />
-      <Footer />
+    <AuthRoute path="/" component={LoginSignup}/>
   </div>
 );
 
