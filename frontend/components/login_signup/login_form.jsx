@@ -25,12 +25,13 @@ class Login extends React.Component {
     render() {
     return (
         <div className="login-form-container">
-            <h6>Log In to Fakebook</h6>
             <form onSubmit={this.handleSubmit} className="login-form">
-                <label>Email:
+                <label className="login-email">Email:
+                    <br/>
                     <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
                 </label>
-                <label>Password:
+                <label className="login-password">Password:
+                    <br/>
                     <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
                 </label>
                 <input className="session-submit" type="submit" value="Login" />

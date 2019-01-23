@@ -29,26 +29,32 @@ class SignupForm extends React.Component {
     render() {
     return (
         <div className="signup-form-container">
-            <h6>Sign Up for Fakebook</h6>
+            <h2>Sign Up</h2>
+            <p>It's free for obvious reasons.</p>
             <form onSubmit={this.handleSubmit} className="signup-form">
-                <label>Email:
-                    <input type="text" value={this.state.email} onChange={this.update('email')} className="signup-input"/>
-                </label>
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.update('password')} className="signup-input"/>
-                </label>
                 <label>First name:
                     <input type="text" value={this.state.firstName} onChange={this.update('first_name')} className="signup-input"/>
                 </label>
                 <label>Last name:
                     <input type="text" value={this.state.lastName} onChange={this.update('last_name')} className="signup-input"/>
                 </label>
-                <label>Gender:
-                    <input type="text" value={this.state.gender} onChange={this.update('gender')} className="signup-input"/>
+                <br />
+                <label>Email:
+                    <input type="text" value={this.state.email} onChange={this.update('email')} className="signup-input"/>
                 </label>
+                <br />
+                <label>Password:
+                    <input type="password" value={this.state.password} onChange={this.update('password')} className="signup-input"/>
+                </label>
+                <br />
                 <label>Birthday:
                     <input type="date" value={this.state.birthdate} onChange={this.update('birthdate')} className="signup-input"/>
                 </label>
+                <br />
+                <label>Gender:
+                    <input type="text" value={this.state.gender} onChange={this.update('gender')} className="signup-input"/>
+                </label>
+                <br />
                 <input className="user-submit" type="submit" value="Sign up" />
             </form>
         </div>

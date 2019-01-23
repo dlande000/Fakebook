@@ -1,22 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
-.navbar {
-  height: 90px;
-  width: 100%;
-  border-bottom: 2px solid black;
-  background-color: blue;
-}
-
-.fakebook-logo {
+.signup-body-text {
   margin: 0;
   font-weight: bold;
   font-family: 'Titillium Web', sans-serif;
   float: left;
-  display: block;
   text-emphasis-color: white;
+  width: 50%;
 }
 
-.login {
+.signup {
   float: right;
-  display: block;
+  width: 50%;
+  font-family: sans-serif;
 }
