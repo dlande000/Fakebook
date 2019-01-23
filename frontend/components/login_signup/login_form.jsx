@@ -26,15 +26,15 @@ class Login extends React.Component {
     return (
         <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form">
-                <label className="login-email">Email:
+                <label className="login-email">Email
                     <br/>
                     <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input"/>
                 </label>
-                <label className="login-password">Password:
+                <label className="login-password">Password
                     <br/>
                     <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input"/>
                 </label>
-                <input className="session-submit" type="submit" value="Login" />
+                <input className="session-submit" type="submit" value="Log In" className="login-button"/>
             </form>
         </div>
         );

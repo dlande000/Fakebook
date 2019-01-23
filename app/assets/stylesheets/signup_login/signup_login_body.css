@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 
+.signup-body {
+  background-color: #eef0f5;
+  height: 100%
+}
+
 .signup-body-text {
   margin: 0;
   font-weight: bold;
@@ -9,8 +14,3 @@
   width: 50%;
 }
 
-.signup {
-  float: right;
-  width: 50%;
-  font-family: sans-serif;
-}
