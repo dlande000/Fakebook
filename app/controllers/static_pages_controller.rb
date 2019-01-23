@@ -1,4 +1,4 @@
-class StaticPagesController < ApplicationRecord
+class StaticPagesController < ApplicationController
     def root
     end
 end
