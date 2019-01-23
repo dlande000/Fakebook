@@ -5,9 +5,6 @@ import Footer from './login_signup/footer';
 
 const App = () => (
   <div>
-      <header>
-        <h1>Main header</h1>
-      </header>
       <Navbar/>
       <LoginSignupBody />
       <Footer />

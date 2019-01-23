@@ -2,9 +2,9 @@ import React from 'react';
 import LoginFormContainer from './login_form_container';
 
 const Navbar = () => (
-  <div>
+  <div className="navbar">
     <div className="fakebook-logo">
-        <h1>It's like Facebook but better</h1>
+        <h1>fakebook</h1>
     </div>
     <div className="login">
         <LoginFormContainer />
