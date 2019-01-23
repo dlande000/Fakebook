@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './login_signup/navbar';
-import SignupFormContainer from './login_signup/signup_form_container';
+import LoginSignupBody from './login_signup/login_signup_body';
+import Footer from './login_signup/footer';
 
 const App = () => (
   <div>
@@ -8,7 +9,8 @@ const App = () => (
         <h1>Main header</h1>
       </header>
       <Navbar/>
-      <SignupFormContainer />
+      <LoginSignupBody />
+      <Footer />
   </div>
 );
 
