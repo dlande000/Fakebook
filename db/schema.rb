@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_194910) do
+ActiveRecord::Schema.define(version: 2019_01_23_012946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 2019_01_22_194910) do
     t.date "birthdate", null: false
     t.string "gender"
     t.string "password_digest", null: false
-    t.string "profile_pic_url", null: false
-    t.string "banner_pic_url", null: false
     t.string "session_token", null: false
     t.string "hometown"
     t.string "current_city"
