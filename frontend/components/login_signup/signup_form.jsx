@@ -4,11 +4,11 @@ class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: '',
-            lastName: '', 
+            first_name: '',
+            last_name: '', 
             email: '',
             password: '',
-            birthdate: '',
+            birthdate: '2006-01-01',
             gender: ''
         };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,18 +38,18 @@ class SignupForm extends React.Component {
                     <input type="password" value={this.state.password} onChange={this.update('password')} className="signup-input"/>
                 </label>
                 <label>First name:
-                    <input type="text" value={this.state.firstName} onChange={this.update('firstName')} className="signup-input"/>
+                    <input type="text" value={this.state.firstName} onChange={this.update('first_name')} className="signup-input"/>
                 </label>
                 <label>Last name:
-                    <input type="text" value={this.state.lastName} onChange={this.update('lastName')} className="signup-input"/>
+                    <input type="text" value={this.state.lastName} onChange={this.update('last_name')} className="signup-input"/>
                 </label>
                 <label>Gender:
                     <input type="text" value={this.state.gender} onChange={this.update('gender')} className="signup-input"/>
                 </label>
                 <label>Birthday:
-                    <input type="text" value={this.state.birthdate} onChange={this.update('birthdate')} className="signup-input"/>
+                    <input type="date" value={this.state.birthdate} onChange={this.update('birthdate')} className="signup-input"/>
                 </label>
-                <input className="session-submit" type="submit" value={this.props.formType} />
+                <input className="user-submit" type="submit" value="Sign up" />
             </form>
         </div>
         );

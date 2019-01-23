@@ -1,12 +1,14 @@
 import React from 'react';
+import Navbar from './login_signup/navbar';
 import SignupFormContainer from './login_signup/signup_form_container';
 
 const App = () => (
   <div>
       <header>
-        <h1>It's like Facebook but better</h1>
+        <h1>Main header</h1>
       </header>
-      <SignupFormContainer/>
+      <Navbar/>
+      <SignupFormContainer />
   </div>
 );
 
