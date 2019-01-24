@@ -1,3 +1,13 @@
 .footer {
     background-color: #ffffff;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #737373;
+    padding: 10px;
+    margin-left: -10px;
+    margin-right: -20px;
+}
+
+.fakebook-footer {
+    padding-left: 100px;
 }

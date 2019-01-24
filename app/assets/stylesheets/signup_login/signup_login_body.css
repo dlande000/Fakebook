@@ -7,7 +7,7 @@
   width: 100%;
   margin: 0 auto;
   margin: -26px;
-  padding: 20px 0px 20px 20px;
+  padding: 20px 20px 20px 20px;
 }
 
 .signup-body-and-form {
@@ -27,6 +27,17 @@
   line-height: 37px;
 }
 
+.signup-body-text > p {
+  font-size: 15px;
+  font-kerning: 2px;
+  color: #666666;
+}
+
+p > b {
+  color: #333;
+  font-size: 17px;
+}
+
 .signup {
   margin-top: -25px;
   float: right;
@@ -43,39 +54,128 @@
 }
 
 .signup-form-container > p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .first-name-input {
+  font-size: 18px;
   margin-top: -50px;
-  width: 47.5%;
+  width: 46.5%;
   border-radius: 4px;
   height: 32px;
   border: 1px solid #bfc7d9;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 .last-name-input {
-  margin-top: -9px;
-  width: 47.5%;
+  font-size: 18px;
+  margin-top: -12px;
+  margin-right: -12px;
+  width: 46.5%;
   height: 32px;
   border-radius: 4px;
   border: 1px solid #bfc7d9;
   float: right;
+  margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 .email-input {
+  font-size: 18px;
   width: 100%;
   height: 32px;
   border-radius: 4px;
   border: 1px solid #bfc7d9;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 .password-input {
+  font-size: 18px;
   width: 100%;
   height: 32px;
   border-radius: 4px;
   border: 1px solid #bfc7d9;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.birthday {
+  font-size: 18px;
+}
+
+.birthday-month {
+    background: #f2f2f2;
+    border: 1px solid #bfc7d9;
+    font-size: 13px;
+    margin-top: 10px;
+    width: 60px;
+    height: 30px;
+}
+
+.birthday-day {
+  background: #f2f2f2;
+  border: 1px solid #bfc7d9;
+  font-size: 13px;
+  height: 30px;
+}
+
+.birthday-year {
+  background: #f2f2f2;
+  border: 1px solid #bfc7d9;
+  font-size: 13px;
+  height: 30px;
+}
+
+.birthday-question > a {
+  text-decoration: none;
+  color: #3d5c94;
+  font-size: 11px;
+  font-family: sans-serif;
+}
+
+.birthday-question {
+  margin-left: 170px;
+  margin-top: -25px;
+  word-wrap: break-word;
+  width: 180px;
+  display: block;
+  line-height: 10px;
+}
+
+.select-female {
+  padding-right: 18px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  align-content: center;
+}
+
+.select-male {
+  padding-right: 8px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  align-content: center;
+}
+
+.input {
+  position: absolute;
+  margin-top: 3px;
+}
+
+.button {
+  margin-top: 12px;
+  width: 187px;
+  height: 37px;
+  margin-left: 4px;
+  background: linear-gradient(#67ae55, #578843);
+  background-color: #69a74e;
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  border-radius: 5px;
+  color: white;
+  font-size: 19px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
 }
