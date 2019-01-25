@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
+import { fetchUsers } from '../../actions/users_actions';
 import Feed from './feed';
 
 const mapStateToProps = state => {
@@ -11,6 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return ({
     logout: () => dispatch(logout()),
+    fetchUsers: () => dispatch(fetchUsers())
   });
 };
 

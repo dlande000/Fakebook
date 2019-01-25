@@ -18,6 +18,8 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "Done with the family.",
+    profile_pic_url: "https://uproxx.files.wordpress.com/2015/01/michael-bluth-reactions.jpg?quality=95&w=650&h=396",
+    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg"
 )
 
 User.create(
@@ -42,6 +44,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Irvine, California",
     bio: "Mr. Manager.",
+    profile_pic_url: "http://2.bp.blogspot.com/-4nYM1gB9DHo/TbIvxACcX3I/AAAAAAAAARI/-x4EHCeNayY/s1600/Picture+3.png",
 )
 
 User.create(
@@ -54,6 +57,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "BEEDS?!",
+    profile_pic_url: "https://thesipadvisor.files.wordpress.com/2013/04/gob-bluth.jpg"
 )
 
 User.create(

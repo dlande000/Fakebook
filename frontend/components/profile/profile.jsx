@@ -1,5 +1,7 @@
 import React from 'react';
 import UserBio from './user_bio';
+import UserName from './name';
+import MiscInfo from './misc_info';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -21,8 +23,10 @@ class Profile extends React.Component {
     if (this.props.user) {
     return (
         <div>
-            <h1>Did this work?</h1>
+            <img src={this.props.user.profile_pic_url}/>
+            <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
             <UserBio bio={this.props.user.bio} />
+            <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
         </div>
         );
     } else {
