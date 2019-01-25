@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
             year: '2006'
         };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
     }
 
     update(field) {
@@ -30,6 +31,11 @@ class SignupForm extends React.Component {
         const user = Object.assign({}, { first_name, last_name, email, password, birthdate, gender });
         this.props.signup(user);
     }
+
+    handleSubmitDemo(event) {
+        event.preventDefault();
+        this.props.login();
+      }
 
     render() {
     return (
@@ -215,8 +221,8 @@ class SignupForm extends React.Component {
                     <label className="select-male" htmlFor="male">Male</label>
                 <br />
                 <input className="button" type="submit" value="Sign Up" />
-                <button className="button" onClick={this.handleSubmit}>Demo</button>
             </form>
+                <button onClick={this.handleSubmitDemo} className="button">Demo</button>
         </div>
         );
     }

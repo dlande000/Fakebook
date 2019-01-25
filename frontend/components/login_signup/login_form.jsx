@@ -8,6 +8,7 @@ class Login extends React.Component {
             password: '',
         };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitDemo = this.handleSubmitDemo.bind(this);
     }
 
     update(field) {
@@ -21,6 +22,11 @@ class Login extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.login(user);
     }
+
+    handleSubmitDemo(event) {
+        event.preventDefault();
+        this.props.loginDemo();
+      }
 
     render() {
     return (
@@ -36,7 +42,7 @@ class Login extends React.Component {
                     </label>
                     <input className="session-submit" type="submit" value="Log In" className="login-button"/>
                 </form>
-                <a className="demo-link-1" href="#">Log in as demo?</a>
+                <a className="demo-link-1" onClick={this.handleSubmitDemo}>Log in as demo?</a>
             </div>
         );
     }

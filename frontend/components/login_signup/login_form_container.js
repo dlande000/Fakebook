@@ -11,6 +11,7 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
   return {
     login: (user) => dispatch(login(user)),
+    loginDemo: () => dispatch(login({email: "michael@bluthcompany.com", password: "tracyb"}))
   };
 };
 
