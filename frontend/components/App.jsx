@@ -8,7 +8,7 @@ const App = () => (
   <div>
     <Switch>
       <AuthRoute exact path="/" component={LoginSignup}/>
-      <ProtectedRoute exact path="/feed" component={LoggedIn}/>
+      <ProtectedRoute path="/feed" component={LoggedIn}/>
     </Switch>
   </div>
 );

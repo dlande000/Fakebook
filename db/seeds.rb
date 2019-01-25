@@ -18,3 +18,14 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
 )
+
+User.create(
+    first_name: "George Michael",
+    last_name: "Bluth",
+    password: "lescousinsdangereux",
+    email: "georgemichael@ucirvine.edu",
+    birthdate: "1990-11-02",
+    gender: "Male",
+    hometown: "Orange County, California",
+    current_city: "Irvine, California",
+)

@@ -8,10 +8,12 @@ export const receiveUser = user => ({
     user
 });
 
-export const receiveUsers = users => ({
-    type: RECEIVE_USERS,
-    users
-});
+export const receiveUsers = users => {
+    return {
+        type: RECEIVE_USERS,
+        users
+    };
+};
 
 export const fetchUser = id => dispatch => {
     return UsersAPIUtil.fetchUser(id).then(user => dispatch(receiveUser(user)));
