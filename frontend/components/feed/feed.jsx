@@ -12,7 +12,6 @@ class Feed extends React.Component {
     render() {
       return (
         <div className="navbar">
-          <h1>YOU LOGGED IN!</h1>
           <p className="hello">Hello {this.props.currentUser.first_name} {this.props.currentUser.last_name}</p>
           <button onClick={() => this.props.logout()}>Logout</button>
         </div>
