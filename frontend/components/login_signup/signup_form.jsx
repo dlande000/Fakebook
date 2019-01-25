@@ -38,6 +38,11 @@ class SignupForm extends React.Component {
       }
 
     render() {
+
+    const errors = this.props.errors.map((error, i) => {
+        return <li key={i}>{error}</li>
+    })
+
     return (
         <div className="signup-form-container">
             <h2>Sign Up</h2>
@@ -223,6 +228,9 @@ class SignupForm extends React.Component {
                 <input className="button" type="submit" value="Sign Up" />
             </form>
                 <button onClick={this.handleSubmitDemo} className="button">Demo</button>
+                <ul className="errors">
+                    {errors}
+                </ul>
         </div>
         );
     }

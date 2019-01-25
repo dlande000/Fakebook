@@ -180,3 +180,13 @@ p > b {
   text-shadow: 0 1px 2px rgba(0,0,0,.5);
   cursor: pointer;
 }
+
+.errors {
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+  margin-left: -570px;
+  margin-top: -100px;
+  list-style-type: none;
+  line-height: 25px;
+}

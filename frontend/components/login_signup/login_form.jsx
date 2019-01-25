@@ -29,6 +29,11 @@ class Login extends React.Component {
       }
 
     render() {
+
+    const errors = this.props.errors.map((error, i) => {
+        return <li key={i}>{error}</li>
+    })
+
     return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form">
