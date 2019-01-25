@@ -15,7 +15,6 @@ class SignupForm extends React.Component {
             year: '2006'
         };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateBirthday = this.updateBirthday.bind(this);
     }
 
     update(field) {
@@ -24,18 +23,11 @@ class SignupForm extends React.Component {
         });
     }
 
-    updateBirthday() {
-        return event => this.setState({
-            day: event.currentTarget.value,
-            month: event.currentTarget.value,
-            year: event.currentTarget.value,
-            birthdate: new Date(year, month - 1, day)
-        });
-    }
-
     handleSubmit(event) {
         event.preventDefault();
-        const user = Object.assign({}, this.state);
+        const { first_name, last_name, email, password, day, month, year, gender } = this.state;
+        const birthdate = new Date(year, month - 1, day);
+        const user = Object.assign({}, { first_name, last_name, email, password, birthdate, gender });
         this.props.signup(user);
     }
 
@@ -63,7 +55,7 @@ class SignupForm extends React.Component {
                 <br />
                 <label className="birthday">Birthday
                     <br />
-                    <select className="birthday-month" onChange={this.updateBirthday()}>
+                    <select className="birthday-month" onChange={this.update('month')}>
                         <option value="01">Jan</option>
                         <option value="02">Feb</option>
                         <option value="03">Mar</option>
@@ -77,7 +69,7 @@ class SignupForm extends React.Component {
                         <option value="11">Nov</option>
                         <option value="12">Dec</option>
                     </select>
-                    <select className="birthday-day" onChange={this.updateBirthday()}>
+                    <select className="birthday-day" onChange={this.update('day')}>
                         <option value="01">1</option>
                         <option value="02">2</option>
                         <option value="03">3</option>
@@ -110,7 +102,7 @@ class SignupForm extends React.Component {
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select className="birthday-year" onChange={this.updateBirthday()}>
+                    <select className="birthday-year" onChange={this.update('year')}>
                         <option value="2006">2006</option>
                         <option value="2005">2005</option>
                         <option value="2004">2004</option>
@@ -217,13 +209,13 @@ class SignupForm extends React.Component {
                 <a href="#">Why do I need to provide my birthday?</a>
                 </div>
                 <br />
-                    <input className="input" type="radio" name="gender" value="female"></input>
+                    <input className="input" type="radio" onChange={this.update('gender')} name="gender" value="Female"></input>
                     <label className="select-female" htmlFor="female">Female</label>
-                    <input className="input" type="radio" name="gender" value="male"></input>
+                    <input className="input" type="radio" onChange={this.update('gender')} name="gender" value="Male"></input>
                     <label className="select-male" htmlFor="male">Male</label>
                 <br />
                 <input className="button" type="submit" value="Sign Up" />
-                <button className="button">Demo</button>
+                <button className="button" onClick={this.handleSubmit}>Demo</button>
             </form>
         </div>
         );
@@ -231,5 +223,3 @@ class SignupForm extends React.Component {
 }
 
 export default SignupForm;
-
-{/* <input type="date" value={this.state.birthdate} onChange={this.update('birthdate')} className="signup-input"/> */}

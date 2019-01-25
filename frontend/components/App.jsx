@@ -7,8 +7,8 @@ import { Switch } from 'react-router-dom';
 const App = () => (
   <div>
     <Switch>
-      <AuthRoute path="/" component={LoginSignup}/>
-      <ProtectedRoute path="/" component={Feed}/>
+      <AuthRoute exact path="/" component={LoginSignup}/>
+      <ProtectedRoute exact path="/feed" component={Feed}/>
     </Switch>
   </div>
 );
