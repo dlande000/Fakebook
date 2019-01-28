@@ -5,7 +5,7 @@ class UserName extends React.Component {
     render() {
     return (
         <div>
-            <h6>{this.props.firstName} {this.props.lastName}</h6>
+            <h2 className="profile-name">{this.props.firstName} {this.props.lastName}</h2>
         </div>
         );
     }

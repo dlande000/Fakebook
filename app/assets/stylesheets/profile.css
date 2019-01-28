@@ -1,0 +1,11 @@
+.full-profile {
+    width: 850px;
+    margin: 0 auto;
+}
+
+.profile-name {
+    color: #fff;
+    text-rendering: optimizelegibility;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .8);
+    font-family: sans-serif;
+}
