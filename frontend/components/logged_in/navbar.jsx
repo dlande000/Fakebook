@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { logout } from '../../actions/session_actions';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -7,7 +8,6 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     this.props.fetchUsers();
   }
 
@@ -23,7 +23,7 @@ class Navbar extends React.Component {
             <div className="navbar-right">
               <Link to={`/feed/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name}</Link>
               <Link to="/feed">Home</Link>
-              <Link onClick={() => this.props.logout()}>Log Out</Link>
+              <Link to="/" onClick={() => this.props.logout()}>Log Out</Link>
             </div>
           </div>
         </div>

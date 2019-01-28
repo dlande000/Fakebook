@@ -31,14 +31,14 @@
 
 
 .profile-pic-container {
-    width: 158px;
-    height: 158px;
+    width: 168px;
+    height: 168px;
     position: relative;
     overflow: hidden;
-    padding: 5px 30px 5px 5px;
+    padding: 5px;
     background: #ffffff;
     border: 1px solid #dddfe2;
-    z-index: 2;
+    z-index: 3;
 }
 
 .profile-pic-background {
