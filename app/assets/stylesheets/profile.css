@@ -32,7 +32,6 @@
     height: auto;
 }
 
-
 .profile-pic-container {
     width: 168px;
     height: 168px;
@@ -41,7 +40,6 @@
     padding: 5px;
     background: #ffffff;
     border: 1px solid #dddfe2;
-    z-index: 3;
 }
 
 .profile-pic-background {
@@ -51,10 +49,14 @@
 
 .profile-pic {
     height: 158px;
-    width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    margin: auto; 
+    min-height: 100%;
+    min-width: 100%;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
 }
 
 .profile-link-container {
