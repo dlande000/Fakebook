@@ -112,10 +112,21 @@
 .bio {
     text-align: center;
     font-weight: normal;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #ebedf0 solid;
 }
 
 .bio > h6 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: normal;
+    color: #1d2129;
+}
+
+.misc-info {
+    margin-top: -9px;
+}
+
+.misc-info > h6 {
+    font-weight: normal;
+    color: #1d2129;
+    line-height: 0px;
 }
