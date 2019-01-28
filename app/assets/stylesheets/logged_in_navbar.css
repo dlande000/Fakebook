@@ -32,3 +32,16 @@
 .navbar-right {
     float: right;
 }
+
+.navbar-profile-pic {
+    height: 15px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.navbar-link {
+    display: inline;
+    padding: 5px;
+    text-decoration: none;
+    font-family: sans-serif;
+}

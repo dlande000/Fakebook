@@ -5,6 +5,7 @@
     margin-top: 10px;
     padding-right: 15px;
     margin-left: -7px;
+    padding-bottom: 40px;
 }
 
 .full-profile {
@@ -17,11 +18,13 @@
     text-rendering: optimizelegibility;
     text-shadow: 0 0 3px rgba(0, 0, 0, .8);
     font-family: sans-serif;
+    z-index: 2;
 }
 
 .banner-pic-container {
     position: absolute;
-    clip: rect(0, 851px, 205px, 0);
+    clip: rect(0, 851px, 310px, 0);
+    z-index: -1;
   }
 
 .banner-pic {
@@ -83,4 +86,5 @@
     width: 37.5%;
     border: 1px solid #dddfe2;
     border-radius: 2px;
+    color: #1d2129;
 }
