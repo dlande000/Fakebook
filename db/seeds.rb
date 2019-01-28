@@ -19,7 +19,7 @@ User.create(
     current_city: "Orange County, California",
     bio: "Done with the family.",
     profile_pic_url: "https://uproxx.files.wordpress.com/2015/01/michael-bluth-reactions.jpg?quality=95&w=650&h=396",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg"
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
 User.create(
@@ -33,7 +33,7 @@ User.create(
     current_city: "New York, New York",
     bio: "Thank you for visiting Fakebook! Please feel free to get in touch with me.",
     banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
-    profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
 User.create(
@@ -47,7 +47,7 @@ User.create(
     current_city: "Irvine, California",
     bio: "Mr. Manager.",
     profile_pic_url: "http://2.bp.blogspot.com/-4nYM1gB9DHo/TbIvxACcX3I/AAAAAAAAARI/-x4EHCeNayY/s1600/Picture+3.png",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg"
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
 User.create(
@@ -61,7 +61,7 @@ User.create(
     current_city: "Orange County, California",
     bio: "BEEDS?!",
     profile_pic_url: "https://thesipadvisor.files.wordpress.com/2013/04/gob-bluth.jpg",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg"
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
 User.create(
@@ -74,7 +74,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "Former and Current Mother Boy",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://flavorwire.files.wordpress.com/2013/05/tumblr_m06al3iedj1rprfgbo1_500.png?w=500"
 )
 
@@ -88,7 +88,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Baja California Peninsula, Mexico",
     bio: "These salon wars have got to stop.",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://amp.businessinsider.com/images/517955e9eab8eae75a000008-750-563.jpg"
 )
 
@@ -102,7 +102,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "My name is Judge",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://www.empireonline.com/images/uploaded/arres-main.jpg"
 )
 
@@ -116,7 +116,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "I don't understand the question, and I won't respond.",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "http://flavorwire.files.wordpress.com/2013/05/lucille4.jpg"
 )
 
@@ -130,7 +130,7 @@ User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "Marry me!",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://pbs.twimg.com/profile_images/735520063168483329/Xmhcyenf.jpg"
 )
 
@@ -144,7 +144,7 @@ User.create(
     hometown: "Janesville, Wisconsin",
     current_city: "Orange County, California",
     bio: "There are dozens of us!",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://i.imgur.com/8tGPcQI.jpg"
 )
 
@@ -158,6 +158,6 @@ User.create(
     hometown: "Duncan, Oklahoma",
     current_city: "Los Angeles, California",
     bio: "Now the story of a wealthy family who lost everything and the one son who had no choice but to keep them all together.",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
 )

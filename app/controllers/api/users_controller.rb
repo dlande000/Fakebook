@@ -1,6 +1,8 @@
 class Api::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
+        @user.profile_pic_url = "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+        @user.banner_pic_url = "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 
         if @user.save
             login(@user)

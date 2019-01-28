@@ -7,6 +7,18 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_many :sent_friend_requests, -> { where "status = 'Requested'" },
+        primary_key: :id,
+        foreign_key: :sender_id,
+        class_name: :User
+
+    has_many :received_friend_requests, -> { where "status = 'Requested'" },
+        primary_key: :id,
+        foreign_key: :receiver_id,
+        class_name: :User
+
+    
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil
