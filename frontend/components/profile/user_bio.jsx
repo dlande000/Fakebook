@@ -4,7 +4,7 @@ class Bio extends React.Component {
 
     render() {
     return (
-        <div>
+        <div className="bio">
             <h6>{this.props.bio}</h6>
         </div>
         );

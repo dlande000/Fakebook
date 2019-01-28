@@ -6,8 +6,12 @@ class ProfileLink extends React.Component {
     return (
         <div className="profile-link-container">
             <nav className="profile-links">
-                <a className="profile-link" href="#">Timeline</a>
-                <a className="profile-link" href="#">Friends</a>
+                <div>
+                    <a className="profile-link" href="#">Timeline</a>
+                </div>
+                <div>
+                    <a className="profile-link" href="#">Friends</a>
+                </div>
             </nav>
         </div>
         );

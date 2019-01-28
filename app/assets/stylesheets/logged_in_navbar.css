@@ -44,4 +44,6 @@
     padding: 5px;
     text-decoration: none;
     font-family: sans-serif;
+    z-index: 2;
+    color: black;
 }
