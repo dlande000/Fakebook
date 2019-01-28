@@ -25,13 +25,18 @@ class Profile extends React.Component {
     render() {
     if (this.props.user) {
     return (
+        <div className="profile-background">
         <div className="full-profile">
             <BannerPic bannerPic={this.props.user.banner_pic_url} />
             <ProfilePic profilePic={this.props.user.profile_pic_url} />
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
             <ProfileLink />
-            <UserBio bio={this.props.user.bio} />
-            <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
+            <div className="info-box">
+                <h5>Intro</h5>
+                <UserBio bio={this.props.user.bio} />
+                <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
+            </div>
+        </div>
         </div>
         );
     } else {
