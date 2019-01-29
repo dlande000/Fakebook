@@ -163,6 +163,26 @@ u10 = User.create(
     profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
 )
 
+u11 = User.create(
+    first_name: "Gene",
+    last_name: "Parmesan",
+    password: "ahhhhhhhhhhhhhh",
+    email: "gene@parmesan.com",
+    birthdate: "1954-03-01",
+    gender: "Male",
+    hometown: "San Francisco, California",
+    current_city: "Orange County, California",
+    bio: "Private Detective for Hire",
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
+    profile_pic_url: "https://i2.wp.com/www.geekbinge.com/wp-content/uploads/2012/09/GeneParmesan_HOWYADOIN.png"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u2.id,
+   status: "Friends"
+)
+
 Friendship.create(
     receiver_id: u1.id,
     sender_id: u3.id,
@@ -176,14 +196,23 @@ Friendship.create(
 )
 
 Friendship.create(
-    receiver_id: u3.id,
-    sender_id: u4.id,
-   status: "Pending"
+    receiver_id: u1.id,
+    sender_id: u5.id,
+   status: "Friends"
 )
-
 Friendship.create(
-    receiver_id: u5.id,
+    receiver_id: u1.id,
     sender_id: u6.id,
+   status: "Friends"
+)
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u7.id,
+   status: "Friends"
+)
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u8.id,
    status: "Friends"
 )
 
@@ -201,12 +230,18 @@ Friendship.create(
 
 Friendship.create(
     receiver_id: u1.id,
-    sender_id: u2.id,
-   status: "Friends"
+    sender_id: u11.id,
+   status: "Pending"
 )
 
 Friendship.create(
-    receiver_id: u1.id,
-    sender_id: u5.id,
+    receiver_id: u3.id,
+    sender_id: u4.id,
+   status: "Pending"
+)
+
+Friendship.create(
+    receiver_id: u5.id,
+    sender_id: u6.id,
    status: "Friends"
 )

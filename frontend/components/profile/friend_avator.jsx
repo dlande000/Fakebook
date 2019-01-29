@@ -11,8 +11,8 @@ class FriendAvatar extends React.Component {
     return (
         <div className="friend-avatar-container">
             <Link to={route}>
-                <img className="friend-avatar-image" src={friend.profile_pic_url}/>
                 <h6 className="friend-avatar-name">{friend.first_name} {friend.last_name}</h6>
+                <img className="friend-avatar-image" src={friend.profile_pic_url}/>
             </Link>
         </div>
         )}
