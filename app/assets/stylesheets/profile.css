@@ -94,11 +94,10 @@
     top: 410px;
     font-family: sans-serif;
     background: #ffffff;
-    width: 323px;
+    width: 321px;
     border: 1px solid #dddfe2;
     border-radius: 2px;
     color: #1d2129;
-    padding: 0 30px;
     font-size: 19px;
     font-weight: normal;
 }
@@ -107,6 +106,7 @@
     font-size: 16px;
     font-weight: normal;
     margin-bottom: -20px;
+    padding-left: 30px;
 }
 
 .bio {
@@ -129,13 +129,13 @@
     font-weight: normal;
     color: #1d2129;
     line-height: 0px;
+    padding-left: 30px;
 }
 
 .friend-box {
-    position: absolute;
-    top: 600px;
-    width: 40%;
     background: #ffffff;
+    width: 321px;
+    justify-content: space-around;
 }
 
 .friend-avatar-image {
@@ -151,12 +151,13 @@
 }
 
 .friend-avatar-container {
-    width: 100px;
-    height: 100px;
+    width: 99px;
+    height: 99px;
     position: relative;
     overflow: hidden;
-    margin: 5px;
     display: inline-block;
+    margin-top: 6px;
+
 }
 
 .friend-avatar-name {
@@ -167,4 +168,13 @@
 .friend-box {
     display: flex;
     flex-wrap: wrap;
+}
+
+.friend-header {
+    position: absolute;
+    top: 620px;
+    background: #ffffff;
+    border: 1px solid #dddfe2;
+    border-radius: 2px;
+    padding-bottom: 10px;
 }

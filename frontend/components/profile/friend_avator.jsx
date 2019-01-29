@@ -7,11 +7,12 @@ class FriendAvatar extends React.Component {
     
     const friend = this.props.users[this.props.id];
     const route = `/feed/users/${this.props.id}`;
+    const fullName = `${friend.first_name} ${friend.last_name}`;
 
     return (
         <div className="friend-avatar-container">
             <Link to={route}>
-                <h6 className="friend-avatar-name">{friend.first_name} {friend.last_name}</h6>
+                <h6 className="friend-avatar-name">{fullName}</h6>
                 <img className="friend-avatar-image" src={friend.profile_pic_url}/>
             </Link>
         </div>

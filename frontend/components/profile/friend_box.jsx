@@ -18,10 +18,13 @@ class FriendBox extends React.Component {
     });
 
     return (
-        <div className="friend-box">
-            {friends}
+        <div className="friend-header">
+            <p><b>Friends</b> {this.props.friendIds.length}</p>
+            <div className="friend-box">
+                {friends}
+            </div>
         </div>
-        )}
+    )}
 }
 
 export default FriendBox;

@@ -32,7 +32,7 @@ u2 = User.create(
     gender: "Male",
     hometown: "Madison, Wisconsin",
     current_city: "New York, New York",
-    bio: "Thank you for visiting Fakebook! Please feel free to get in touch with me.",
+    bio: "Thank you for visiting Fakebook!",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
 )
@@ -158,7 +158,7 @@ u10 = User.create(
     gender: "Male",
     hometown: "Duncan, Oklahoma",
     current_city: "Los Angeles, California",
-    bio: "Now the story of a wealthy family who lost everything and the one son who had no choice but to keep them all together.",
+    bio: "Now the story of a wealthy family who lost everything...",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
 )
@@ -218,20 +218,20 @@ Friendship.create(
 
 Friendship.create(
     receiver_id: u1.id,
-    sender_id: u10.id,
-   status: "Pending"
+    sender_id: u9.id,
+   status: "Friends"
 )
 
 Friendship.create(
     receiver_id: u1.id,
-    sender_id: u9.id,
-   status: "Pending"
+    sender_id: u10.id,
+   status: "Friends"
 )
 
 Friendship.create(
     receiver_id: u1.id,
     sender_id: u11.id,
-   status: "Pending"
+   status: "Friends"
 )
 
 Friendship.create(
