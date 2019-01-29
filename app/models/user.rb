@@ -7,17 +7,25 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
-    has_many :sent_friend_requests, -> { where "status = 'Requested'" },
+    has_many :sent_friend_requests,
         primary_key: :id,
         foreign_key: :sender_id,
-        class_name: :User
+        class_name: :Friendship
 
-    has_many :received_friend_requests, -> { where "status = 'Requested'" },
+    has_many :received_friend_requests,
         primary_key: :id,
         foreign_key: :receiver_id,
-        class_name: :User
+        class_name: :Friendship
 
-    
+    def pending_friend_requests
+        self.received_friend_requests.where(status: 'Pending')
+    end
+
+    def friend_ids
+        accepted_ids = self.sent_friend_requests.where(sender_id: self.id, status: 'Friends').pluck(:receiver_id)
+        approved_ids = self.received_friend_requests.where(receiver_id: self.id, status: 'Friends').pluck(:sender_id)
+        friend_ids = accepted_ids.concat(approved_ids)
+    end
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

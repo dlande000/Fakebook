@@ -5,6 +5,7 @@ import MiscInfo from './misc_info';
 import ProfilePic from './profile_picture';
 import BannerPic from './banner_picture';
 import ProfileLink from './profile-link';
+import FriendBox from './friend_box';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class Profile extends React.Component {
                 <UserBio bio={this.props.user.bio} />
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
+            <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
         </div>
         </div>
         );

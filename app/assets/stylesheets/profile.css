@@ -130,3 +130,41 @@
     color: #1d2129;
     line-height: 0px;
 }
+
+.friend-box {
+    position: absolute;
+    top: 600px;
+    width: 40%;
+    background: #ffffff;
+}
+
+.friend-avatar-image {
+    height: 80px;
+    position: absolute;
+    margin: auto; 
+    min-height: 100%;
+    min-width: 100%;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+}
+
+.friend-avatar-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    margin: 5px;
+    display: inline-block;
+}
+
+.friend-avatar-name {
+    z-index: 100;
+    color: black;
+}
+
+.friend-box {
+    display: flex;
+    flex-wrap: wrap;
+}

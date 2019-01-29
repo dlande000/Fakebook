@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Friendship.delete_all
 User.delete_all
 
-User.create(
+u1 = User.create(
     first_name: "Michael",
     last_name: "Bluth",
     password: "tracyb",
@@ -22,7 +23,7 @@ User.create(
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
-User.create(
+u2 = User.create(
     first_name: "David",
     last_name: "Anderson",
     password: "theSimpsonsIsTheBestShowEver",
@@ -32,11 +33,11 @@ User.create(
     hometown: "Madison, Wisconsin",
     current_city: "New York, New York",
     bio: "Thank you for visiting Fakebook! Please feel free to get in touch with me.",
-    banner_pic_url: "http://i.imgur.com/D5uoQ4h.jpg",
-    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
+    profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
 )
 
-User.create(
+u3 = User.create(
     first_name: "George Michael",
     last_name: "Bluth",
     password: "lescousinsdangereux",
@@ -50,7 +51,7 @@ User.create(
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
-User.create(
+u4 = User.create(
     first_name: "GOB",
     last_name: "Bluth",
     password: "hugemistake",
@@ -64,7 +65,7 @@ User.create(
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
-User.create(
+u5 = User.create(
     first_name: "Buster",
     last_name: "Bluth",
     password: "mother",
@@ -78,7 +79,7 @@ User.create(
     profile_pic_url: "https://flavorwire.files.wordpress.com/2013/05/tumblr_m06al3iedj1rprfgbo1_500.png?w=500"
 )
 
-User.create(
+u6 = User.create(
     first_name: "Lindsay",
     last_name: "Bluth Funke",
     password: "guccichanel",
@@ -106,7 +107,7 @@ User.create(
     profile_pic_url: "https://www.empireonline.com/images/uploaded/arres-main.jpg"
 )
 
-User.create(
+u7 = User.create(
     first_name: "Lucille",
     last_name: "Bluth",
     password: "buildthewall",
@@ -120,7 +121,7 @@ User.create(
     profile_pic_url: "http://flavorwire.files.wordpress.com/2013/05/lucille4.jpg"
 )
 
-User.create(
+u8 = User.create(
     first_name: "Maeby",
     last_name: "Funke",
     password: "marryme",
@@ -134,7 +135,7 @@ User.create(
     profile_pic_url: "https://pbs.twimg.com/profile_images/735520063168483329/Xmhcyenf.jpg"
 )
 
-User.create(
+u9 = User.create(
     first_name: "Tobias",
     last_name: "Funke",
     password: "blueman",
@@ -148,7 +149,7 @@ User.create(
     profile_pic_url: "https://i.imgur.com/8tGPcQI.jpg"
 )
 
-User.create(
+u10 = User.create(
     first_name: "Omniscient",
     last_name: "Narrator",
     password: "ronhoward",
@@ -160,4 +161,52 @@ User.create(
     bio: "Now the story of a wealthy family who lost everything and the one son who had no choice but to keep them all together.",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
     profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u3.id,
+   status: "Friends"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u4.id,
+   status: "Friends"
+)
+
+Friendship.create(
+    receiver_id: u3.id,
+    sender_id: u4.id,
+   status: "Pending"
+)
+
+Friendship.create(
+    receiver_id: u5.id,
+    sender_id: u6.id,
+   status: "Friends"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u10.id,
+   status: "Pending"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u9.id,
+   status: "Pending"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u2.id,
+   status: "Friends"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u5.id,
+   status: "Friends"
 )
