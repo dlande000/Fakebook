@@ -160,8 +160,17 @@
 }
 
 .friend-avatar-name {
-    z-index: 100;
-    color: black;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    align-self: flex-end;
+    bottom: 0px;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-shadow: .5px .5px #1d2129;
 }
 
 .friend-box {
@@ -185,7 +194,7 @@
     top: 90px;
     margin-right: 250px;
     padding: 0px 10px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     background-clip: padding-box;
     border-color: rgba(0, 0, 0, .4);

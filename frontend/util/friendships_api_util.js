@@ -1,9 +1,9 @@
-export const createFriendship = id => {
+export const createFriendship = receiver_id => {
     return (
       $.ajax({
       method: 'POST',
       url: '/api/friendships',
-      data: { receiver_id: id }
+      data: { receiver_id }
     })
   );
 };
@@ -18,11 +18,11 @@ export const confirmFriendship = (friendship_id, sender_id) => {
   );
 };
 
-export const destroyFriendship = (friendship_id) => {
+export const destroyFriendship = friendship_id => {
     return (
     $.ajax({
       method: 'DELETE',
-      url: `/api/friendship/${id}`,
+      url: `/api/friendship/${friendship_id}`
     })
     );
   };

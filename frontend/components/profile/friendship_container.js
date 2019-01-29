@@ -9,10 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    createFriendship: () => dispatch(createFriendship()),
-    destroyFriendship: () => dispatch(destroyFriendship())
+    createFriendship: (id) => dispatch(createFriendship(id)),
+    destroyFriendship: (id) => dispatch(destroyFriendship(id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Friendship));
-
-// FINISH WORKING ON MAP DISPATCH
