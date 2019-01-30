@@ -6,6 +6,8 @@
     border-bottom: 1px solid #29487d;
     color: #fff;
     margin: -10px;
+    z-index: 2;
+    position: relative;
 }
 
 .logged-in-container {

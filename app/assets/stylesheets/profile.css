@@ -1,11 +1,7 @@
-.profile-background {
-    background: #e9ebee;
-    height: 100%;
+body {
     width: 100%;
-    margin-top: 10px;
-    padding-right: 15px;
-    margin-left: -7px;
-    padding-bottom: 40px;
+    height: 100%;
+    background: #e9ebee;
 }
 
 .full-profile {
@@ -20,8 +16,9 @@
     font-family: sans-serif;
     z-index: 2;
     position: absolute;
-    top: 291px;
+    top: 286px;
     margin-left: 215px;
+    font-weight: normal;
 }
 
 .banner-pic-container {
@@ -62,7 +59,7 @@
 
 .profile-link-container {
     position: absolute;
-    top: 353px;
+    top: 343px;
     height: 43px;
     width: 851px;
     background: #ffffff;
@@ -172,7 +169,7 @@
     padding: 5px;
     font-family: sans-serif;
     font-weight: normal;
-    text-shadow: .5px .5px #1d2129;
+    text-shadow: .7px .7px #1d2129;
 }
 
 .friend-box {
