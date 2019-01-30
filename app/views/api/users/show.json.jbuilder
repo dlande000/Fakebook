@@ -12,3 +12,9 @@ pending_sent_friend_ids = []
     pending_sent_friend_ids << pending_sent_request.receiver_id
 end
 json.pendingSentFriendIds pending_sent_friend_ids
+
+posts_on_wall = []
+@user.posts_on_wall.each do |post|
+    posts_on_wall << post.id
+end
+json.postsOnWallIds posts_on_wall

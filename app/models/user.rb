@@ -16,6 +16,20 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :receiver_id,
         class_name: :Friendship
+    
+    has_many :authored_posts,
+        primary_key: :id,
+        foreign_key: :author_id,
+        class_name: :Post
+
+    has_many :received_posts,
+        primary_key: :id,
+        foreign_key: :receiver_id,
+        class_name: :Post
+    
+    def posts_on_wall
+        self.received_posts.where(receiver_id: self.id)
+    end
 
     def pending_friend_requests
         self.received_friend_requests.where(status: 'Pending')
