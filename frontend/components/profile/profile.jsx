@@ -26,11 +26,10 @@ class Profile extends React.Component {
 
     render() {
     if (this.props.user) {
-    
     let friendshipStatus;
     if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
         friendshipStatus = "Friends";
-    } else if (this.props.currentUser.pendingFriendIds.includes(Number(this.props.match.params.userId))) {
+    } else if (this.props.currentUser.pendingSentFriendIds.includes(Number(this.props.match.params.userId))) {
         friendshipStatus = "Pending";
     } else if (this.props.currentUser.id == this.props.match.params.userId) {
         friendshipStatus = "Profile";
@@ -39,8 +38,8 @@ class Profile extends React.Component {
     }
 
     return (
-        <div className="profile-background">
         <div className="full-profile">
+    <div className="profile-background">
             <BannerPic bannerPic={this.props.user.banner_pic_url} />
             <ProfilePic profilePic={this.props.user.profile_pic_url} />
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />

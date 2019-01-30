@@ -1,6 +1,6 @@
 .profile-background {
     background: #e9ebee;
-    height: 2000px;
+    height: 100%;
     width: 100%;
     margin-top: 10px;
     padding-right: 15px;
@@ -135,7 +135,6 @@
 .friend-box {
     background: #ffffff;
     width: 321px;
-    justify-content: space-around;
 }
 
 .friend-avatar-image {
@@ -157,14 +156,17 @@
     overflow: hidden;
     display: inline-block;
     margin-top: 6px;
+    padding: 1px;
+    margin-left: 4px;
 }
 
 .friend-avatar-name {
-    position: relative;
+    position: absolute;
     z-index: 2;
     display: inline-block;
     align-self: flex-end;
-    bottom: 0px;
+    bottom: -28px;
+    left: 1px;
     color: #fff;
     font-size: 12px;
     padding: 5px;
@@ -185,6 +187,21 @@
     border: 1px solid #dddfe2;
     border-radius: 2px;
     padding-bottom: 10px;
+
+}
+    
+.friend-header-text {
+    position: relative;
+    top: 2px;
+    left: 25px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #90949b;
+}
+
+.friend-header-text > b {
+    font-weight: normal;
+    color: #1e2128;
 }
 
 .friendship {

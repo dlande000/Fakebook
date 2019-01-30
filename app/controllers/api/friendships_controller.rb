@@ -1,9 +1,9 @@
 class Api::FriendshipsController < ApplicationController
     def create
-        @friendship = current_user.sent_friend_requests.new(friendship_params)
+        @friendship = current_user.sent_friend_requests.new(receiver_id: params[:receiver_id])
         @friendship.update(status: 'Pending')
         if @friendship.save
-            @user = User.find_by(id: @friendship.receiver_id)
+            @user = current_user
             render 'api/users/show'
         else
             render json: @friendship.errors.full_messages, status: 422
@@ -26,11 +26,5 @@ class Api::FriendshipsController < ApplicationController
         friendship.destroy
         @user = current_user
         render 'api/users/show'
-    end
-
-    private
-
-    def friendship_params
-        params.require(:friendship).permit(:receiver_id)
     end
 end

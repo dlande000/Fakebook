@@ -5,11 +5,11 @@ class Friendship extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.props.status === "Friends") {
-            this.props.destroyFriendship();
+            this.props.destroyFriendship(this.props.user.id);
         } else if (this.props.status === "Pending") {
-            this.props.destroyFriendship();
+            this.props.destroyFriendship(this.props.user.id);
         } else if (this.props.status === "Add Friend") {
-            this.props.createFriendship();
+            this.props.createFriendship(this.props.user.id);
         }
     }
 

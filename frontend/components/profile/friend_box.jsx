@@ -19,7 +19,7 @@ class FriendBox extends React.Component {
 
     return (
         <div className="friend-header">
-            <p><b>Friends</b> {this.props.friendIds.length}</p>
+            <p className="friend-header-text"><b>Friends</b> · {this.props.friendIds.length}</p>
             <div className="friend-box">
                 {friends}
             </div>

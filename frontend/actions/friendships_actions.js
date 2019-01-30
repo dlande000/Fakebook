@@ -9,6 +9,6 @@ export const confirmFriendship = (friendship_id, sender_id) => dispatch => {
     return FriendshipsAPIUtil.confirmFriendship(friendship_id, sender_id).then(user => dispatch(receiveUser(user)));
 };
 
-export const destroyFriendship = friendship_id => dispatch => {
-    return UsersAPIUtil.destroyFriendship(friendship_id).then(user => dispatch(receiveUser(user)));
+export const destroyFriendship = id => dispatch => {
+    return FriendshipsAPIUtil.destroyFriendship(id).then(user => dispatch(receiveUser(user)));
 };
