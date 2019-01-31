@@ -1,6 +1,6 @@
 import React from 'react';
 
-class PostsAllComponents extends React.Component {
+class Post extends React.Component {
     render() {
     return (
         <div>
@@ -9,4 +9,4 @@ class PostsAllComponents extends React.Component {
     }
 }
 
-export default PostsAllComponents;
+export default Post;
