@@ -7,7 +7,7 @@ import BannerPic from './banner_picture';
 import ProfileLink from './profile_link';
 import FriendBox from './friend_box';
 import FriendshipContainer from './friendship_container';
-import WallContainer from './wall_container';
+import Wall from './wall';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -51,7 +51,7 @@ class Profile extends React.Component {
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
             <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
-            <WallContainer />
+            <Wall fetchPosts={this.props.fetchPosts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         );
     } else {

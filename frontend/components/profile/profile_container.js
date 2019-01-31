@@ -1,4 +1,5 @@
 import { fetchUser, fetchUsers } from '../../actions/users_actions';
+import { fetchPosts } from '../../actions/posts_actions';
 import { connect } from 'react-redux';
 import Profile from './profile';
 import { withRouter } from 'react-router-dom';
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: id => dispatch(fetchUser(id)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchUsers: () => dispatch(fetchUsers()),
+    fetchPosts: () => dispatch(fetchPosts())
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Profile));
