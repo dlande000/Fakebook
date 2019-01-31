@@ -10,7 +10,7 @@ class PostsAllComponents extends React.Component {
     return (
         <div>
             <PostForm />
-            <Posts posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+            <Posts correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         )
     }

@@ -5,8 +5,8 @@ class Wall extends React.Component {
     render() {
 
     return (
-        <div>
-            <PostsAllComponents posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+        <div className="wall">
+            <PostsAllComponents correctReceivers={[this.props.user.id]} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         )
     }

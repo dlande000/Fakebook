@@ -52,7 +52,7 @@ class Profile extends React.Component {
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
             <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
-            <Wall posts={this.props.posts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+            <Wall user={this.props.user} posts={this.props.posts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         );
     } else {
