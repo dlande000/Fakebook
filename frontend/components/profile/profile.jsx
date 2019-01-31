@@ -17,6 +17,7 @@ class Profile extends React.Component {
     componentDidMount() {
         const { match: { params: { userId } } } = this.props;
         this.props.fetchUsers().then(() => this.props.fetchUser(userId));
+        this.props.fetchPosts();
     }
 
     componentDidUpdate(oldProps) {
@@ -26,7 +27,7 @@ class Profile extends React.Component {
     }
 
     render() {
-    if (this.props.user) {
+    if (Object.values(this.props.posts).length !== 0) {
     let friendshipStatus;
     if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
         friendshipStatus = "Friends";
@@ -51,7 +52,7 @@ class Profile extends React.Component {
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
             <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
-            <Wall fetchPosts={this.props.fetchPosts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+            <Wall posts={this.props.posts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         );
     } else {
