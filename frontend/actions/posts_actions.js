@@ -9,9 +9,9 @@ export const receivePosts = posts => ({
     posts
 });
 
-export const removePost = id => ({
+export const removePost = post => ({
     type: REMOVE_POST,
-    id
+    post
 });
 
 export const receivePostErrors = errors => ({
