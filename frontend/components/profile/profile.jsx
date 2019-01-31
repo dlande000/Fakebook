@@ -7,6 +7,7 @@ import BannerPic from './banner_picture';
 import ProfileLink from './profile_link';
 import FriendBox from './friend_box';
 import FriendshipContainer from './friendship_container';
+import WallContainer from './wall_container';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -39,7 +40,6 @@ class Profile extends React.Component {
 
     return (
         <div className="full-profile">
-    <div className="profile-background">
             <BannerPic bannerPic={this.props.user.banner_pic_url} />
             <ProfilePic profilePic={this.props.user.profile_pic_url} />
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
@@ -51,7 +51,7 @@ class Profile extends React.Component {
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
             <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
-        </div>
+            <WallContainer />
         </div>
         );
     } else {

@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Post.delete_all
 Friendship.delete_all
 User.delete_all
 
@@ -93,7 +94,7 @@ u6 = User.create(
     profile_pic_url: "https://amp.businessinsider.com/images/517955e9eab8eae75a000008-750-563.jpg"
 )
 
-User.create(
+u12 = User.create(
     first_name: "Franklin Delano",
     last_name: "Bluth",
     password: "itainteasybeing",
@@ -244,4 +245,46 @@ Friendship.create(
     receiver_id: u5.id,
     sender_id: u6.id,
    status: "Friends"
+)
+
+Friendship.create(
+    receiver_id: u1.id,
+    sender_id: u12.id,
+   status: "Friends"
+)
+
+Post.create(
+    author_id: u12.id,
+    receiver_id: u1.id,
+    body: "My man!"
+)
+
+Post.create(
+    author_id: u3.id,
+    receiver_id: u1.id,
+    body: "Michael!"
+)
+
+Post.create(
+    author_id: u1.id,
+    receiver_id: u12.id,
+    body: "Test post!"
+)
+
+Post.create(
+    author_id: u1.id,
+    receiver_id: u2.id,
+    body: "Test post 2!"
+)
+
+Post.create(
+    author_id: u3.id,
+    receiver_id: u2.id,
+    body: "Test post 3!"
+)
+
+Post.create(
+    author_id: u1.id,
+    receiver_id: u1.id,
+    body: "This would be a status!"
 )
