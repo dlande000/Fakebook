@@ -1,18 +1,18 @@
-import { fetchUser, fetchUsers } from '../../actions/users_actions';
-import {} from '../../actions/post_actions';
 import { connect } from 'react-redux';
 import Wall from './profile';
 import { withRouter } from 'react-router-dom';
+import {} from '../../actions/posts_actions';
+import { getPostsForWall } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-    user: state.entities.users[ownProps.match.params.userId],
-    users: state.entities.users, 
-    currentUser: state.entities.users[state.session.id]
+    posts: getPostsForWall(state, ownProps.match.parms.userId)
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchUser: id => dispatch(fetchUser(id)),
-    fetchUsers: () => dispatch(fetchUsers())
+    fetchPosts: () => dispatch(fetchPosts()),
+    createPost: post => dispatch(createPost(post)),
+    updatePost: post => dispatch(updatePost(post)),
+    deletePost: id => dispatch(deletePost(id))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Wall));
