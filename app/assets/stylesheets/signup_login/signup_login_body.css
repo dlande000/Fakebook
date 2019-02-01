@@ -27,10 +27,14 @@
   line-height: 37px;
 }
 
-.signup-body-text > p {
+.signup-body-points > p {
   font-size: 15px;
-  font-kerning: 2px;
   color: #666666;
+  margin-left: 0;
+  display: inline;
+  position: relative;
+  top: -20px;
+  left: 12px;
 }
 
 p > b {
@@ -189,4 +193,15 @@ p > b {
   margin-top: -100px;
   list-style-type: none;
   line-height: 25px;
+}
+
+.signup-body-text > img {
+  float: left;
+  display: inline;
+}
+
+.signup-body-points {
+  vertical-align: center;
+  padding-top: 10px;
+  width: 500px;
 }

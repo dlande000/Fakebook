@@ -1,12 +1,20 @@
 .footer {
-    background-color: #ffffff;
-    font-family: sans-serif;
-    font-size: 12px;
-    color: #737373;
-    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 35px;
 }
 
 .fakebook-footer {
-    width: 831px;
-    align-self: center;
+    width: 1000px;
+    color:  #737373;
+    height: 100%;
+    margin: 0 auto;
+    text-align: left;
+    background: #ffffff;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+html {
+    background: #ffffff;
 }

@@ -15,16 +15,19 @@ class Post extends React.Component {
 
     let createdAndEdited;
     if (this.props.createdAt === this.props.updatedAt) {
-        createdAndEdited = `Created at ${this.props.post.createdAt}`;
+        createdAndEdited = `Created at ${new Date(this.props.post.createdAt)}`;
     } else {
-        createdAndEdited = `Created at ${this.props.post.createdAt}; edited at ${this.props.post.updatedAt}`
+        createdAndEdited = `Created at ${this.props.post.createdAt}; edited at ${this.props.post.updatedAt}`;
     }
 
     return (
-        <div>
-            <h6>{authorAndReceiver}</h6>
-            <p>{this.props.post.body}</p>
-            <p>{createdAndEdited}</p>
+        <div className="post">
+            <div className="post-image-container">
+                <img className="post-image" src={author.profile_pic_url}/>
+            </div>
+            <h6 className="post-authors">{authorAndReceiver}</h6>
+            <p className="post-created">{createdAndEdited}</p>
+            <p className="post-body">{this.props.post.body}</p>
         </div>
         )
     }

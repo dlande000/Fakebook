@@ -32,11 +32,12 @@ class Posts extends React.Component {
         }
     });
 
-    debugger
-
     return (
-        <div>
+        <div className="posts-header">
+            <h5>POSTS</h5>
+        <div className="posts">
             {formattedPosts}
+        </div>
         </div>
         )
     }

@@ -5,11 +5,16 @@ import { Route } from 'react-router-dom';
 import ProfileContainer from '../profile/profile_container';
 import NavbarContainer from './navbar_container';
 
-const LoggedIn = () => (
+const LoggedIn = () => {
+  $("html").addClass("html-class");
+  return (
   <div>
+    <script>
+    </script>
     <NavbarContainer />
     <Route path='/feed/users/:userId' component={ProfileContainer}/>
   </div>
-);
+  )
+};
 
 export default LoggedIn;

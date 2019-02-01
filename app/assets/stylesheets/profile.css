@@ -4,6 +4,10 @@ body {
     background: #e9ebee;
 }
 
+.html-class {
+    background: none;
+}
+
 .full-profile {
     width: 851px;
     margin: 0 auto;
@@ -219,18 +223,4 @@ body {
     width: 95px;
     border-radius: 0;
     cursor: pointer;
-}
-
-.wall {
-    position: relative;
-    top: 200px;
-    font-family: sans-serif;
-    background: #ffffff;
-    width: 492px;
-    border: 1px solid #dddfe2;
-    border-radius: 2px;
-    color: #1d2129;
-    font-size: 19px;
-    font-weight: normal;
-    left: 360px;
 }

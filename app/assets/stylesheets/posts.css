@@ -1,0 +1,130 @@
+.wall {
+    position: relative;
+    top: 203px;
+    font-family: sans-serif;
+    width: 492px;
+    border-radius: 2px;
+    color: #1d2129;
+    font-size: 19px;
+    font-weight: normal;
+    left: 360px;
+}
+
+.post-image {
+    height: 40px;
+    width: auto;
+    position: absolute;
+    margin: auto; 
+    min-height: 100%;
+    min-width: 100%;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+}
+
+.post-form-header {
+    color: #4b4f56;
+    font-size: 12px;
+    font-family: sans-serif;
+    margin-left: 13px;
+    margin-top: 11px;
+}
+
+.post-image-container {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: -20px;
+}
+
+.post-form{
+    width: 100%;
+    background-color: #f5f6f7;
+    border-bottom: 1px solid #dddfe2;
+    border-radius: 2px 2px 0 0;
+    height: 170px;
+    border: #dddfe2 1px solid;
+    margin-bottom: 10px;
+}
+
+.post-form-body {
+    width: 99%;
+    height: 80px;
+    resize: none;
+    border: none;
+    margin-top: -14px;
+}
+
+.post-form-submit-button {
+    background-color: #4267b2;
+    border-color: #4267b2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 0 16px;
+    font-family: sans-serif;
+    float: right;
+    margin-right: 11px;
+    margin-top: 5px;
+}
+
+.posts {
+    width: 100%;
+}
+
+.posts-header {
+    color: #a2a5ab;
+    font-size: 12px;
+    font-family: sans-serif;
+    margin-left: 4px;
+}
+
+.post {
+    width: 100%;
+    min-height: 106px;
+    max-height: auto;
+    margin-bottom: 10px;
+    border: #dddfe2 1px solid;
+    background: white;
+}
+
+.post-image-container {
+    position: relative;
+    top: 30px;
+    left: 10px;
+}
+
+.post-authors {
+    color: #3d5c94;
+    font-size: 14px;
+    font-family: sans-serif;
+    position: relative;
+    left: 60px;
+    top: -40px;
+    font-weight: bold;
+}
+
+.post-created {
+    font-size: 12px;
+    font-family: sans-serif;
+    position: relative;
+    left: 61px;
+    top: -69px;
+}
+
+.post-body {
+    font-family: sans-serif;
+    position: relative;
+    left: 17px;
+    top: -61px;
+    color: #3d5c94;
+    font-size: 14px;
+    font-family: sans-serif;
+    height: 100%;
+    padding-right: 27px;
+    margin-bottom: -36px;
+}

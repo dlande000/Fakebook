@@ -1,8 +1,8 @@
 import { fetchUser, fetchUsers } from '../../actions/users_actions';
 import { fetchPosts, createPost } from '../../actions/posts_actions';
 import { connect } from 'react-redux';
-import Profile from './profile';
 import { withRouter } from 'react-router-dom';
+import Profile from '../profile/profile';
 
 const mapStateToProps = (state, ownProps) => ({
     user: state.entities.users[ownProps.match.params.userId],
