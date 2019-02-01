@@ -9,7 +9,7 @@ class PostsAllComponents extends React.Component {
     render() {
     return (
         <div>
-            <PostForm />
+            <PostForm user={this.props.user} createPost={this.props.createPost}/>
             <Posts correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
         )

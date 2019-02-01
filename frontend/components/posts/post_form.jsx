@@ -5,13 +5,14 @@ class PostForm extends React.Component {
         super(props);
         this.state = {
           body: '',
-          receiverId: ""
+          receiver_id: this.props.user.id
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.createPost({post: this.state});
     }
 
     update(body) {
@@ -23,9 +24,9 @@ class PostForm extends React.Component {
     render() {
     return (
         <div>
-            <h1>This is the psot form</h1>
+            <h1>This is the post form!!!!!</h1>
             <form onSubmit={this.handleSubmit}>
-            <textarea name="" id="" cols="30" rows="10" onChange={this.update('body')}></textarea>
+            <textarea name="" id="" cols="30" rows="10" onChange={this.update('body')} value="Write a post"></textarea>
             <input type="submit" value="Post" />
             </form>
         </div>

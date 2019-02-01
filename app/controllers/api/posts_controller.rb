@@ -1,8 +1,11 @@
 class Api::PostsController < ApplicationController
     def create
-        @post = Post.new(post_params)
-        @post.author_id = current_user.id
-        if @post.save
+        post = Post.new(post_params)
+        post.author_id = current_user.id
+        if post.save
+            ids = [current_user.id] + current_user.friend_ids
+            @posts = Post.where(receiver_id: ids)
+                .or(Post.where(author_id: ids))
             render 'api/posts/index'
         else
             render json: @post.errors.full_messages, status: 422
@@ -30,9 +33,12 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find_by(id: params[:id])
-        if @post.author_id == current_user.id || @post.receiver_id == current_user.id
-            @post.destroy
+        post = Post.find_by(id: params[:id])
+        if post.author_id == current_user.id || @post.receiver_id == current_user.id
+            post.destroy
+            ids = [current_user.id] + current_user.friend_ids
+            @posts = Post.where(receiver_id: ids)
+                .or(Post.where(author_id: ids))
             render 'api/posts/show'
         else 
             render json: ['Cannot delete post'], status: 401
@@ -41,6 +47,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:text, :receiver_id)
+        params.require(:post).permit(:body, :receiver_id)
     end
 end

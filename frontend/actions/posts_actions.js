@@ -23,10 +23,11 @@ export const fetchPosts = () => dispatch => (
     PostsAPIUtil.fetchPosts().then(posts => dispatch(receivePosts(posts)))
 );
 
-export const createPost = post => dispatch => (
-    PostsAPIUtil.createPost(post)
+export const createPost = post => dispatch => {
+    debugger
+    return PostsAPIUtil.createPost(post)
         .then(posts => dispatch(receivePosts(posts)), errors => dispatch(receivePostErrors(errors.responseJSON)))
-);
+};
 
 export const updatePost = post => dispatch => (
     PostsAPIUtil.updatePost(post)
