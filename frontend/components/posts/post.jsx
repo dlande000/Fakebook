@@ -10,12 +10,12 @@ class Post extends React.Component {
     if (author.id === receiver.id) {
         authorAndReceiver = `${author.first_name} ${author.last_name}`;
     } else {
-        authorAndReceiver = `${author.first_name} ${author.last_name} to ${receiver.first_name} ${receiver.last_name}`;
+        authorAndReceiver = `${author.first_name} ${author.last_name} ${receiver.first_name} ${receiver.last_name}`;
     }
 
     let createdAndEdited;
     if (this.props.createdAt === this.props.updatedAt) {
-        createdAndEdited = `Created at ${new Date(this.props.post.createdAt)}`;
+        createdAndEdited = `${new Date(this.props.post.createdAt)}`;
     } else {
         createdAndEdited = `Created at ${this.props.post.createdAt}; edited at ${this.props.post.updatedAt}`;
     }

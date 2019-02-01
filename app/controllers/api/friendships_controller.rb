@@ -3,7 +3,7 @@ class Api::FriendshipsController < ApplicationController
         @friendship = current_user.sent_friend_requests.new(receiver_id: params[:receiver_id])
         @friendship.update(status: 'Pending')
         if @friendship.save
-            @user = current_user
+            @users = current_user
             render 'api/users/show'
         else
             render json: @friendship.errors.full_messages, status: 422

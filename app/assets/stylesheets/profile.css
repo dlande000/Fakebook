@@ -13,6 +13,19 @@ body {
     margin: 0 auto;
 }
 
+.bio-globe-image {
+    height: 20px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+
+.profile-left {
+    position: absolute;
+    top: 400px;
+}
+
 .profile-name {
     color: #fff;
     text-rendering: optimizelegibility;
@@ -91,8 +104,8 @@ body {
 }
 
 .info-box {
-    position: absolute;
-    top: 410px;
+    position: relative;
+    top: 0px;
     font-family: sans-serif;
     background: #ffffff;
     width: 321px;
@@ -101,41 +114,60 @@ body {
     color: #1d2129;
     font-size: 19px;
     font-weight: normal;
+    height: 216px;
 }
 
 .info-box > h5 {
     font-size: 16px;
     font-weight: normal;
-    margin-bottom: -20px;
-    padding-left: 30px;
-}
-
-.bio {
-    text-align: center;
-    font-weight: normal;
-    border-bottom: 1px #ebedf0 solid;
+    position: relative;
+    top: -28px;
+    left: 48px;
 }
 
 .bio > h6 {
-    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: center;
     font-weight: normal;
     color: #1d2129;
+    position: relative;
+    top: -50px;
+    padding: 7px;
+}
+
+.bio-horizontal-line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    position: relative;
+    top: -55px;
 }
 
 .misc-info {
-    margin-top: -9px;
+    position: relative;
+    top: -40px;
 }
 
 .misc-info > h6 {
     font-weight: normal;
     color: #1d2129;
-    line-height: 0px;
-    padding-left: 30px;
+    position: relative;
+    left: 58px;
+    top: -68px;
+    margin-bottom: -51px;
 }
 
 .friend-box {
     background: #ffffff;
     width: 321px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: -47px;
+    padding-bottom: 7px;
 }
 
 .friend-avatar-image {
@@ -176,25 +208,19 @@ body {
     text-shadow: .7px .7px #1d2129;
 }
 
-.friend-box {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .friend-header {
-    position: absolute;
-    top: 620px;
+    position: relative;
+    top: 7px;
     background: #ffffff;
     border: 1px solid #dddfe2;
     border-radius: 2px;
-    padding-bottom: 10px;
-
+    height: 80px;
 }
     
 .friend-header-text {
     position: relative;
-    top: 2px;
-    left: 25px;
+    top: -42px;
+    left: 47px;
     font-size: 14px;
     font-family: sans-serif;
     color: #90949b;
@@ -223,4 +249,28 @@ body {
     width: 95px;
     border-radius: 0;
     cursor: pointer;
+}
+
+.bio-house-image {
+    height: 30px;
+    width: auto;
+    position: relative;
+    top: -13px;
+    right: -10px;
+}
+
+.bio-location-image{
+    height: 40px;
+    width: auto;
+    position: relative;
+    top: -8px;
+    right: -5px;
+}
+
+.friend-image {
+    height: 40px;
+    width: auto;
+    position: relative;
+    top: 5px;
+    left: 4px;
 }

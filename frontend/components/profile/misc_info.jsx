@@ -6,9 +6,8 @@ class MiscInfo extends React.Component {
     if (this.props.currentCity) {
     return (
         <div className="misc-info">
-            <h6>Lives in {this.props.currentCity}</h6>
-            <h6>From {this.props.hometown}</h6>
-            <h6>Born {this.props.birthday}</h6>
+            <img className="bio-house-image" src="https://cdn1.iconfinder.com/data/icons/facebook-ui/48/additional_icons-10-512.png"/><h6>Lives in {this.props.currentCity}</h6>
+            <img className="bio-location-image" src="https://cdn2.iconfinder.com/data/icons/facebook-ui/48/Jee-07-512.png"/><h6>From {this.props.hometown}</h6>
         </div>
         )} else {
             return (

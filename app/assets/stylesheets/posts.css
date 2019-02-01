@@ -27,8 +27,8 @@
     color: #4b4f56;
     font-size: 12px;
     font-family: sans-serif;
-    margin-left: 13px;
-    margin-top: 11px;
+    margin-left: 38px;
+    margin-top: -10px;
 }
 
 .post-image-container {
@@ -114,6 +114,7 @@
     position: relative;
     left: 61px;
     top: -69px;
+    color: #6c6f7c;
 }
 
 .post-body {
@@ -121,10 +122,18 @@
     position: relative;
     left: 17px;
     top: -61px;
-    color: #3d5c94;
+    color: #1d202a;
     font-size: 14px;
     font-family: sans-serif;
     height: 100%;
     padding-right: 27px;
     margin-bottom: -36px;
+}
+
+.pencil-post-image {
+    height: 21px;
+    width: auto;
+    position: relative;
+    top: 9px;
+    left: 11px;
 }

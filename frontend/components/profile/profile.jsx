@@ -27,7 +27,7 @@ class Profile extends React.Component {
     }
 
     render() {
-    if (Object.values(this.props.posts).length !== 0) {
+    if (Object.values(this.props.posts).length !== 0 && !!this.props.user) {
     let friendshipStatus;
     if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
         friendshipStatus = "Friends";
@@ -46,13 +46,17 @@ class Profile extends React.Component {
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
             <FriendshipContainer status={friendshipStatus}/>
             <ProfileLink />
+            <div className="profile-left">
             <div className="info-box">
-                <h5>Intro</h5>
+            <img className="bio-globe-image" src="https://cdn3.iconfinder.com/data/icons/communication-icons-1/32/Earth-512.png"/><h5>Intro</h5>
                 <UserBio bio={this.props.user.bio} />
+                <hr className="bio-horizontal-line"/>
                 <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />
             </div>
             <FriendBox friendIds={this.props.user.friendIds} users={this.props.users}/>
+            </div><div>
             <Wall createPost={this.props.createPost} user={this.props.user} posts={this.props.posts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+        </div>
         </div>
         );
     } else {
