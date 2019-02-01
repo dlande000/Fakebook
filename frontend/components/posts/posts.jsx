@@ -5,11 +5,34 @@ class Posts extends React.Component {
     render() {
 
     const postsArr = Object.values(this.props.posts);
-    const formattedPosts = postsArr.map((post, id) => {
+    
+    function quicksort(array) {
+        if(array.length < 2) {
+          return array;
+        }
+      
+        let pivot = array[0];
+        let lesser = [];
+        let greater = [];
+      
+        for(let i = 1; i < array.length; i++) {
+          if(array[i].createdAt < pivot.createdAt) {
+            lesser.push(array[i]);
+          } else {
+            greater.push(array[i]);
+          }
+        }
+      
+        return quicksort(greater).concat(pivot, quicksort(lesser));
+    }
+
+    const formattedPosts = quicksort(postsArr).map((post, id) => {
         if (this.props.correctReceivers.includes(post.receiverId)) {
             return (<Post key={id} post={post} users={this.props.users}/>);
         }
     });
+
+    debugger
 
     return (
         <div>

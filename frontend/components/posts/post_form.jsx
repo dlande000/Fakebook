@@ -15,18 +15,18 @@ class PostForm extends React.Component {
         this.props.createPost({post: this.state});
     }
 
-    update(body) {
+    update(value) {
         return e => this.setState({
-          [body]: e.target.value
+          [value]: e.target.value
         });
     }
 
     render() {
     return (
         <div>
-            <h1>This is the post form!!!!!</h1>
+            <h6>Create Post</h6>
             <form onSubmit={this.handleSubmit}>
-            <textarea name="" id="" cols="30" rows="10" onChange={this.update('body')} value="Write a post"></textarea>
+            <textarea name="" id="" cols="30" rows="10" onChange={this.update('body')} placeholder="ass" value={this.state.body}></textarea>
             <input type="submit" value="Post" />
             </form>
         </div>
