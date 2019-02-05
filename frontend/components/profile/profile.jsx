@@ -12,6 +12,10 @@ import Wall from './wall';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            rerender: true
+        };
+        this.update = this.update.bind(this);
     }
 
     componentDidMount() {
@@ -26,25 +30,20 @@ class Profile extends React.Component {
         }
     }
 
+    update() {
+        this.setState({rerender: !this.state.rerender});
+        this.render();
+    }
+
     render() {
-        if (Object.values(this.props.posts).length !== 0 && !!this.props.user) {
-            let friendshipStatus;
-            if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
-                friendshipStatus = "Friends";
-            } else if (this.props.currentUser.pendingSentFriendIds.includes(Number(this.props.match.params.userId))) {
-                friendshipStatus = "Pending";
-            } else if (this.props.currentUser.id == this.props.match.params.userId) {
-                friendshipStatus = "Profile";
-            } else {
-                friendshipStatus = "Add Friend";
-            }
+    if (Object.values(this.props.posts).length !== 0 && !!this.props.user && Object.keys(this.props.users).length > 1) {
 
     return (
         <div className="full-profile">
             <BannerPic bannerPic={this.props.user.banner_pic_url} />
             <ProfilePic profilePic={this.props.user.profile_pic_url} />
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
-            <FriendshipContainer status={friendshipStatus}/>
+            <FriendshipContainer callback={this.update}/>
             <ProfileLink />
             <div className="profile-left">
             <div className="info-box">

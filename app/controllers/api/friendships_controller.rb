@@ -23,8 +23,9 @@ class Api::FriendshipsController < ApplicationController
 
     def destroy
         friendship = current_user.received_friend_requests.find_by(sender_id: params[:id]) || current_user.sent_friend_requests.find_by(receiver_id: params[:id])
-        @user = User.find_by(id: friendship.receiver_id)
-        friendship.destroy!
-        render 'api/users/show'
+        if friendship.destroy!
+            @user = User.find_by(id: friendship.receiver_id)
+            render 'api/users/show'
+        end
     end
 end
