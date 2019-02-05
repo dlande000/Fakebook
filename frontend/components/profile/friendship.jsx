@@ -13,13 +13,12 @@ class Friendship extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.props.user.friendIds.includes(this.props.currentUser.id)) {
-            this.props.destroyFriendship(this.props.user.id).then(this.props.fetchUser(this.props.user.id));
-        } else if (this.props.currentUser.pendingSentFriendIds.includes(this.props.user.id)) {
-            this.props.destroyFriendship(this.props.user.id).then(this.props.fetchUser(this.props.user.id));
+            this.props.destroyFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
+        } else if (this.props.user.pendingFriendIds.includes(this.props.currentUser.id)) {
+            this.props.destroyFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
         } else if (this.props.currentUser.id != this.props.user.id) {
-            this.props.createFriendship(this.props.user.id).then(this.props.fetchUser(this.props.user.id));
+            this.props.createFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
         } 
-        this.props.callback();
     }
 
     render() {
@@ -27,7 +26,7 @@ class Friendship extends React.Component {
             let friendshipStatus;
             if (this.props.user.friendIds.includes(this.props.currentUser.id)) {
                 friendshipStatus = "Friends";
-            } else if (this.props.currentUser.pendingSentFriendIds.includes(this.props.user.id)) {
+            } else if (this.props.user.pendingFriendIds.includes(this.props.currentUser.id)) {
                 friendshipStatus = "Pending";
             } else if (this.props.user.id == this.props.currentUser.id) {
                 friendshipStatus = "Profile";
