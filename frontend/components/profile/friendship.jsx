@@ -1,5 +1,4 @@
 import React from 'react';
-import Profile from './profile';
 
 class Friendship extends React.Component {
     constructor(props) {
@@ -16,9 +15,11 @@ class Friendship extends React.Component {
             this.props.destroyFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
         } else if (this.props.user.pendingFriendIds.includes(this.props.currentUser.id)) {
             this.props.destroyFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
+        } else if (this.props.user.pendingSentFriendIds.includes(this.props.currentUser.id)) {
+            this.props.confirmFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
         } else if (this.props.currentUser.id != this.props.user.id) {
             this.props.createFriendship(this.props.user.id).then(() => this.props.fetchUser(this.props.user.id)).then(() => this.props.callback());
-        } 
+        }
     }
 
     render() {
@@ -28,6 +29,8 @@ class Friendship extends React.Component {
                 friendshipStatus = "Friends";
             } else if (this.props.user.pendingFriendIds.includes(this.props.currentUser.id)) {
                 friendshipStatus = "Pending";
+            } else if (this.props.user.pendingSentFriendIds.includes(this.props.currentUser.id)) {
+                friendshipStatus = "Approve";
             } else if (this.props.user.id == this.props.currentUser.id) {
                 friendshipStatus = "Profile";
             } else {

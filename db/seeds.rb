@@ -187,13 +187,13 @@ Friendship.create(
 Friendship.create(
     receiver_id: u1.id,
     sender_id: u3.id,
-   status: "Friends"
+   status: "Pending"
 )
 
 Friendship.create(
     receiver_id: u1.id,
     sender_id: u4.id,
-   status: "Friends"
+   status: "Pending"
 )
 
 Friendship.create(

@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     createFriendship: (id) => dispatch(createFriendship(id)),
     destroyFriendship: (id) => dispatch(destroyFriendship(id)),
+    confirmFriendship: (id) => dispatch(confirmFriendship(id)),
     fetchUser: (id) => dispatch(fetchUser(id))
 });
 
