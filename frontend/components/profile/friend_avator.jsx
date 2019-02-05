@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 class FriendAvatar extends React.Component {
 
     render() {
-    
     const friend = this.props.users[this.props.id];
     const route = `/feed/users/${this.props.id}`;
     const fullName = `${friend.first_name} ${friend.last_name}`;
-
+    
     return (
         <div className="friend-avatar-container">
             <Link to={route}>

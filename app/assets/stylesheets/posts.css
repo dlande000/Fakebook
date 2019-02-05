@@ -62,11 +62,13 @@
 }
 
 .post-form-body {
-    width: 99%;
-    height: 80px;
+    width: 96%;
+    height: 64px;
     resize: none;
     border: none;
     margin-top: -14px;
+    padding: 10px;
+    font-size: 14px;
 }
 
 .post-form-submit-button {

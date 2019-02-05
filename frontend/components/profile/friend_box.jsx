@@ -12,8 +12,8 @@ class FriendBox extends React.Component {
     } else {
         ids = this.props.friendIds;
     }
-    
     const friends = ids.map(id => {
+
         return <FriendAvatar key={id} id={id} users={this.props.users}/>
     });
 

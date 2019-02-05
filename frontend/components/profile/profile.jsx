@@ -27,17 +27,17 @@ class Profile extends React.Component {
     }
 
     render() {
-    if (Object.values(this.props.posts).length !== 0 && !!this.props.user) {
-    let friendshipStatus;
-    if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
-        friendshipStatus = "Friends";
-    } else if (this.props.currentUser.pendingSentFriendIds.includes(Number(this.props.match.params.userId))) {
-        friendshipStatus = "Pending";
-    } else if (this.props.currentUser.id == this.props.match.params.userId) {
-        friendshipStatus = "Profile";
-    } else {
-        friendshipStatus = "Add Friend";
-    }
+        if (Object.values(this.props.posts).length !== 0 && !!this.props.user) {
+            let friendshipStatus;
+            if (this.props.currentUser.friendIds.includes(Number(this.props.match.params.userId))) {
+                friendshipStatus = "Friends";
+            } else if (this.props.currentUser.pendingSentFriendIds.includes(Number(this.props.match.params.userId))) {
+                friendshipStatus = "Pending";
+            } else if (this.props.currentUser.id == this.props.match.params.userId) {
+                friendshipStatus = "Profile";
+            } else {
+                friendshipStatus = "Add Friend";
+            }
 
     return (
         <div className="full-profile">
