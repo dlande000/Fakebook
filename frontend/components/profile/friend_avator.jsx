@@ -5,7 +5,7 @@ class FriendAvatar extends React.Component {
 
     render() {
     const friend = this.props.users[this.props.id];
-    const route = `/feed/users/${this.props.id}`;
+    const route = `/home/users/${this.props.id}`;
     const fullName = `${friend.first_name} ${friend.last_name}`;
     
     return (
