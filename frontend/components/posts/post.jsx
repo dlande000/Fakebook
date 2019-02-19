@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Post extends React.Component {
     render() {
@@ -10,9 +11,12 @@ class Post extends React.Component {
 
     let authorAndReceiver;
     if (author.id === receiver.id) {
-        authorAndReceiver = () => (<h6 className="post-authors">{authorName}</h6>);
+        authorAndReceiver = () => (
+            <div className="post-authors">
+                <Link to={`/home/users/${this.props.post.authorId}`}>{authorName}</Link>
+            </div>);
     } else {
-        authorAndReceiver = () => (<h6 className="post-authors">{authorName}   <b>&#9658;</b>   {receiverName}</h6>);
+        authorAndReceiver = () => (<div className="post-authors"><Link to={`/home/users/${this.props.post.authorId}`}>{authorName}</Link>   <b>&#9658;</b>   <Link to={`/home/users/${this.props.post.receiverId}`}>{receiverName}</Link></div>);
     }
 
     let createdAndEdited;

@@ -111,15 +111,18 @@
     left: 10px;
 }
 
-.post-authors {
+.post-authors, .post-authors > a {
     color: #3d5c94;
     font-size: 14px;
     font-family: sans-serif;
     position: relative;
-    left: 60px;
-    top: -40px;
+    left: 20px;
+    top: -13px;
     font-weight: bold;
+    text-decoration: none;
 }
+
+
 
 .post-created {
     font-size: 12px;
