@@ -9,7 +9,7 @@
 }
 
 .feed-links {
-    width: 200px;
+    width: 170px;
     height: 250px;
     display: block;
     margin: 10px;
@@ -66,4 +66,30 @@ ul {
 li > a {
     color: #1d2129;
     text-decoration: none
+}
+
+.email-icon, .portfolio-icon, .linkedin-icon, .github-icon {
+    height: 15px;
+    padding-left: -2px;
+}
+
+.angellist-icon {
+    height: 18px;
+    padding-left: -2px;
+}
+
+.feeder {
+    padding: 8px;
+    position: relative;
+    top: -2px;
+}
+
+.feeder-angellist {
+    padding: 6px;
+    position: relative;
+    top: -3px;
+}
+
+.feed-links > p {
+    padding: 8px;
 }

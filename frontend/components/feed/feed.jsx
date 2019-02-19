@@ -19,15 +19,18 @@ class Feed extends React.Component {
             <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</Link>
             <p>Enjoying Fakebook? Interested in knowing what features are on the horizon? Get in touch with me, David Anderson, via the links below.</p>
             <ul>
-              <li><a href="mailto:dlande000@gmail.com">Email</a></li><br/>
-              <li><a href="http://davidanderson.nyc">Portfolio</a></li><br/>
-              <li><a href="http://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a></li><br/>
-              <li><a href="http://github.com/dlande000">GitHub</a></li><br/>
-              <li><a href="#"></a>AngelList</li>
+              <li><img className="email-icon" src="https://cdn1.iconfinder.com/data/icons/education-set-01/512/email-open-512.png" alt=""/>       <a className="feeder" href="mailto:dlande000@gmail.com">Email</a></li><br/>
+              <li><img className="portfolio-icon" src="https://image.flaticon.com/icons/png/512/93/93618.png" alt=""/>       <a className="feeder" href="http://davidanderson.nyc">Portfolio</a></li><br/>
+              <li><img className="linkedin-icon" src="https://image.flaticon.com/icons/png/512/61/61109.png" alt=""/>       <a className="feeder" href="http://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a></li><br/>
+              <li><img className="github-icon" src="https://image.flaticon.com/icons/png/512/25/25231.png" alt=""/>       <a className="feeder" href="http://github.com/dlande000">GitHub</a></li><br/>
+              <li><img className="angellist-icon" src="https://www.shareicon.net/data/512x512/2016/07/08/117681_angellist_512x512.png" alt=""/>     <a className="feeder-angellist" href="#">AngelList</a></li>
             </ul>
           </div>
           <div className="feed">
             <PostsAllComponents user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+          </div>
+          <div>
+            <p>This is where I will put information about the project.</p>
           </div>
         </div>
       )
