@@ -28,7 +28,7 @@ class Posts extends React.Component {
 
     const formattedPosts = quicksort(postsArr).map((post, id) => {
         if (this.props.correctReceivers.includes(post.receiverId)) {
-            return (<Post key={id} post={post} users={this.props.users}/>);
+            return (<Post key={id} post={post} users={this.props.users} currentUser={this.props.currentUser}/>);
         }
     });
 

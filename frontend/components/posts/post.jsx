@@ -26,6 +26,15 @@ class Post extends React.Component {
         createdAndEdited = `Created at ${this.props.post.createdAt}; edited at ${this.props.post.updatedAt}`;
     }
 
+    let editIcon;
+    if (this.props.currentUser.id == this.props.post.receiverId || this.props.currentUser.id == this.props.post.authorId) {
+        debugger
+        editIcon = () => (<img className="edit-icon" src="https://static.thenounproject.com/png/93425-200.png" alt=""/>)
+    } else {
+        debugger
+        editIcon = () => {};
+    }
+
     return (
         <div className="post">
             <div className="post-image-container">
@@ -33,6 +42,7 @@ class Post extends React.Component {
             </div>
             {authorAndReceiver()}
             <p className="post-created">{createdAndEdited}</p>
+            {editIcon()}
             <p className="post-body">{this.props.post.body}</p>
         </div>
         )

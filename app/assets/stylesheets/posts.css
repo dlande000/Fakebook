@@ -162,3 +162,11 @@
     top: -4.5px;
     left: 29px;
 }
+
+.edit-icon {
+    width: 25px;
+    float: right;
+    position: relative;
+    top: -72px;
+    right: 5px;
+}
