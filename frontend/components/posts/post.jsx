@@ -28,10 +28,8 @@ class Post extends React.Component {
 
     let editIcon;
     if (this.props.currentUser.id == this.props.post.receiverId || this.props.currentUser.id == this.props.post.authorId) {
-        debugger
         editIcon = () => (<img className="edit-icon" src="https://static.thenounproject.com/png/93425-200.png" alt=""/>)
     } else {
-        debugger
         editIcon = () => {};
     }
 

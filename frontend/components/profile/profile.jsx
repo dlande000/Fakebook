@@ -38,9 +38,7 @@ class Profile extends React.Component {
     render() {
     if (Object.values(this.props.posts).length !== 0 && !!this.props.user && Object.keys(this.props.users).length > 1) {
         let wall;
-        debugger
         if (this.props.match.params.userId == this.props.currentUser.id || this.props.user.friendIds.includes(this.props.currentUser.id)) {
-            debugger
             wall = () => (<Wall createPost={this.props.createPost} user={this.props.user} posts={this.props.posts} friendIds={this.props.user.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>);
         } else {
             wall = () => {};
