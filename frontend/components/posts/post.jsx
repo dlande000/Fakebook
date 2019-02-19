@@ -5,7 +5,7 @@ class Post extends React.Component {
 
     const receiver = this.props.users[this.props.post.receiverId];
     const author = this.props.users[this.props.post.authorId];
-
+    debugger
     let authorName = `${author.first_name} ${author.last_name}`;
     let receiverName = `${receiver.first_name} ${receiver.last_name}`
 

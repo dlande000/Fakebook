@@ -1,3 +1,11 @@
 p {
     color: black;
 }
+
+.feed {
+    align-self: center;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    top: 25px;
+}
