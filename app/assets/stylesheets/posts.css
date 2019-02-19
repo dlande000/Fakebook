@@ -116,8 +116,8 @@
     font-size: 14px;
     font-family: sans-serif;
     position: relative;
-    left: 20px;
-    top: -13px;
+    left: 29px;
+    top: -4px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -128,16 +128,16 @@
     font-size: 12px;
     font-family: sans-serif;
     position: relative;
-    left: 61px;
-    top: -69px;
+    left: 59px;
+    top: -18px;
     color: #6c6f7c;
 }
 
 .post-body {
     font-family: sans-serif;
     position: relative;
-    left: 17px;
-    top: -61px;
+    left: 14px;
+    top: -9px;
     color: #1d202a;
     font-size: 14px;
     font-family: sans-serif;
@@ -154,8 +154,11 @@
     left: 11px;
 }
 
-h6 > b {
+.post-authors > b {
     color: #4b4f56;
     font-size: 10px;
     font-family: sans-serif;
+    position: relative;
+    top: -4.5px;
+    left: 29px;
 }
