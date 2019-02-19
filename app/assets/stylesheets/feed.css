@@ -70,12 +70,12 @@ li > a {
 
 .email-icon, .portfolio-icon, .linkedin-icon, .github-icon {
     height: 15px;
-    padding-left: -2px;
+    margin-left: -10px;
 }
 
 .angellist-icon {
     height: 18px;
-    padding-left: -2px;
+    margin-left: -10px;
 }
 
 .feeder {
@@ -92,4 +92,39 @@ li > a {
 
 .feed-links > p {
     padding: 8px;
+}
+
+.feed-info {
+    width: 270px;
+    height: 450px;
+    border: #dddfe2 1px solid;
+    background: #fff;
+    margin: 12px;
+    position: relative;
+    top: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.feed-info > h4 {
+    color: #61676f;
+    font-size: 14px;
+}
+
+.feed-info > p {
+    color: #8d949e;
+    font-size: 13px;
+}
+
+.github-link {
+    color: #3d5c94;
+    text-decoration: none;
+}
+
+.below-feed-info {
+    position: relative;
+    top: 8px;
+    color: #61676f;
+    font-size: 12px;
+    margin-left: -5px;
 }

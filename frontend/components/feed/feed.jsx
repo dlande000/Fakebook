@@ -17,7 +17,7 @@ class Feed extends React.Component {
           <div className="feed-links">
             <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}><div className="feed-pic-container"><img className="feed-profile-pic" src={this.props.currentUser.profile_pic_url}/></div></Link>
             <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</Link>
-            <p>Enjoying Fakebook? Interested in knowing what features are on the horizon? Get in touch with me, David Anderson, via the links below.</p>
+            <p>Enjoying Fakebook? Interested in knowing what features are on the horizon? Get in touch with me, David Anderson, via the links below:</p>
             <ul>
               <li><img className="email-icon" src="https://cdn1.iconfinder.com/data/icons/education-set-01/512/email-open-512.png" alt=""/>       <a className="feeder" href="mailto:dlande000@gmail.com">Email</a></li><br/>
               <li><img className="portfolio-icon" src="https://image.flaticon.com/icons/png/512/93/93618.png" alt=""/>       <a className="feeder" href="http://davidanderson.nyc">Portfolio</a></li><br/>
@@ -29,8 +29,14 @@ class Feed extends React.Component {
           <div className="feed">
             <PostsAllComponents user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
           </div>
-          <div>
-            <p>This is where I will put information about the project.</p>
+          <div className="feed-info">
+            <h4>What is Fakebook?</h4>
+            <p>Fakebook is a page website inspired by Facebook and built by David Anderson, a software engineer based on New York, New York. Fakebook uses Ruby on Rails for its back end, and it utilizes React and Redux for the front end.<br/><br/>
+            On Fakebook, users can send and approve friend requests, post statuses for their friends to see, and write directly to their friends' walls. Feel free to explore what Fakebook as to offer!<br/><br/>
+            Fakebook's functionality is continually updated continually—soon, users will be able to like, edit, and comment on posts. Users will also be able to upload and post images.<br/><br/>
+            If you have any questions about Fakebook, please feel free to get in touch. The GitHub repo for Fakebook can be found <a className="github-link" href="https://github.com/dlande000/Fakebook">here.</a><br/><br/>
+            Fakebook's demo profiles are made for characters from 'Arrested Development,' the funniest television show ever made.</p><br/>
+            <div className="below-feed-info">Made by David Anderson in 2019. All images belong to their respective owner.</div>
           </div>
         </div>
       )
