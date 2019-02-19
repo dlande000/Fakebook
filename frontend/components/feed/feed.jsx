@@ -31,7 +31,7 @@ class Feed extends React.Component {
           </div>
           <div className="feed-info">
             <h4>What is Fakebook?</h4>
-            <p>Fakebook is a page website inspired by Facebook and built by David Anderson, a software engineer based on New York, New York. Fakebook uses Ruby on Rails for its back end, and it utilizes React and Redux for the front end.<br/><br/>
+            <p>Fakebook is a single-page website inspired by Facebook and built by David Anderson, a software engineer based on New York, New York. Fakebook uses Ruby on Rails for its back end, and it utilizes React and Redux for the front end.<br/><br/>
             On Fakebook, users can send and approve friend requests, post statuses for their friends to see, and write directly to their friends' walls. Feel free to explore what Fakebook as to offer!<br/><br/>
             Fakebook's functionality is continually updated continually—soon, users will be able to like, edit, and comment on posts. Users will also be able to upload and post images.<br/><br/>
             If you have any questions about Fakebook, please feel free to get in touch. The GitHub repo for Fakebook can be found <a className="github-link" href="https://github.com/dlande000/Fakebook">here.</a><br/><br/>
