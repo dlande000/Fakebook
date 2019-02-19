@@ -7,16 +7,13 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-      // const { match: { params: { userId } } } = this.props;
       this.props.fetchUsers().then(() => this.props.fetchPosts());
-      // this.render();
     }
 
     render() {
-      debugger
       return (
         <div className="feed">
-          <PostsAllComponents user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={[this.props.correctReceivers]} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
+          <PostsAllComponents user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser}/>
         </div>
       )
     };

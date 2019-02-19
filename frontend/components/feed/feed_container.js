@@ -9,7 +9,7 @@ const mapStateToProps = state => {
     currentUser: state.entities.users[state.session.id],
     posts: state.entities.posts,
     users: state.entities.users,
-    correctReceivers: [state.entities.users[state.session.id]].concat(state.entities.users[state.session.id].friendIds),
+    correctReceivers: [state.entities.users[state.session.id].id].concat(state.entities.users[state.session.id].friendIds),
   });
 };
 
