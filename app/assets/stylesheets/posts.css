@@ -98,11 +98,11 @@
 
 .post {
     width: 100%;
-    min-height: 106px;
-    max-height: auto;
+    height: 100%;
     margin-bottom: 10px;
     border: #dddfe2 1px solid;
     background: white;
+    padding-bottom: 55px;
 }
 
 .post-image-container {
@@ -121,8 +121,6 @@
     font-weight: bold;
     text-decoration: none;
 }
-
-
 
 .post-created {
     font-size: 12px;
