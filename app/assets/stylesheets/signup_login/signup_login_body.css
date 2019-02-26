@@ -186,11 +186,12 @@ p > b {
 }
 
 .errors {
-  font-size: 14px;
+  font-size: 13px;
   color: red;
   font-weight: bold;
   list-style-type: none;
   line-height: 25px;
+  margin-top: -5px;
 }
 
 .signup-body-text > img {

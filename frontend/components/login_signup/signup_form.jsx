@@ -51,7 +51,7 @@ class SignupForm extends React.Component {
                 </ul></div>
         <div className="signup-form-container">
             <h2>Sign Up</h2>
-            <p>It's free for obvious reasons.</p>
+            <p>It's free and always will be.</p>
             <br/>
             <form onSubmit={this.handleSubmit} className="signup-form">
                 <label className="first-name">
