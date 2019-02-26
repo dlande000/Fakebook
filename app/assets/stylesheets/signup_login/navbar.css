@@ -84,4 +84,5 @@
   font-size: 12px;
   color: #a0b4d5;
   cursor: pointer;
+  white-space: nowrap;
 }
