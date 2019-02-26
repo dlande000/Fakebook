@@ -44,6 +44,11 @@ class SignupForm extends React.Component {
     })
 
     return (
+        <div>
+            <div>
+                <ul className="errors">
+                    {errors}
+                </ul></div>
         <div className="signup-form-container">
             <h2>Sign Up</h2>
             <p>It's free for obvious reasons.</p>
@@ -228,9 +233,7 @@ class SignupForm extends React.Component {
                 <input className="button" type="submit" value="Sign Up" />
             </form>
                 <button onClick={this.handleSubmitDemo} className="button">Demo</button>
-                <ul className="errors">
-                    {errors}
-                </ul>
+        </div>
         </div>
         );
     }
