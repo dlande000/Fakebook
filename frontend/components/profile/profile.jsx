@@ -50,7 +50,7 @@ class Profile extends React.Component {
             <ProfilePic profilePic={this.props.user.profile_pic_url} />
             <UserName firstName={this.props.user.first_name} lastName={this.props.user.last_name} />
             <FriendshipContainer callback={this.update}/>
-            <ProfileLink />
+            <ProfileLink user={this.props.users[this.props.match.params.userId]}/>
             <div className="profile-left">
             <div className="info-box">
             <img className="bio-globe-image" src="https://cdn3.iconfinder.com/data/icons/communication-icons-1/32/Earth-512.png"/><h5>Intro</h5>
