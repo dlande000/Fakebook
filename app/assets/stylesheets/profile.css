@@ -274,3 +274,15 @@ body {
     top: 5px;
     left: 4px;
 }
+
+.friend-view {
+    width: 100%;
+    background: #e9ebee;
+    z-index: 3;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    height: 700px;
+    margin: -1px;
+    padding-right: 3px;
+}
