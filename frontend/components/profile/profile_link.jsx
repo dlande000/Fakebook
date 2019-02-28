@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import FriendsViewContainer from './friends_view_container';
-import ProfileContainer from './profile_container';
+import { Link } from 'react-router-dom';
 
 class ProfileLink extends React.Component {
 
