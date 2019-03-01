@@ -34,8 +34,8 @@ u2 = User.create(
     hometown: "Madison, Wisconsin",
     current_city: "New York, New York",
     bio: "Thank you for visiting Fakebook!",
-    banner_pic_url: "https://avatars3.githubusercontent.com/u/44009893?s=460&v=4",
-    profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
+    profile_pic_url: "https://avatars3.githubusercontent.com/u/44009893?s=460&v=4"
 )
 
 u3 = User.create(
