@@ -1,51 +1,73 @@
-import React, { Component } from 'react';
-import Suggestions from './suggestions';
+import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import Results from './results';
 
-class Search extends Component {
-    constructor(props) {
-        super(props);
-
-  this.state = {
-    query: '',
-    results: []
-  };
-
-  this.handleInputChange = this.handleInputChange.bind(this);
-  this.getInfo = this.getInfo.bind(this);
-}
-
-  getInfo() {
-    // axios.get(`${API_URL}?api_key=${API_KEY}&prefix=${this.state.query}&limit=7`)
-    //   .then(({ data }) => {
-    //     this.setState({
-    //       results: data.data
-    //     })
-    //   })
+class Search extends React.Component {
+  constructor(props) {
+    super(props);
+    this.search = this.search.bind(this);
+    this.state = {
+      input: '',
+      results: this.props.results
+    };
   }
 
-  handleInputChange() {
-    this.setState({
-      query: this.search.value
-    }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-          this.getInfo();
-      } else if (!this.state.query) {
+  search(event) {
+    event.preventDefault();
+    this.setState({ input: event.target.value }, () => {
+      if (this.state.input.length > 0) {
+        this.props.fetchSearchResults(this.state.input);
       }
     });
   }
 
+  componentWillUpdate(nextProps) {
+    if (this.state.results.length !== nextProps.results.length) {
+      this.setState({ results: nextProps.results });
+  } if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.props.clearSearch();
+      this.setState({ input: '' });
+    }
+  }
+
   render() {
+    let results;
+    if (this.state.results.length < 1) {
+      results = null;
+    } else {
+      const searchResultItems = this.state.results.map(user => {
+        return(
+          <li className='search-result' key={user.id}>
+            <Link to={`/users/${user.id}`} className='search-result-content'>
+              <div className='main-nav-minipic'>
+                <img src={user.profilePicUrl} />
+              </div>
+              <p>{user.fname} {user.lname}</p>
+            </Link>
+          </li>
+        );
+      });
+
+      searchResults = (
+        <ul className='search-results content-item'>
+          {searchResultItems}
+        </ul>
+      );
+    }
+
     return (
-      <form>
-        <input
-          placeholder="Search for..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-        />
-        <Suggestions results={this.state.results} />
-      </form>
-    )
+      <div>
+        <div>
+          <input onChange={this.search} type='text' placeholder='Search' value={this.state.input}
+          />
+          {/* <div className='nav-search-icon'>
+            <img src={window.magnifierURL} />
+          </div> */}
+        </div>
+        {/* {searchResults} */}
+      </div>
+    );
   }
 }
 
-export default Search
+export default withRouter(Search);

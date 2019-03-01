@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchResults, clearSearch } from '../../actions/search_actions';
+import { fetchSearchResults, clearSearch } from '../../actions/search_actions';
 import Search from './search';
 
 const mapStateToProps = state => {
@@ -9,10 +9,10 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return {
+  return ({
     fetchSearchResults: input => dispatch(fetchSearchResults(input)),
-    clearSearchResults: () => dispatch(clearSearchResults())
-  };
+    clearSearch: () => dispatch(clearSearch())
+  });
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Suggestions = (props) => {
+const Results = (props) => {
   const options = props.results.map(r => (
     <li key={r.id}>
       {r.name}
@@ -9,4 +9,4 @@ const Suggestions = (props) => {
   return <ul>{options}</ul>
 }
 
-export default Suggestions
+export default Results

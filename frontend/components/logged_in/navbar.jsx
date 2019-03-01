@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
+import SearchContainer from './search_container';
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class Navbar extends React.Component {
           <div className="logged-in-container">
             <div className="navbar-left">
               <Link to={"/home"}><img className="facebook-f" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png" /></Link>
+              <SearchContainer />
             </div>
             <div className="navbar-right">
               <Link className="navbar-link" to={`/home/users/${this.props.currentUser.id}`}><div className="navbar-pic-container"><img className="navbar-profile-pic" src={this.props.currentUser.profile_pic_url}/></div></Link>
