@@ -1,23 +1,23 @@
 import * as SearchAPIUtil from '../util/search_api_util';
 
-export const RECEIVE_SEARCH_RESULTS = 'RECEIVE_SEARCH_RESULTS';
-export const CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+export const RECEIVE_RESULTS = 'RECEIVE_RESULTS';
+export const CLEAR_SEARCH = 'CLEAR_SEARCH';
 
-function receiveSearchResults = users => {
+function receiveResults(users) {
   return {
-    type: RECEIVE_SEARCH_RESULTS,
+    type: RECEIVE_RESULTS,
     users
   };
 }
 
-export const clearSearchResults = () => {
+export const clearSearch = () => {
   return {
-    type: CLEAR_SEARCH_RESULTS
+    type: CLEAR_SEARCH
   };
 };
 
 export const fetchSearchResults = input => dispatch => {
   return SearchAPIUtil.fetchSearchResults(input).then(users => {
-    return dispatch(receiveSearchResults(users));
+    return dispatch(receiveResults(users));
   });
 };
