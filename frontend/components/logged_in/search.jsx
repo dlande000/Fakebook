@@ -31,9 +31,9 @@ class Search extends React.Component {
   }
 
   render() {
-    let results;
+    let resultsA;
     if (this.state.results.length < 1) {
-      results = null;
+      resultsA = null;
     } else {
       const searchResultItems = this.state.results.map(user => {
         return(
@@ -55,16 +55,23 @@ class Search extends React.Component {
       );
     }
 
+    let results = this.state.results.map((result, idx) => {
+      <Results key={idx} user={result}/>
+    })
+
     return (
       <div>
         <div>
-          <input onChange={this.search} type='text' placeholder='Search' value={this.state.input}
-          />
+          <input onChange={this.search} type='text' placeholder='Search' value={this.state.input} />
           {/* <div className='nav-search-icon'>
             <img src={window.magnifierURL} />
           </div> */}
         </div>
-        {/* {searchResults} */}
+        <div>
+          <ul>
+            {results}
+          </ul>
+        </div>
       </div>
     );
   }
