@@ -28,6 +28,7 @@ class Search extends React.Component {
     if (this.state.results.length !== nextProps.results.length) {
       this.setState({ results: nextProps.results });
   } if (this.props.location.pathname !== nextProps.location.pathname) {
+      this.props.clearSearch();
       this.setState({ input: '' });
     }
   }

@@ -88,7 +88,7 @@
 }
 
 .search-results {
-    z-index: 1000;
+    z-index: 2;
     position: relative;
     top: -12px;
     background: #fff;

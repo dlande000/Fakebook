@@ -31,7 +31,7 @@ body {
     text-rendering: optimizelegibility;
     text-shadow: 0 0 3px rgba(0, 0, 0, .8);
     font-family: sans-serif;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     top: 286px;
     margin-left: 215px;
@@ -59,7 +59,7 @@ body {
     outline: 1px solid #dddfe2;
     top: 160px;
     margin-left: 15px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .profile-pic {
