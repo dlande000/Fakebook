@@ -34,7 +34,7 @@ class Search extends React.Component {
 
   render() {
     let results = this.state.results.map((result, idx) => {
-      return <Results key={idx} id={result} users={this.props.users}/>
+      return <Results key={idx} id={result} users={this.props.users} />
     });
 
     return (
@@ -42,7 +42,7 @@ class Search extends React.Component {
         <div className="search-bar">
           <input onChange={this.search} type='text' placeholder='Search' value={this.state.input} />
         </div>
-        <div>
+        <div className="navbar-results">
           <ul>
             {results}
           </ul>

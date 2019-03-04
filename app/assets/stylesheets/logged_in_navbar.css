@@ -39,8 +39,6 @@
 
 .navbar-right {
     float: right;
-    position: relative;
-    top: -73px;
 }
 
 .navbar-link {
@@ -72,7 +70,7 @@
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
-    margin-top: -20px;
+    margin-top: 0px;
 }
 
 .search-results {
@@ -80,6 +78,17 @@
     position: relative;
     background: white;
     width: 390px;
+    padding: 5px;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+}
+
+.search-results:first-of-type {
+    border-top: 1px solid black;
+}
+
+.search-results:last-of-type {
+    border-bottom: 1px solid black;
 }
 
 .search-bar {
@@ -92,4 +101,18 @@
     width: 390px;
     height: 22px;
     border-radius: 5px;
+    padding-left: 8px;
+    font-size: 12px;
+}
+
+.search-name {
+    position: relative;
+    left: 35px;
+}
+
+.navbar-results {
+    position: relative;
+    top: -50px;
+    left: 10px;
+    width: 390px;
 }

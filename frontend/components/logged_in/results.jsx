@@ -10,9 +10,9 @@ class Results extends React.Component {
     return (
       <li className="search-results">
         <div className="navbar-pic-container">
-        <img className="navbar-profile-pic" src={user.profile_pic_url} alt=""/>
+          <img className="navbar-profile-pic" src={user.profile_pic_url} alt=""/>
         </div>
-        <div>
+        <div className="search-name">
           <Link to={`/home/users/${this.props.id}`}>{userName}</Link>
         </div>
       </li>
