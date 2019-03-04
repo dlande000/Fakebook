@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 class Results extends React.Component {
     render() {
 
-    const userName = `${this.props.user.first_name} ${this.props.user.last_name}`;
-
+    const user = this.props.users[this.props.id];
+    const userName = `${user.first_name} ${user.last_name}`;
+      
     return (
-      <li>
-        <div>
-        <img src="{this.props.user.profile_pic_url}" alt=""/>
+      <li className="search-results">
+        <div className="navbar-pic-container">
+        <img className="navbar-profile-pic" src={user.profile_pic_url} alt=""/>
         </div>
         <div>
-          <Link to={`/home/users/${this.props.user.id}`}>{userName}</Link>
+          <Link to={`/home/users/${this.props.id}`}>{userName}</Link>
         </div>
       </li>
         )

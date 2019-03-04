@@ -4,7 +4,8 @@ import Search from './search';
 
 const mapStateToProps = state => {
   return ({
-    results: state.entities.search
+    results: state.entities.search,
+    users: state.entities.users
   });
 };
 
