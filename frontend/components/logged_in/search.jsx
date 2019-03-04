@@ -56,7 +56,7 @@ class Search extends React.Component {
     }
 
     let results = this.state.results.map((result, idx) => {
-      <Results key={idx} user={result}/>
+      return <Results key={idx} user={result}/>
     })
 
     return (

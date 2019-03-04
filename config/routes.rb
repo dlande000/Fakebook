@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :friendships, only: [:create, :update, :destroy]
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:create, :index, :update, :destroy]
+    get 'searches/:input', to: 'searches#search'
   end
 
   root "static_pages#root"

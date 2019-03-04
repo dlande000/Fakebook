@@ -1,5 +1,5 @@
 export const fetchSearchResults = input => (
     $.ajax({
-        url: `api/search/${input}`
+        url: `api/searches/${input}`
     })
 );
