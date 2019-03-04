@@ -41,6 +41,7 @@ class Search extends React.Component {
       <div>
         <div className="search-bar">
           <input onChange={this.search} type='text' placeholder='Search' value={this.state.input} />
+          <img className="search-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg" alt=""/>
         </div>
         <div className="navbar-results">
           <ul>

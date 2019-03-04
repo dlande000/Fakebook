@@ -22,7 +22,7 @@ class Navbar extends React.Component {
               <SearchContainer />
             </div>
             <div className="navbar-right">
-              <Link className="navbar-link" to={`/home/users/${this.props.currentUser.id}`}><div className="navbar-pic-container"><img className="navbar-profile-pic" src={this.props.currentUser.profile_pic_url}/></div></Link>
+              <Link className="navbar-link" to={`/home/users/${this.props.currentUser.id}`}><div className="navbar-pic-container-main"><img className="navbar-profile-pic" src={this.props.currentUser.profile_pic_url}/></div></Link>
               <Link className="navbar-link" to={`/home/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name}</Link>
               <Link className="navbar-link" to="/home">Home</Link>
               <Link className="navbar-link" to="/" onClick={() => this.props.logout()}>Log Out</Link>
