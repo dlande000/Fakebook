@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import { createPost, fetchPosts } from '../../actions/posts_actions';
+import { fetchComments } from '../../actions/comments_actions';
 import Feed from './feed';
 
 const mapStateToProps = state => {
@@ -9,6 +10,7 @@ const mapStateToProps = state => {
     currentUser: state.entities.users[state.session.id],
     posts: state.entities.posts,
     users: state.entities.users,
+    comments: state.entities.comments,
     correctReceivers: [state.entities.users[state.session.id].id].concat(state.entities.users[state.session.id].friendIds),
   });
 };
@@ -18,7 +20,8 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     fetchUsers: () => dispatch(fetchUsers()),
     createPost: post => dispatch(createPost(post)),
-    fetchPosts: () => dispatch(fetchPosts())
+    fetchPosts: () => dispatch(fetchPosts()),
+    fetchComments: id => dispatch(fetchComments(id))
   });
 };
 

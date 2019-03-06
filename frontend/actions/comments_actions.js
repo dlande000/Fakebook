@@ -19,10 +19,10 @@ export const receiveCommentErrors = errors => ({
     errors
 });
 
-export const fetchComments = id => dispatch => (
-    CommentsAPIUtil.fetchComments(id)
-        .then(comments => dispatch(receiveComments(comments)))
-);
+export const fetchComments = id => dispatch => {
+    return CommentsAPIUtil.fetchComments(id)
+        .then(comments => dispatch(receiveComments(comments)));
+};
 
 export const createComment = comment => dispatch => {
     return CommentsAPIUtil.createComment(comment)

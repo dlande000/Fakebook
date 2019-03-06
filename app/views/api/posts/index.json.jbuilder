@@ -1,6 +1,7 @@
 @posts.each do |post|
     json.set! post.id do
         json.extract! post, :body, :id
+        json.comments post.comments
 
         json.receiverId post.receiver_id
         json.authorId post.author_id

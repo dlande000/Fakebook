@@ -33,6 +33,13 @@ class Post extends React.Component {
         editIcon = () => {};
     }
 
+    let comments;
+    if (this.props.post.comments.length > 0) {
+        comments = () => (<p>COMMENTS</p>)
+    } else {
+        comments = () => {};
+    }
+
     return (
         <div className="post">
             <div className="post-image-container">
@@ -42,6 +49,7 @@ class Post extends React.Component {
             <p className="post-created">{createdAndEdited}</p>
             {editIcon()}
             <p className="post-body">{this.props.post.body}</p>
+            {comments()}
         </div>
         )
     }

@@ -8,7 +8,11 @@ class Feed extends React.Component {
     }
 
     componentDidMount() {
-      this.props.fetchUsers().then(() => this.props.fetchPosts());
+      this.props.fetchUsers()
+        .then(() => this.props.fetchPosts())
+        // .then(() => Object.keys(this.props.posts).forEach(id => {
+        //   this.props.fetchComments(id);
+        // }));
     }
 
     render() {
