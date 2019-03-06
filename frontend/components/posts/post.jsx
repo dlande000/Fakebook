@@ -43,7 +43,7 @@ class Post extends React.Component {
             <p className="post-created">{createdAndEdited}</p>
             {editIcon()}
             <p className="post-body">{this.props.post.body}</p>
-            <div>
+            <div className="comments-all-components">
                 <CommentsAllComponents createComment={this.props.createComment} post={this.props.post} users={this.props.users} currentUser={this.props.currentUser}/>
             </div>
         </div>

@@ -36,8 +36,11 @@ class CommentForm extends React.Component {
 
     return (
         <div>
+            <div className="comment-image-container">
+                <img className="comment-image" src={this.props.currentUser.profile_pic_url} alt=""/>
+          </div>
             <form >
-            <textarea onKeyDown={this.checkSubmit} onChange={this.update('body')} placeholder="Write a comment..." value={this.state.body}></textarea>
+                <textarea onKeyDown={this.checkSubmit} onChange={this.update('body')} placeholder="Write a comment..." value={this.state.body}></textarea>
             </form>
         </div>
         )

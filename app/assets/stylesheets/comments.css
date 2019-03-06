@@ -1,0 +1,36 @@
+/* everything involving comments */
+
+.comments-all-components {
+    position: relative;
+    top: 50px;
+}
+
+/* container surrounding each comment */
+
+.comment-container {}
+
+/* individual comment */
+
+.comment {}
+
+.comment-image-container {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-top: -20px;
+}
+
+.comment-image {
+    height: 40px;
+    width: auto;
+    position: absolute;
+    margin: auto; 
+    min-height: 100%;
+    min-width: 100%;
+    left: -100%;
+    right: -100%;
+    top: -100%;
+    bottom: -100%;
+}

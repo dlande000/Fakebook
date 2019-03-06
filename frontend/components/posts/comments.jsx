@@ -14,7 +14,7 @@ class Comments extends React.Component {
     }
 
     return (
-        <div>
+        <div className="comment-container">
             {formattedComments}
         </div>
         )
