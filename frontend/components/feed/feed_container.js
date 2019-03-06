@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import { createPost, fetchPosts } from '../../actions/posts_actions';
-import { fetchComments } from '../../actions/comments_actions';
+import { fetchComments, createComment } from '../../actions/comments_actions';
 import Feed from './feed';
 
 const mapStateToProps = state => {
@@ -21,7 +21,8 @@ const mapDispatchToProps = dispatch => {
     fetchUsers: () => dispatch(fetchUsers()),
     createPost: post => dispatch(createPost(post)),
     fetchPosts: () => dispatch(fetchPosts()),
-    fetchComments: id => dispatch(fetchComments(id))
+    fetchComments: id => dispatch(fetchComments(id)),
+    createComment: comment => dispatch(createComment(comment))
   });
 };
 

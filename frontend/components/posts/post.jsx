@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentsAllComponents from './comments_all_components';
 import { Link } from 'react-router-dom';
 
 class Post extends React.Component {
@@ -33,13 +34,6 @@ class Post extends React.Component {
         editIcon = () => {};
     }
 
-    let comments;
-    if (this.props.post.comments.length > 0) {
-        comments = () => (<p>COMMENTS</p>)
-    } else {
-        comments = () => {};
-    }
-
     return (
         <div className="post">
             <div className="post-image-container">
@@ -49,7 +43,9 @@ class Post extends React.Component {
             <p className="post-created">{createdAndEdited}</p>
             {editIcon()}
             <p className="post-body">{this.props.post.body}</p>
-            {comments()}
+            <div>
+                <CommentsAllComponents post={this.props.post} users={this.props.users} currentUser={this.props.currentUser}/>
+            </div>
         </div>
         )
     }
