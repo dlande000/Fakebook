@@ -35,11 +35,11 @@ class CommentForm extends React.Component {
     render() {
 
     return (
-        <div>
+        <div className="comment-form-container">
             <div className="comment-image-container">
                 <img className="comment-image" src={this.props.currentUser.profile_pic_url} alt=""/>
           </div>
-            <form >
+            <form className="comment-form">
                 <textarea onKeyDown={this.checkSubmit} onChange={this.update('body')} placeholder="Write a comment..." value={this.state.body}></textarea>
             </form>
         </div>

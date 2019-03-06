@@ -168,3 +168,19 @@
     top: -72px;
     right: 5px;
 }
+
+.post-horizontal-line {
+    width: 95%;
+    position: absolute;
+    top: 40px;
+    left: 2.5%;
+    border-color: #dadde1;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #dadde1;
+}
+
+.line-holder {
+    width: 100%;
+    position: relative;
+}

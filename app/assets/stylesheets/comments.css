@@ -19,7 +19,7 @@
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
-    margin-top: -20px;
+    left: 2%;
 }
 
 .comment-image {
@@ -33,4 +33,25 @@
     right: -100%;
     top: -100%;
     bottom: -100%;
+}
+
+.comment-form {
+    position: relative;
+    left: 10%;
+}
+
+.comment-form > textarea {
+    resize: none;
+    width: 85%;
+}
+
+.comment-form-container {
+    padding-top: 9px;
+}
+
+.comment-body {
+    width: 85%;
+    left: 10%;
+    top: 5px;
+    position: relative;
 }
