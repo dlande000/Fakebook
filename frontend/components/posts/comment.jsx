@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Comment extends React.Component {
     render() {
     
-    const author = (<Link to={`/home/users/${this.props.comment.author_id}`}>
+    const author = (<Link className="comment-author" to={`/home/users/${this.props.comment.author_id}`}>
     {this.props.users[this.props.comment.author_id].first_name} {this.props.users[this.props.comment.author_id].last_name}
     </Link>);
 
@@ -38,7 +38,7 @@ const periods = {
     }
   }
 
-    const timeAgoComment = (<p>{formatTime(time)}</p>)
+    const timeAgoComment = (<p className="time-comment">{formatTime(time)}</p>)
 
     return (
         <div className="comment">
