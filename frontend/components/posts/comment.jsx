@@ -8,7 +8,7 @@ class Comment extends React.Component {
     {this.props.users[this.props.comment.author_id].first_name} {this.props.users[this.props.comment.author_id].last_name}
     </Link>);
 
-var periods = {
+const periods = {
     year: 365 * 30 * 24 * 60 * 60 * 1000,
     month: 30 * 24 * 60 * 60 * 1000,
     week: 7 * 24 * 60 * 60 * 1000,
