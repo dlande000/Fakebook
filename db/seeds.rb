@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Comment.delete_all
 Post.delete_all
 Friendship.delete_all
 User.delete_all
@@ -283,14 +284,32 @@ Post.create(
     body: "Test post 3!"
 )
 
-Post.create(
+p2 = Post.create(
     author_id: u1.id,
     receiver_id: u1.id,
     body: "This would be a status!"
 )
 
-Post.create(
+p1 = Post.create(
     author_id: u2.id,
     receiver_id: u2.id,
     body: "Thank you for checking out Fakebook! If you have any questions, please feel free to get in touch."
+)
+
+Comment.create(
+    post_id: p1.id,
+    author_id: u1.id,
+    body: "Test comment."
+)
+
+Comment.create(
+    post_id: p1.id,
+    author_id: u2.id,
+    body: "Test comment 2."
+)
+
+Comment.create(
+    post_id: p2.id,
+    author_id: u3.id,
+    body: "Test comment 3."
 )
