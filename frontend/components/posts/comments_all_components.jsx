@@ -8,7 +8,7 @@ class CommentsAllComponents extends React.Component {
     return (
         <div>
             <Comments comments={this.props.post.comments} users={this.props.users}/>
-            {/* <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/> */}
+            <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>
         </div>
         )
     }

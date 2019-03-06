@@ -8,6 +8,7 @@ class PostForm extends React.Component {
           receiver_id: ''
         };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkSubmit = this.checkSubmit.bind(this);
     }
 
     handleSubmit(e) {
@@ -25,6 +26,12 @@ class PostForm extends React.Component {
         });
     }
 
+    checkSubmit(e) {
+        if(e.keyCode == 13 && e.shiftKey == false) {
+            this.handleSubmit(e);
+          }
+    }
+
     render() {
 
     let placeholderText;
@@ -40,7 +47,7 @@ class PostForm extends React.Component {
             <img className="pencil-post-image" src="https://image.flaticon.com/icons/svg/39/39681.svg"/><h6 className="post-form-header">Create Post</h6>
             </div>
             <form className="form" onSubmit={this.handleSubmit}>
-            <textarea className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
+            <textarea onKeyDown={this.checkSubmit} className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
             <input className="post-form-submit-button" type="submit" value="Post" />
             </form>
         </div>

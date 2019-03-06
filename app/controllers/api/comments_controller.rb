@@ -3,15 +3,15 @@ class Api::CommentsController < ApplicationController
         comment = Comment.new(comment_params)
         comment.author_id = current_user.id
         if comment.save
-            @comments = Comment.where(post_id: params[:post_id])
-            render 'api/comments/index'
+            @posts = Post.where(id: comment.post_id)
+            render 'api/posts/index'
         else
             render json: comment.errors.full_messages, status: 422
         end
     end
 
     def index
-        @comments = Comment.where(post_id: params[:post_id])
+        @posts = Post.where(id: params[:post_id])
         render 'api/posts/index'
     end
 

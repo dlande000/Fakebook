@@ -486,6 +486,42 @@ Comment.create(
     body: "GOB's not on board."
 )
 
+p13 = Post.create(
+    author_id: lucille.id,
+    receiver_id: michael.id,
+    body: "GOB's not happy."
+)
+
+Comment.create(
+    post_id: p13.id,
+    author_id: michael.id,
+    body: "Again? I tried to include him, I gave him a job."
+)
+
+Comment.create(
+    post_id: p13.id,
+    author_id: lucille.id,
+    body: "You gave him a letter to mail."
+)
+
+Comment.create(
+    post_id: p13.id,
+    author_id: michael.id,
+    body: "And don’t tell me that was too much for him."
+)
+
+Comment.create(
+    post_id: p13.id,
+    author_id: lucille.id,
+    body: "No, Michael, he mailed the letter. That’s not the point."
+)
+
+Comment.create(
+    post_id: p13.id,
+    author_id: narrator.id,
+    body: "GOB had not mailed the letter."
+)
+
 p1 = Post.create(
     author_id: david.id,
     receiver_id: david.id,
