@@ -11,7 +11,12 @@
 
 /* individual comment */
 
-.comment {}
+.comment {
+    display: block;
+    position: relative;
+    top: 13px;
+    margin-bottom: -38px;
+}
 
 .comment-image-container {
     width: 30px;
@@ -63,8 +68,19 @@
 .comment-body {
     width: 85%;
     left: 10%;
-    top: 5px;
+    top: -14px;
     position: relative;
+    color: #1c1e21;
+    font-size: 13.5px;
+}
+
+.comment-border {
+    border: 1px solid#eff1f3;
+    border-radius: 15px;
+    padding: 8px 11px;
+    background: #eff1f3;
+    position: relative;
+    display: inline-block;
 }
 
 .comment-author {
@@ -73,13 +89,10 @@
     font-weight: bold;
 }
 
-.comment-body {
-    color: #1c1e21;
-    font-size: 13.5px;
-}
-
 .time-comment {
+    position: relative;
     color: #616671;
     font-size: 12px;
-    margin-top: -10px;
+    left: 2%;
+    top: -23px;
 }

@@ -46,7 +46,7 @@ const periods = {
             <img className="comment-image" src={this.props.users[this.props.comment.author_id].profile_pic_url} alt=""/>
           </div>
             <div className="comment-body">
-            <p>{author} {this.props.comment.body}</p>
+            <p className="comment-border">{author} {this.props.comment.body}</p>
                 {timeAgoComment}
             </div>
         </div>
