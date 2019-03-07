@@ -38,11 +38,22 @@
 .comment-form {
     position: relative;
     left: 10%;
+    top: -1px;
 }
 
 .comment-form > textarea {
     resize: none;
-    width: 85%;
+    width: 81%;
+    border-radius: 86px;
+    /* left: 5%; */
+    padding: 7px 10px 0px 16px;
+    font-size: 13px;
+    font-family: sans-serif;
+    position: relative;
+    height: 24px;
+    border: #cdd0d5 1px solid;
+    background: #f2f3f5;
+    color: #1c1d21;
 }
 
 .comment-form-container {
