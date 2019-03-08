@@ -34,6 +34,44 @@ class Post extends React.Component {
         editIcon = () => {};
     }
 
+    let likes;
+    if (this.props.post.likes.length === 0) {
+        likes = (
+            <div></div>
+        )
+    } else if (this.props.post.likes.length === 1) {
+        likes = (
+            <div>
+                <p>1 Like</p>
+            </div>
+        )
+    } else {
+        likes = (
+            <div>
+                <p>{this.props.post.likes.length} Likes</p>
+            </div>
+        )
+    }
+
+    let comments;
+    if (this.props.post.comments.length === 0) {
+        comments = (
+            <div></div>
+        )
+    } else if (this.props.post.comments.length === 1) {
+        comments = (
+            <div>
+                <p>1 Comment</p>
+            </div>
+        )
+    } else {
+        comments = (
+            <div>
+                <p>{this.props.post.comments.length} Comments</p>
+            </div>
+        )
+    }
+
     return (
         <div className="post">
             <div className="post-image-container">
@@ -46,6 +84,8 @@ class Post extends React.Component {
             <div className="line-holder">
                 <hr className="post-horizontal-line"/>
             </div>
+            {likes}
+            {comments}
             <div className="comments-all-components">
                 <CommentsAllComponents createComment={this.props.createComment} post={this.props.post} users={this.props.users} currentUser={this.props.currentUser}/>
             </div>

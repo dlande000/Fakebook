@@ -43,7 +43,7 @@ class User < ApplicationRecord
 
     def pending_sent_friend_requests
         self.sent_friend_requests.where(status: 'Pending')
-    end 
+    end
 
     def friend_ids
         accepted_ids = self.sent_friend_requests.where(sender_id: self.id, status: 'Friends').pluck(:receiver_id)

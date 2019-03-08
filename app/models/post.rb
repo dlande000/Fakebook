@@ -16,5 +16,6 @@ class Post < ApplicationRecord
         foreign_key: :post_id,
         class_name: :Comment
 
-    has_many :likes, as: :likeable
+    has_many :likes,
+        as: :likeable
 end

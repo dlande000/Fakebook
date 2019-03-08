@@ -517,7 +517,7 @@ Comment.create(
     body: "No, Michael, he mailed the letter. That’s not the point."
 )
 
-Comment.create(
+c1 = Comment.create(
     post_id: p13.id,
     author_id: narrator.id,
     body: "GOB had not mailed the letter."
@@ -533,4 +533,10 @@ Like.create(
     user_id: michael.id,
     likeable_id: p1.id,
     likeable_type: 'Post'
+)
+
+Like.create(
+    user_id: david.id,
+    likeable_id: c1.id,
+    likeable_type: 'Comment'
 )

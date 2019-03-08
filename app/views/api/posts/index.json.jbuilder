@@ -1,7 +1,17 @@
 @posts.each do |post|
     json.set! post.id do
         json.extract! post, :body, :id
-        json.comments post.comments
+        json.comments post.comments.each do |comment|
+                json.authorId comment.author_id
+                json.body comment.body
+                json.id comment.id
+                json.postId comment.post_id
+                json.likes comment.likes.each do |like|
+                        json.userId like.user_id
+                        json.likeId like.id
+                        json.likeType "Comment"
+            end
+        end
 
         json.receiverId post.receiver_id
         json.authorId post.author_id
@@ -18,5 +28,12 @@
         json.authorFirstName author.first_name
         json.authorLastName author.last_name
         json.authorProfilePic author.profile_pic_url
+
+        json.likes post.likes.each do |like|
+                json.userId like.user_id
+                json.likeId like.id
+                json.likeType "Post"
+                json.postId like.likeable_id
+        end
     end
 end
