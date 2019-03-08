@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :posts, only: [:create, :index, :update, :destroy]
     resources :comments, only: [:create, :index, :update, :destroy]
+    resources :likes, only: [:create, :index, :destroy]
     get 'searches/:input', to: 'searches#search'
   end
 
