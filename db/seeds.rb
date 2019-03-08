@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Like.delete_all
 Comment.delete_all
 Post.delete_all
 Friendship.delete_all
@@ -526,4 +527,10 @@ p1 = Post.create(
     author_id: david.id,
     receiver_id: david.id,
     body: "Thank you for checking out Fakebook! If you have any questions, please feel free to get in touch."
+)
+
+Like.create(
+    user_id: michael.id,
+    likeable_id: p1.id,
+    likeable_type: 'Post'
 )

@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
     def create
         like = Like.new(like_params)
-        like.author_id = current_user.id
+        like.user_id = current_user.id
         like.save
     end
 
@@ -13,6 +13,6 @@ class Api::LikesController < ApplicationController
 
     private
     def like_params
-        params.require(:like).permit(:likeable_item, :likeable_item_id)
+        params.require(:like).permit(:likeable_type, :likeable_id)
     end
 end
