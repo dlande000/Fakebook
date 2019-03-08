@@ -32,6 +32,11 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Comment
 
+    has_many :likes,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Like
+
     def pending_friend_requests
         self.received_friend_requests.where(status: 'Pending')
     end
