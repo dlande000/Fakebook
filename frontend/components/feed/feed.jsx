@@ -31,7 +31,7 @@ class Feed extends React.Component {
             </ul>
           </div>
           <div className="feed">
-            <PostsAllComponents user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser} createComment={this.props.createComment}/>
+            <PostsAllComponents createLike={this.props.createLike} deleteLike={this.props.deleteLike} user={this.props.currentUser} createPost={this.props.createPost} correctReceivers={this.props.correctReceivers} posts={this.props.posts} friendIds={this.props.friendIds} users={this.props.users} currentUser={this.props.currentUser} createComment={this.props.createComment}/>
           </div>
           <div className="feed-info">
             <h4>What is Fakebook?</h4>

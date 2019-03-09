@@ -6,18 +6,23 @@ class Post extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.likedIds = [];
+        this.checkLikedIds = this.checkLikedIds.bind(this);
+    }
+
+    checkLikedIds() {
+        let likedIds = [];
         this.props.post.likes.forEach(like => {
-            this.likedIds.push(like.userId);
+            likedIds.push(like.userId);
         });
+        return likedIds.includes(this.props.currentUser.id);
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        if (!this.likedIds.includes(this.props.currentUser.id)) {
-            this.props.createLike({like: {post_id: postId, likeable: "Post"}});
+        if (!this.checkLikedIds()) {
+            this.props.createLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
         } else {
-            this.props.deleteLike({like: {post_id: postId, likeable: "Post"}});
+            this.props.deleteLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
         }
     }
 
@@ -91,7 +96,7 @@ class Post extends React.Component {
     }
 
     let liked;
-    if (!this.likedIds.includes(this.props.currentUser.id)) {
+    if (!this.checkLikedIds()) {
         liked = (
             <div>
                 <a onClick={this.handleSubmit} href=""><img width="40px" src="https://image.flaticon.com/icons/png/512/39/39794.png" alt=""/> Like</a>
