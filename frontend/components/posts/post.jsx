@@ -14,10 +14,10 @@ class Post extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.likedIds.includes(this.props.currentUser.id)) {
-            this.props.deleteLike(postId);
+        if (!this.likedIds.includes(this.props.currentUser.id)) {
+            this.props.createLike({like: {post_id: postId, likeable: "Post"}});
         } else {
-            this.props.createLike(postId);
+            this.props.deleteLike({like: {post_id: postId, likeable: "Post"}});
         }
     }
 
