@@ -20,10 +20,8 @@ class Post extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (!this.checkLikedIds()) {
-            debugger
             this.props.createLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
         } else {
-            debugger
             let likeId;
             this.props.post.likes.forEach(like => {
                 if (like.userId == this.props.currentUser.id) {
@@ -70,16 +68,10 @@ class Post extends React.Component {
         likes = (
             <div></div>
         )
-    } else if (this.props.post.likes.length === 1) {
-        likes = (
-            <div>
-                <p>1 Like</p>
-            </div>
-        )
     } else {
         likes = (
-            <div>
-                <p>{this.props.post.likes.length} Likes</p>
+            <div className="number-of-likes-post">
+                <img className="like-text-icon" src="https://cdn3.iconfinder.com/data/icons/social-icons-5/606/Like.png" alt=""/><p>{this.props.post.likes.length}</p>
             </div>
         )
     }
@@ -91,13 +83,13 @@ class Post extends React.Component {
         )
     } else if (this.props.post.comments.length === 1) {
         comments = (
-            <div>
+            <div className="number-of-comments">
                 <p>1 Comment</p>
             </div>
         )
     } else {
         comments = (
-            <div>
+            <div className="number-of-comments">
                 <p>{this.props.post.comments.length} Comments</p>
             </div>
         )
@@ -106,13 +98,13 @@ class Post extends React.Component {
     let liked;
     if (!this.checkLikedIds()) {
         liked = (
-            <div>
-                <a onClick={this.handleSubmit} href=""><img width="40px" src="https://image.flaticon.com/icons/png/512/39/39794.png" alt=""/> Like</a>
+            <div className="like-post-icon-div">
+                <a onClick={this.handleSubmit} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> Like</a>
             </div>
         )
     } else if (this.checkLikedIds()) {
-        liked = (<div>
-            <a onClick={this.handleSubmit} href=""><img width="40px" src="https://cdn.designcrowd.com/blog/2016/March/icons-vs-logos/FBLike-Icon_300_v2.png" alt=""/> Like</a>
+        liked = (<div className="like-post-icon-div">
+            <a onClick={this.handleSubmit} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> Like</a>
         </div>
         )
     }
@@ -126,23 +118,23 @@ class Post extends React.Component {
             <p className="post-created">{createdAndEdited}</p>
             {editIcon()}
             <p className="post-body">{this.props.post.body}</p>
-            <div className="line-holder">
-                <hr className="post-horizontal-line"/>
-            </div>
-            <div>
+            <div className="like-and-comment-text-div">
                 {likes}
                 {comments}
             </div>
             <div className="line-holder">
                 <hr className="post-horizontal-line"/>
             </div>
-            <div>
+            <div className="like-and-comment-icons-div">
                 <div>
                     {liked}
                 </div>
-                <div>
+                <div className="comment-post-icon-div">
                     <a href=""><img width="40px" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> Comment</a>
                 </div>
+            </div>
+            <div className="line-holder">
+                <hr className="post-horizontal-line"/>
             </div>
             <div className="comments-all-components">
                 <CommentsAllComponents createComment={this.props.createComment} post={this.props.post} users={this.props.users} currentUser={this.props.currentUser}/>

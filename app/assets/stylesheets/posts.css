@@ -172,7 +172,7 @@
 .post-horizontal-line {
     width: 95%;
     position: absolute;
-    top: 40px;
+    top: 54px;
     left: 2.5%;
     border-color: #dadde1;
     height: 1px;
@@ -184,3 +184,59 @@
     width: 100%;
     position: relative;
 }
+
+.like-and-comment-icons-div {
+    height: 30px;
+    width: 100%px;
+}
+
+.like-post-icon-div {
+    position: absolute;
+    margin-top: 20px;
+    left: 25%;
+}
+
+.comment-post-icon-div {
+    position: absolute;
+    right: 25%;
+}
+
+#unliked-icon-post {
+    height: 22px;
+}
+
+#liked-icon-post {
+    height: 22px;
+}
+
+.like-and-comment-text-div {
+    height: 20px;
+    position: absolute;
+    width: 100%;
+    margin-top: 25px;
+    margin-left: 16px;
+}
+
+.number-of-likes-post {
+    position: absolute;
+    left: 1%;
+}
+
+.number-of-likes-post > img {
+    float: left;
+}
+
+.number-of-likes-post > p {
+    float: right;
+}
+
+.number-of-comments {
+    position: absolute;
+    right: 10%;
+}
+
+.like-text-icon {
+    height: 18px;
+    padding-top: 10px;
+}
+

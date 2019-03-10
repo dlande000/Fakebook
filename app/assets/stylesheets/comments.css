@@ -14,7 +14,7 @@
 .comment {
     display: block;
     position: relative;
-    top: 13px;
+    top: 21px;
     margin-bottom: -38px;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .comment-form-container {
-    padding-top: 9px;
+    padding-top: 21px;
 }
 
 .comment-body {

@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 const postsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
-  debugger
   switch(action.type) {
     case RECEIVE_POSTS:
       newState = merge({}, oldState, action.posts);
