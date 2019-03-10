@@ -15,7 +15,14 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy
-        like = Like.where(likeable_type: params[:likeable_type]).and(likeable_id: params[:likeable_id])
+        like = Like.find_by(id: params[:id])
+        like.destroy
+        if like.likeable_type == "Post"
+            @posts = Post.where(id: like.likeable_id)
+        else 
+            @posts = Post.where(id: (Comment.where(id: like.likeable_id).post_id))
+        end
+        render 'api/posts/index'
     end
 
     private

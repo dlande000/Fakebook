@@ -6,10 +6,10 @@ export const createLike = like => {
     });
   };
   
-  export const deleteLike = like => {
+  export const deleteLike = ({ id }) => {
+      debugger
     return $.ajax({
       method: 'DELETE',
-      url: `api/likes`,
-      data: like
+      url: `api/likes/${id}`
     });
   };

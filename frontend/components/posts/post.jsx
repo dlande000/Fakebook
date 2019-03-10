@@ -20,9 +20,17 @@ class Post extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (!this.checkLikedIds()) {
+            debugger
             this.props.createLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
         } else {
-            this.props.deleteLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
+            debugger
+            let likeId;
+            this.props.post.likes.forEach(like => {
+                if (like.userId == this.props.currentUser.id) {
+                    likeId = like.likeId;
+                }
+            });
+            this.props.deleteLike({id: likeId});
         }
     }
 
@@ -102,7 +110,7 @@ class Post extends React.Component {
                 <a onClick={this.handleSubmit} href=""><img width="40px" src="https://image.flaticon.com/icons/png/512/39/39794.png" alt=""/> Like</a>
             </div>
         )
-    } else {
+    } else if (this.checkLikedIds()) {
         liked = (<div>
             <a onClick={this.handleSubmit} href=""><img width="40px" src="https://cdn.designcrowd.com/blog/2016/March/icons-vs-logos/FBLike-Icon_300_v2.png" alt=""/> Like</a>
         </div>
