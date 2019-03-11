@@ -134,8 +134,8 @@
 .post-body {
     font-family: sans-serif;
     position: relative;
-    left: 14px;
-    top: -9px;
+    left: 15px;
+    top: -11px;
     color: #1d202a;
     font-size: 14px;
     font-family: sans-serif;
@@ -172,7 +172,7 @@
 .post-horizontal-line {
     width: 95%;
     position: absolute;
-    top: 54px;
+    top: 49px;
     left: 2.5%;
     border-color: #dadde1;
     height: 1px;
@@ -189,7 +189,7 @@
     height: 30px;
     width: 100%px;
     position: relative;
-    top: 68px;
+    top: 62px;
 }
 
 .like-post-icon-div {
@@ -245,7 +245,7 @@
     height: 20px;
     position: absolute;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 22px;
     margin-left: 16px;
 }
 
@@ -284,5 +284,11 @@
 #align-vertical {
     position: absolute;
     top: -5px;
+    left: 29px;
+}
+
+#align-vertical-comment {
+    position: absolute;
+    top: -6px;
     left: 29px;
 }

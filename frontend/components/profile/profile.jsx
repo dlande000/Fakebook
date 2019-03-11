@@ -19,10 +19,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         const { match: { params: { userId } } } = this.props;
         this.props.fetchUsers().then(() => this.props.fetchUser(userId));
         this.props.fetchPosts();
-        window.scrollTo(0, 0);
     }
 
     componentDidUpdate(oldProps) {

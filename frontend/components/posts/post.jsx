@@ -130,7 +130,7 @@ class Post extends React.Component {
                     {liked}
                 </div>
                 <div className="comment-post-icon-div">
-                    <a href=""><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical">Comment</div></a>
+                    <a href=""><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
                 </div>
             </div>
             <div className="line-holder">
