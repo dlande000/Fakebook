@@ -188,11 +188,13 @@
 .like-and-comment-icons-div {
     height: 30px;
     width: 100%px;
+    position: relative;
+    top: 68px;
 }
 
 .like-post-icon-div {
     position: absolute;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     left: 25%;
 }
 
@@ -203,14 +205,23 @@
 
 #unliked-icon-post {
     height: 22px;
+    position: absolute;
+    right: 28px;
+    top: -6px;
 }
 
 #liked-icon-post {
     height: 22px;
+    position: absolute;
+    right: 28px;
+    top: -6px;
 }
 
 #comment-icon-post {
     height: 22px;
+    position: absolute; 
+    right: 57px;
+    top: -3px;
 }
 
 .like-and-comment-text-div {
