@@ -203,11 +203,11 @@
     position: absolute;
     left: 5%;
 }
-/* 
-.like-post-icon-div > a {
-    position: absolute;
-    left: 35%;
-} */
+
+.like-post-icon-div > a, .comment-post-icon-div > a {
+    position: relative;
+    left: 30%;
+}
 
 .like-post-icon-div:hover {
     background:#f2f3f5;
@@ -237,7 +237,7 @@
 }
 
 #comment-icon-post {
-    height: 22px;
+    height: 23px;
     position: relative; 
 }
 
@@ -275,4 +275,14 @@
 .like-post-icon-div > a, .comment-post-icon-div > a {
     color: #333333;
     text-decoration: none;
+}
+
+#liked-link-text-color {
+    color: #447fdc;
+}
+
+#align-vertical {
+    position: absolute;
+    top: -5px;
+    left: 29px;
 }

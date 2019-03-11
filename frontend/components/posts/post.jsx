@@ -99,12 +99,12 @@ class Post extends React.Component {
     if (!this.checkLikedIds()) {
         liked = (
             <div className="like-post-icon-div">
-                <a onClick={this.handleSubmit} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> Like</a>
+                <a onClick={this.handleSubmit} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> <div id="align-vertical">Like</div></a>
             </div>
         )
     } else if (this.checkLikedIds()) {
         liked = (<div className="like-post-icon-div">
-            <a onClick={this.handleSubmit} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> Like</a>
+            <a id="liked-link-text-color" onClick={this.handleSubmit} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> <div id="align-vertical">Like</div></a>
         </div>
         )
     }
@@ -130,7 +130,7 @@ class Post extends React.Component {
                     {liked}
                 </div>
                 <div className="comment-post-icon-div">
-                    <a href=""><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> Comment</a>
+                    <a href=""><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical">Comment</div></a>
                 </div>
             </div>
             <div className="line-holder">
