@@ -193,35 +193,52 @@
 }
 
 .like-post-icon-div {
+    position: relative;
+    left: 5%;
+    top: -4px;
+    width: 45%;
+}
+
+.like-post-icon-div {
     position: absolute;
-    /* margin-top: 20px; */
-    left: 25%;
+    left: 5%;
+}
+/* 
+.like-post-icon-div > a {
+    position: absolute;
+    left: 35%;
+} */
+
+.like-post-icon-div:hover {
+    background:#f2f3f5;
+    border-radius: 2px;
 }
 
 .comment-post-icon-div {
     position: absolute;
-    right: 25%;
+    right: 5%;
+    top: -4px;
+    width: 45%;
+}
+
+.comment-post-icon-div:hover {
+    background:#f2f3f5;
+    border-radius: 2px;
 }
 
 #unliked-icon-post {
     height: 22px;
-    position: absolute;
-    right: 28px;
-    top: -6px;
+    position: relative;
 }
 
 #liked-icon-post {
     height: 22px;
-    position: absolute;
-    right: 28px;
-    top: -6px;
+    position: relative;
 }
 
 #comment-icon-post {
     height: 22px;
-    position: absolute; 
-    right: 57px;
-    top: -3px;
+    position: relative; 
 }
 
 .like-and-comment-text-div {
@@ -253,4 +270,9 @@
 .like-text-icon {
     height: 16px;
     padding-top: 10px;
+}
+
+.like-post-icon-div > a, .comment-post-icon-div > a {
+    color: #333333;
+    text-decoration: none;
 }
