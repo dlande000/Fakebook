@@ -109,6 +109,13 @@ class Post extends React.Component {
         )
     }
 
+    // let commentLink;
+    // if (this.props.type == "Feed") {
+    //     commentLink = `#/home#comment-${this.props.post.id}`;
+    // } else {
+    //     commentLink = `#/home/users/${receiver.id}#comment-${this.props.post.id}`;
+    // }
+
     return (
         <div className="post">
             <div className="post-image-container">
