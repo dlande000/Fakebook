@@ -209,6 +209,10 @@
     height: 22px;
 }
 
+#comment-icon-post {
+    height: 22px;
+}
+
 .like-and-comment-text-div {
     height: 20px;
     position: absolute;
@@ -236,7 +240,6 @@
 }
 
 .like-text-icon {
-    height: 18px;
+    height: 16px;
     padding-top: 10px;
 }
-
