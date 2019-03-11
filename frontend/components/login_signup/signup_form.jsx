@@ -222,7 +222,7 @@ class SignupForm extends React.Component {
                     </select>
                 </label>
                 <div className="birthday-question">
-                <a href="#">Why do I need to provide my birthday?</a>
+                <a href="javascript:void(0);">Why do I need to provide my birthday?</a>
                 </div>
                 <br />
                     <input className="input" type="radio" onChange={this.update('gender')} name="gender" value="Female"></input>
