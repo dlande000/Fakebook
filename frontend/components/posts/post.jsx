@@ -109,12 +109,12 @@ class Post extends React.Component {
         )
     }
 
-    // let commentLink;
-    // if (this.props.type == "Feed") {
-    //     commentLink = `#/home#comment-${this.props.post.id}`;
-    // } else {
-    //     commentLink = `#/home/users/${receiver.id}#comment-${this.props.post.id}`;
-    // }
+    let commentLink;
+    if (this.props.type == "Feed") {
+        commentLink = `#/home#comment-${this.props.post.id}`;
+    } else {
+        commentLink = `#/home/users/${receiver.id}#comment-${this.props.post.id}`;
+    }
 
     return (
         <div className="post">
@@ -137,7 +137,7 @@ class Post extends React.Component {
                     {liked}
                 </div>
                 <div className="comment-post-icon-div">
-                    <a href=""><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
+                    <a href="javascript:void(0);"><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
                 </div>
             </div>
             <div className="line-holder">
