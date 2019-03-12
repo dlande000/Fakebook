@@ -6,7 +6,7 @@ class Api::LikesController < ApplicationController
         if like.likeable_type == "Post"
             @posts = Post.where(id: like.likeable_id)
         else 
-            @posts = Post.where(id: (Comment.where(id: like.likeable_id).post_id))
+            @posts = Post.where(id: (Comment.where(id: like.likeable_id)[0].post_id))
         end
         render 'api/posts/index'
     end
@@ -20,7 +20,7 @@ class Api::LikesController < ApplicationController
         if like.likeable_type == "Post"
             @posts = Post.where(id: like.likeable_id)
         else 
-            @posts = Post.where(id: (Comment.where(id: like.likeable_id).post_id))
+            @posts = Post.where(id: (Comment.where(id: like.likeable_id)[0].post_id))
         end
         render 'api/posts/index'
     end
