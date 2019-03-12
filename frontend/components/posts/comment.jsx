@@ -99,11 +99,11 @@ const periods = {
             <div className="comment-body">
             <p className="comment-border">{author} {this.props.comment.body}</p>
             {commentLikesNumber}
+            </div>
             <div className="beneath-comment-text">
               <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
                 {timeAgoComment}
                 </div>
-            </div>
         </div>
         )
     }
