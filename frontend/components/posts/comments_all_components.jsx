@@ -7,7 +7,7 @@ class CommentsAllComponents extends React.Component {
     render() {
     return (
         <div>
-            <Comments comments={this.props.post.comments} users={this.props.users}/>
+            <Comments createLike={this.props.createLike} deleteLike={this.props.deleteLike} comments={this.props.post.comments} users={this.props.users} currentUser={this.props.currentUser}/>
             <CommentForm currentUser={this.props.currentUser} postId={this.props.post.id} createComment={this.props.createComment}/>
         </div>
         )

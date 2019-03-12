@@ -9,7 +9,7 @@ class Comments extends React.Component {
     let formattedComments = [];
     if (commentsArr.length > 0) {
     formattedComments = commentsArr.map((comment, id) => {
-            return (<Comment key={id} comment={comment} users={this.props.users}/>);
+            return (<Comment createLike={this.props.createLike} deleteLike={this.props.deleteLike} key={id} comment={comment} users={this.props.users} currentUser={this.props.currentUser}/>);
         });
     }
 

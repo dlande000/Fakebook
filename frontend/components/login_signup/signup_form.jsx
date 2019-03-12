@@ -216,9 +216,6 @@ class SignupForm extends React.Component {
                         <option value="1912">1912</option>
                         <option value="1911">1911</option>
                         <option value="1910">1910</option>
-                        <option value="1909">1909</option>
-                        <option value="1908">1908</option>
-                        <option value="1907">1907</option>
                     </select>
                 </label>
                 <div className="birthday-question">
