@@ -72,8 +72,8 @@ const periods = {
     let commentLikesNumber;
     if (this.props.comment.likes.length > 0) {
       commentLikesNumber = (
-        <div>
-          <p>{this.props.comment.likes.length}</p>
+        <div className="comment-number-liked">
+          <img src="https://i0.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Facebook-Like.png?resize=300%2C300" alt=""/> <p>{this.props.comment.likes.length}</p>
         </div>)
     } else {
       commentLikesNumber = (<div></div>);
@@ -98,10 +98,12 @@ const periods = {
           </div>
             <div className="comment-body">
             <p className="comment-border">{author} {this.props.comment.body}</p>
-              <a id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
-                {timeAgoComment}
-            </div>
             {commentLikesNumber}
+            <div className="beneath-comment-text">
+              <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
+                {timeAgoComment}
+                </div>
+            </div>
         </div>
         )
     }

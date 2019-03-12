@@ -1,21 +1,13 @@
-/* everything involving comments */
-
 .comments-all-components {
     position: relative;
     top: 50px;
 }
 
-/* container surrounding each comment */
-
-.comment-container {}
-
-/* individual comment */
-
 .comment {
     display: block;
     position: relative;
     top: 21px;
-    margin-bottom: -38px;
+    margin-bottom: -47px;
 }
 
 .comment-image-container {
@@ -93,6 +85,51 @@
     position: relative;
     color: #616671;
     font-size: 12px;
-    left: 2%;
-    top: -23px;
+    left: 8%;
+    top: -26px;
+}
+
+.comment-number-liked {
+    display: inline;
+    position: relative;
+    top: 24px;
+    right: 43px;
+    border: 1px solid #dddddd;
+    padding: 7px 3px 0px 3px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 2px 2px 0px #dddddd;
+}
+
+.comment-number-liked > img {
+    width: 16px;
+}
+
+.comment-number-liked > p {
+    display: inline;
+    position: relative;
+    top: -4px;
+    left: -1px;
+    color: #797e88;
+}
+
+.comment-like-link {
+    display: block;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+#user-liked-comment {
+    color: #447fdc;
+    font-weight: bold;
+}
+
+#user-not-liked-comment {
+    color: #616671;
+}
+
+.beneath-comment-text {
+    position: relative;
+    top: -6px;
+    left: 3%;
 }

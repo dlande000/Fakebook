@@ -71,7 +71,7 @@ class Post extends React.Component {
     } else {
         likes = (
             <div className="number-of-likes-post">
-                <img className="like-text-icon" src="https://cdn3.iconfinder.com/data/icons/social-icons-5/606/Like.png" alt=""/><p>{this.props.post.likes.length}</p>
+                <img className="like-text-icon" src="https://i0.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Facebook-Like.png?resize=300%2C300" alt=""/> <p>{this.props.post.likes.length}</p>
             </div>
         )
     }
