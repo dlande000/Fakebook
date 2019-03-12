@@ -1,5 +1,4 @@
-import { RECEIVE_POSTS, REMOVE_POST } from '../actions/posts_actions';
-import { UPDATE_POST } from '../actions/likes_actions';
+import { RECEIVE_POSTS, REMOVE_POST, UPDATE_POST } from '../actions/posts_actions';
 import merge from 'lodash/merge';
 
 const postsReducer = (oldState = {}, action) => {

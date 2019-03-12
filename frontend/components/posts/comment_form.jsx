@@ -24,25 +24,24 @@ class CommentForm extends React.Component {
         return e => this.setState({
           [value]: e.target.value, post_id: this.props.postId
         });
-}
+    }
 
     checkSubmit(e) {
         if(e.keyCode == 13 && e.shiftKey == false) {
             this.handleSubmit(e);
-          }
+        }
     }
 
     render() {
-
-    return (
-        <div className="comment-form-container">
-            <div className="comment-image-container">
-                <img className="comment-image" src={this.props.currentUser.profile_pic_url} alt=""/>
-          </div>
-            <form className="comment-form">
-                <textarea onKeyDown={this.checkSubmit} onChange={this.update('body')} placeholder="Write a comment..." value={this.state.body}></textarea>
-            </form>
-        </div>
+        return (
+            <div className="comment-form-container">
+                <div className="comment-image-container">
+                    <img className="comment-image" src={this.props.currentUser.profile_pic_url} alt=""/>
+                </div>
+                <form className="comment-form">
+                    <textarea onKeyDown={this.checkSubmit} onChange={this.update('body')} placeholder="Write a comment..." value={this.state.body}></textarea>
+                </form>
+            </div>
         )
     } 
 }

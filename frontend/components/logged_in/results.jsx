@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Results extends React.Component {
-    render() {
+  render() {
 
     const user = this.props.users[this.props.id];
     const userName = `${user.first_name} ${user.last_name}`;
@@ -16,8 +16,8 @@ class Results extends React.Component {
           <Link to={`/home/users/${this.props.id}`}>{userName}</Link>
         </div>
       </li>
-        )
-    }
+    )
+  }
 }
 
 export default Results;

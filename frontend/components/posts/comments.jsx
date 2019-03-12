@@ -4,19 +4,25 @@ import Comment from './comment';
 class Comments extends React.Component {
     render() {
 
-    const commentsArr = Object.values(this.props.comments);
+        const commentsArr = Object.values(this.props.comments);
 
-    let formattedComments = [];
-    if (commentsArr.length > 0) {
-    formattedComments = commentsArr.map((comment, id) => {
-            return (<Comment createLike={this.props.createLike} deleteLike={this.props.deleteLike} key={id} comment={comment} users={this.props.users} currentUser={this.props.currentUser}/>);
-        });
-    }
+        let formattedComments = [];
+        if (commentsArr.length > 0) {
+            formattedComments = commentsArr.map((comment, id) => {
+                return (<Comment
+                    createLike={this.props.createLike}
+                    deleteLike={this.props.deleteLike}
+                    key={id} comment={comment}
+                    users={this.props.users}
+                    currentUser={this.props.currentUser}
+                />);
+            });
+        }
 
-    return (
-        <div className="comment-container">
-            {formattedComments}
-        </div>
+        return (
+            <div className="comment-container">
+                {formattedComments}
+            </div>
         )
     }
 }

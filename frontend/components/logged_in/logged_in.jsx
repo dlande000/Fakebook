@@ -10,8 +10,6 @@ const LoggedIn = () => {
   $("html").addClass("html-class");
   return (
   <div>
-    <script>
-    </script>
     <NavbarContainer />
     <Route exact path='/home' component={FeedContainer}/>
     <Route path='/home/users/:userId' component={ProfileContainer}/>

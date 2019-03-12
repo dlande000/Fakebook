@@ -4,11 +4,9 @@ import Navbar from './navbar';
 import { withRouter } from 'react-router-dom';
 import { logout } from '../../actions/session_actions';
 
-const mapStateToProps = state => {
-    return ({
-        currentUser: state.entities.users[state.session.id]
-    });
-};
+const mapStateToProps = state => ({
+    currentUser: state.entities.users[state.session.id]
+});
 
 const mapDispatchToProps = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),

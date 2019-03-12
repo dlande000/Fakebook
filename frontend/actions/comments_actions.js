@@ -19,14 +19,16 @@ export const receivePostErrors = errors => ({
     errors
 });
 
-export const createComment = comment => dispatch => {
-    return CommentsAPIUtil.createComment(comment)
-        .then(posts => dispatch(receivePosts(posts)), errors => dispatch(receivePostErrors(errors.responseJSON)));
-};
+export const createComment = comment => dispatch => (
+    CommentsAPIUtil.createComment(comment)
+        .then(posts => dispatch(receivePosts(posts)),
+        errors => dispatch(receivePostErrors(errors.responseJSON)))
+);
 
 export const updateComment = comment => dispatch => (
     CommentsAPIUtil.updateComment(comment)
-        .then(posts => dispatch(receivePosts(posts)), errors => dispatch(receivePostErrors(errors.responseJSON)))
+        .then(posts => dispatch(receivePosts(posts)),
+        errors => dispatch(receivePostErrors(errors.responseJSON)))
 );
 
 export const deleteComment = id => dispatch => (
