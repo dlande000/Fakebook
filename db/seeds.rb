@@ -349,13 +349,13 @@ p11 = Post.create(
     body: "CAW CUH CAW CUH CAW CUH CAW!"
 )
 
-Comment.create(
+c4 = Comment.create(
     author_id: lindsay.id,
     post_id: p11.id,
     body: "Chaw chee chaw chee chaw chee chaw!"
 )
 
-Comment.create(
+c5 = Comment.create(
     author_id: lucille.id,
     post_id: p11.id,
     body: "A coodle doodle doo! A coodle doodle doo!"
@@ -481,7 +481,7 @@ Comment.create(
     body: "BEEDS?!"
 )
 
-Comment.create(
+c2 = Comment.create(
     post_id: p3.id,
     author_id: michael.id,
     body: "GOB's not on board."
@@ -529,14 +529,70 @@ p1 = Post.create(
     body: "Thank you for checking out Fakebook! If you have any questions, please feel free to get in touch."
 )
 
-Like.create(
-    user_id: michael.id,
-    likeable_id: p1.id,
-    likeable_type: 'Post'
-)
+User.all.each do |user|
+    Like.create(
+        user_id: user.id,
+        likeable_id: p1.id,
+        likeable_type: 'Post'
+    ) 
+end
 
 Like.create(
     user_id: david.id,
     likeable_id: c1.id,
+    likeable_type: 'Comment'
+)
+
+Like.create(
+    user_id: david.id,
+    likeable_id: p6.id,
+    likeable_type: 'Post'
+)
+
+Like.create(
+    user_id: narrator.id,
+    likeable_id: c2.id,
+    likeable_type: 'Comment'
+)
+
+Like.create(
+    user_id: lindsay.id,
+    likeable_id: p11.id,
+    likeable_type: 'Post' 
+)
+
+Like.create(
+    user_id: lucille.id,
+    likeable_id: p11.id,
+    likeable_type: 'Post' 
+)
+
+Like.create(
+    user_id: ann.id,
+    likeable_id: p8.id,
+    likeable_type: 'Post' 
+)
+
+Like.create(
+    user_id: gob.id,
+    likeable_id: c4.id,
+    likeable_type: 'Comment'
+)
+
+Like.create(
+    user_id: lucille.id,
+    likeable_id: c4.id,
+    likeable_type: 'Comment'
+)
+
+Like.create(
+    user_id: gob.id,
+    likeable_id: c5.id,
+    likeable_type: 'Comment'
+)
+
+Like.create(
+    user_id: lindsay.id,
+    likeable_id: c5.id,
     likeable_type: 'Comment'
 )
