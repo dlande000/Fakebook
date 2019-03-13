@@ -17,15 +17,11 @@ class Api::CommentsController < ApplicationController
 
     def update
         comment = Comment.find_by(id: params[:id])
-        comment.update(comment_params)
-        if @post.author_id == current_user.id
-            if @post.update(post_params)
-                render 'api/posts/show'
-              else
-                render json: @post.errors.full_messages, status: 422
-              end
+        if comment.update(comment_params)
+            @posts = Post.where(id: comment.post_id)
+            render 'api/posts/index'
         else 
-            render json: ['Cannot edit post'], status: 401
+            render json: ['Cannot edit comment'], status: 401
         end 
     end
 

@@ -18,6 +18,7 @@ class Comments extends React.Component {
                     postAuthorId={this.props.postAuthorId}
                     postReceiverId={this.props.postReceiverId}
                     updateComment={this.props.updateComment}
+                    postId={this.props.postId}
                 />);
             });
         }

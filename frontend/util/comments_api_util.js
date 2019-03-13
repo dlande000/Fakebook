@@ -6,13 +6,13 @@ export const createComment = comment => (
   })
 );
 
-export const updateComment = (id, comment) => (
-  $.ajax({
+export const updateComment = (id, comment) => {
+  return $.ajax({
     method: 'PATCH',
     url: `api/comments/${id}`,
     data: { comment }
-  })
-);
+  });
+};
 
 export const deleteComment = id => (
   $.ajax({
