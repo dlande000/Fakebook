@@ -15,6 +15,7 @@ class CommentsAllComponents extends React.Component {
                     postReceiverId={this.props.post.receiverId}
                     postAuthorId={this.props.post.authorId}
                     updateComment={this.props.updateComment}
+                    deleteComment={this.props.deleteComment}
                     postId={this.props.postId}
                 />
                 <CommentForm

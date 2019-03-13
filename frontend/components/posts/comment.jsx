@@ -65,7 +65,7 @@ update() {
     if (value === "edit") {
       this.setState({ openEditForm: true });
     } else if (value === "delete") {
-      console.log("hi");
+      this.props.deleteComment(this.props.comment.id);
     } else if (value === "cancel") {
       this.setState({ body: this.state.initialBody, openEditForm: false });
     }

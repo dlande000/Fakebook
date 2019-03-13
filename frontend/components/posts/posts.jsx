@@ -33,6 +33,7 @@ class Posts extends React.Component {
               currentUser={this.props.currentUser}
               createComment={this.props.createComment}
               updateComment={this.props.updateComment}
+              deleteComment={this.props.deleteComment}
           />);
         }
       });

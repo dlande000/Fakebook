@@ -17,7 +17,8 @@ class Wall extends React.Component {
                     friendIds={this.props.friendIds}
                     users={this.props.users}
                     currentUser={this.props.currentUser}
-                    updateComment={this.props.updateComment}/>
+                    updateComment={this.props.updateComment}
+                    deleteComment={this.props.deleteComment}/>
             </div>
         )
     }

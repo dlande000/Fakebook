@@ -3,7 +3,7 @@ import { logout } from '../../actions/session_actions';
 import { fetchUsers } from '../../actions/users_actions';
 import { createPost, fetchPosts } from '../../actions/posts_actions';
 import { createLike, deleteLike } from '../../actions/likes_actions';
-import { createComment, updateComment } from '../../actions/comments_actions';
+import { createComment, updateComment, deleteComment } from '../../actions/comments_actions';
 import Feed from './feed';
 
 const mapStateToProps = state => {
@@ -24,6 +24,7 @@ const mapDispatchToProps = dispatch => {
     fetchPosts: () => dispatch(fetchPosts()),
     createComment: comment => dispatch(createComment(comment)),
     updateComment: (id, comment) => dispatch(updateComment(id, comment)),
+    deleteComment: id => dispatch(deleteComment(id)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: like => dispatch(deleteLike(like)),
   });

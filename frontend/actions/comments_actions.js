@@ -1,37 +1,19 @@
 import * as CommentsAPIUtil from '../util/comments_api_util';
-
-export const RECEIVE_POSTS = 'RECEIVE_POSTS';
-export const REMOVE_POST = 'REMOVE_POST';
-export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
-
-export const receivePosts = posts => ({
-    type: RECEIVE_POSTS,
-    posts
-});
-
-export const removePost = post => ({
-    type: REMOVE_POST,
-    post
-});
-
-export const receivePostErrors = errors => ({
-    type: RECEIVE_POST_ERRORS,
-    errors
-});
+import { updatePost, receivePostErrors } from './posts_actions';
 
 export const createComment = comment => dispatch => (
     CommentsAPIUtil.createComment(comment)
-        .then(posts => dispatch(receivePosts(posts)),
+        .then(post => dispatch(updatePost(post)),
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 );
 
 export const updateComment = (id, comment) => dispatch => (
     CommentsAPIUtil.updateComment(id, comment)
-        .then(posts => dispatch(receivePosts(posts)),
+        .then(post => dispatch(updatePost(post)),
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 );
 
 export const deleteComment = id => dispatch => (
     CommentsAPIUtil.deleteComment(id)
-        .then(post => dispatch(removeComment(comment)))
+        .then(post => dispatch(updatePost(post)))
 );

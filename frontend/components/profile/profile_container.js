@@ -1,7 +1,7 @@
 import { fetchUser, fetchUsers } from '../../actions/users_actions';
 import { fetchPosts, createPost } from '../../actions/posts_actions';
 import { deleteLike, createLike } from '../../actions/likes_actions';
-import { createComment, updateComment } from '../../actions/comments_actions';
+import { createComment, updateComment, deleteComment } from '../../actions/comments_actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Profile from '../profile/profile';
@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
     fetchPosts: () => dispatch(fetchPosts()),
     createPost: post => dispatch(createPost(post)),
     createComment: comment => dispatch(createComment(comment)),
-    updateComment: (id, comment) => dispatch(createComment(id, comment)),
+    updateComment: (id, comment) => dispatch(updateComment(id, comment)),
+    deleteComment: id => dispatch(deleteComment(id)),
     createLike: like => dispatch(createLike(like)),
     deleteLike: like => dispatch(deleteLike(like))
 });
