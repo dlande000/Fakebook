@@ -49,7 +49,8 @@ update() {
 
   handleSubmitComment(e) {
     e.preventDefault();
-    this.props.editComment(this.props.comment.id, {comment: {likeableId: this.props.comment.id, likeableType: "Comment", body: this.state.body}});
+    debugger
+    this.props.updateComment(this.props.comment.id, {comment: {likeableId: this.props.comment.id, likeableType: "Comment", body: this.state.body}});
     this.setState({
       openEditForm: false,
       initialBody: this.state.body

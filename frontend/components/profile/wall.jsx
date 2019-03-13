@@ -16,7 +16,8 @@ class Wall extends React.Component {
                     posts={this.props.posts}
                     friendIds={this.props.friendIds}
                     users={this.props.users}
-                    currentUser={this.props.currentUser}/>
+                    currentUser={this.props.currentUser}
+                    updateComment={this.props.updateComment}/>
             </div>
         )
     }

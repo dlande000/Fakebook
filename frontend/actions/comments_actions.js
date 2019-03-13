@@ -25,8 +25,8 @@ export const createComment = comment => dispatch => (
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 );
 
-export const updateComment = comment => dispatch => (
-    CommentsAPIUtil.updateComment(comment)
+export const updateComment = (id, comment) => dispatch => (
+    CommentsAPIUtil.updateComment(id, comment)
         .then(posts => dispatch(receivePosts(posts)),
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 );

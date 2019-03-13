@@ -54,6 +54,7 @@ class Feed extends React.Component {
             users={this.props.users}
             currentUser={this.props.currentUser}
             createComment={this.props.createComment}
+            updateComment={this.props.updateComment}
             />
         </div>
         <div className="feed-info">

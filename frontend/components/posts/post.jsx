@@ -158,6 +158,7 @@ class Post extends React.Component {
                         post={this.props.post}
                         users={this.props.users}
                         currentUser={this.props.currentUser}
+                        updateComment={this.props.updateComment}
                         />
                 </div>
             </div>

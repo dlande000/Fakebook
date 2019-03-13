@@ -19,6 +19,7 @@ class PostsAllComponents extends React.Component {
                     posts={this.props.posts} friendIds={this.props.friendIds}
                     users={this.props.users} currentUser={this.props.currentUser}
                     createComment={this.props.createComment}
+                    updateComment={this.props.updateComment}
                 />
             </div>
         )

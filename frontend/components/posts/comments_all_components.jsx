@@ -14,6 +14,7 @@ class CommentsAllComponents extends React.Component {
                     currentUser={this.props.currentUser}
                     postReceiverId={this.props.post.receiverId}
                     postAuthorId={this.props.post.authorId}
+                    updateComment={this.props.updateComment}
                 />
                 <CommentForm
                     currentUser={this.props.currentUser}
