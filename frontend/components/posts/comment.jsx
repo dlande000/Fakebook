@@ -9,6 +9,7 @@ class Comment extends React.Component {
     this.state = {
       openDropDown: false
     };
+    this.openEditMenu = this.openEditMenu.bind(this);
   }
 
   checkLikedIds() {
@@ -34,12 +35,41 @@ class Comment extends React.Component {
     }
   }
 
+  openEditMenu() {
+    this.setState({ openDropDown: !this.state.openDropDown });
+  }
+
     render() {
     
       const author = (<Link className="comment-author" to={`/home/users/${this.props.comment.authorId}`}>
           {this.props.users[this.props.comment.authorId].first_name} {this.props.users[this.props.comment.authorId].last_name}
         </Link>
       );
+
+      let commentEditIcon = (<div></div>);
+      if (this.props.comment.authorId === this.props.currentUser.id || this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
+        commentEditIcon = (<div className="edit-icon-comment-div">
+          <img onClick={this.openEditMenu} src="https://static.thenounproject.com/png/93425-200.png" alt=""/>
+        </div>)
+      }
+
+      let editMenu = (<div></div>);
+      if (this.state.openDropDown === true) {
+        if (this.props.comment.authorId === this.props.currentUser.id) {
+          editMenu = (
+            <ul className="edit-comment-menu">
+              <li>Edit Comment</li>
+              <li>Delete Comment</li>
+            </ul>
+          )
+        } else if (this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
+          editMenu = (
+            <ul className="edit-comment-menu">
+              <li>Delete Comment</li>
+            </ul>
+          )
+        }
+      }
 
       const periods = {
         year: 365 * 30 * 24 * 60 * 60 * 1000,
@@ -94,8 +124,6 @@ class Comment extends React.Component {
         isCommentLiked = "user-not-liked-comment";
       }
 
-      
-
       return (
         <div className="comment">
           <div className="comment-image-container">
@@ -105,6 +133,8 @@ class Comment extends React.Component {
             <p className="comment-border">{author} {this.props.comment.body}</p>
             {commentLikesNumber}
           </div>
+          {commentEditIcon}
+          {editMenu}
           <div className="beneath-comment-text">
             <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
             {timeAgoComment}
