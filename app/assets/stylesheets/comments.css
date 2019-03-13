@@ -150,3 +150,26 @@
 .comment:hover .edit-icon-comment-div { 
     display: block; 
 }
+
+.edit-comment-menu {
+    position: absolute;
+    z-index: 2;
+    background: white;
+    border: 1px solid black;
+    right: -7%;
+    top: 12px;
+}
+
+.edit-form {
+    z-index: 3;
+    position: absolute;
+    background:rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+}
+
+.edit-form > form > textarea {
+    width: 480px;
+    height: 300px;
+    resize: none;
+    box-shadow: #1c1d21;
+}

@@ -7,9 +7,13 @@ class Comment extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkLikedIds = this.checkLikedIds.bind(this);
     this.state = {
-      openDropDown: false
+      openDropDown: false,
+      openEditForm: false,
+      body: this.props.comment.body
     };
     this.openEditMenu = this.openEditMenu.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.update = this.update.bind(this);
   }
 
   checkLikedIds() {
@@ -18,6 +22,12 @@ class Comment extends React.Component {
         likedIds.push(like.userId);
     });
     return likedIds.includes(this.props.currentUser.id);
+}
+
+update() {
+  return e => this.setState({
+    body: e.target.value
+  });
 }
 
   handleSubmit(e) {
@@ -39,12 +49,33 @@ class Comment extends React.Component {
     this.setState({ openDropDown: !this.state.openDropDown });
   }
 
-    render() {
+  handleClick(value) {
+    this.setState({ openDropDown: false });
+    if (value === "edit") {
+      this.setState({ openEditForm: true });
+      console.log("this should have worked");
+    } else if (value === "delete") {
+      console.log("hi")
+    }
+  }
+
+  render() {
     
       const author = (<Link className="comment-author" to={`/home/users/${this.props.comment.authorId}`}>
           {this.props.users[this.props.comment.authorId].first_name} {this.props.users[this.props.comment.authorId].last_name}
         </Link>
       );
+
+      let commentEditForm = (<div></div>)
+      if (this.state.openEditForm === true) {
+        commentEditForm = (<div className="edit-form">
+          <form action="">
+            <textarea onChange={this.update()} name="" id="" cols="30" rows="10" value={this.state.body}></textarea>
+            <button>Submit</button>
+            <button>Cancel</button>
+          </form>
+        </div>)
+      }
 
       let commentEditIcon = (<div></div>);
       if (this.props.comment.authorId === this.props.currentUser.id || this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
@@ -58,14 +89,14 @@ class Comment extends React.Component {
         if (this.props.comment.authorId === this.props.currentUser.id) {
           editMenu = (
             <ul className="edit-comment-menu">
-              <li>Edit Comment</li>
-              <li>Delete Comment</li>
+              <li onClick={() => this.handleClick("edit")}>Edit Comment</li>
+              <li onClick={() => this.handleClick("delete")}>Delete Comment</li>
             </ul>
           )
         } else if (this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
           editMenu = (
             <ul className="edit-comment-menu">
-              <li>Delete Comment</li>
+              <li onClick={() => this.handleClick("delete")}>Delete Comment</li>
             </ul>
           )
         }
@@ -135,6 +166,7 @@ class Comment extends React.Component {
           </div>
           {commentEditIcon}
           {editMenu}
+          {commentEditForm}
           <div className="beneath-comment-text">
             <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
             {timeAgoComment}
