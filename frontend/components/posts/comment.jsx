@@ -47,7 +47,7 @@ class Comment extends React.Component {
         minute: 60 * 1000
       };
 
-      const time = ((new Date()) - (new Date(this.props.comment.created_at)))
+      let time = ((new Date()) - (new Date(this.props.comment.created_at)))
   
       function formatTime(time) {
         if (time > periods.year) {

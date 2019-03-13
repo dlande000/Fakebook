@@ -7,6 +7,7 @@ class Post extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkLikedIds = this.checkLikedIds.bind(this);
+        this.findCommentForm = this.findCommentForm.bind(this);
     }
 
     checkLikedIds() {
@@ -30,6 +31,11 @@ class Post extends React.Component {
             });
             this.props.deleteLike({id: likeId});
         }
+    }
+
+    findCommentForm() {
+        const commentForm = document.getElementById(`comment-form-${this.props.post.id}`);
+        commentForm.focus();
     }
 
     render() {
@@ -138,7 +144,7 @@ class Post extends React.Component {
                         {liked}
                     </div>
                     <div className="comment-post-icon-div">
-                        <a href="javascript:void(0);"><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
+                        <a onClick={this.findCommentForm}><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
                     </div>
                 </div>
                 <div className="line-holder">
