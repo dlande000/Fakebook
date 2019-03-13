@@ -6,6 +6,9 @@ class Comment extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkLikedIds = this.checkLikedIds.bind(this);
+    this.state = {
+      openDropDown: false
+    };
   }
 
   checkLikedIds() {
@@ -90,6 +93,8 @@ class Comment extends React.Component {
       } else {
         isCommentLiked = "user-not-liked-comment";
       }
+
+      
 
       return (
         <div className="comment">

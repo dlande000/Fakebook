@@ -151,7 +151,14 @@ class Post extends React.Component {
                     <hr className="post-horizontal-line"/>
                 </div>
                 <div className="comments-all-components">
-                    <CommentsAllComponents createLike={this.props.createLike} deleteLike={this.props.deleteLike} createComment={this.props.createComment} post={this.props.post} users={this.props.users} currentUser={this.props.currentUser}/>
+                    <CommentsAllComponents
+                        createLike={this.props.createLike}
+                        deleteLike={this.props.deleteLike}
+                        createComment={this.props.createComment}
+                        post={this.props.post}
+                        users={this.props.users}
+                        currentUser={this.props.currentUser}
+                        />
                 </div>
             </div>
         )

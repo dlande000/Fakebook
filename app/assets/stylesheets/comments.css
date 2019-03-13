@@ -73,6 +73,7 @@
     background: #eff1f3;
     position: relative;
     display: inline-block;
+    margin-right: 14px;
 }
 
 .comment-author {

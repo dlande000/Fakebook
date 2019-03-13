@@ -15,6 +15,8 @@ class Comments extends React.Component {
                     key={id} comment={comment}
                     users={this.props.users}
                     currentUser={this.props.currentUser}
+                    postAuthorId={this.props.postAuthorId}
+                    postReceiverId={this.props.postReceiverId}
                 />);
             });
         }
