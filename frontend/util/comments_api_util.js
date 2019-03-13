@@ -6,10 +6,10 @@ export const createComment = comment => (
   })
 );
 
-export const updateComment = comment => (
+export const updateComment = (id, comment) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/comments/${comment.id}`,
+    url: `api/comments/${id}`,
     data: { comment }
   })
 );

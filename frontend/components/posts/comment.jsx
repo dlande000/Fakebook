@@ -4,16 +4,18 @@ import { Link } from 'react-router-dom';
 class Comment extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitLike = this.handleSubmitLike.bind(this);
     this.checkLikedIds = this.checkLikedIds.bind(this);
     this.state = {
       openDropDown: false,
       openEditForm: false,
+      initialBody: this.props.comment.body,
       body: this.props.comment.body
     };
     this.openEditMenu = this.openEditMenu.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.update = this.update.bind(this);
+    this.handleSubmitComment = this.handleSubmitComment.bind(this);
   }
 
   checkLikedIds() {
@@ -30,7 +32,7 @@ update() {
   });
 }
 
-  handleSubmit(e) {
+  handleSubmitLike(e) {
     e.preventDefault();
     if (!this.checkLikedIds()) {
         this.props.createLike({like: {likeable_id: this.props.comment.id, likeable_type: "Comment"}});
@@ -45,6 +47,15 @@ update() {
     }
   }
 
+  handleSubmitComment(e) {
+    e.preventDefault();
+    this.props.editComment(this.props.comment.id, {comment: {likeableId: this.props.comment.id, likeableType: "Comment", body: this.state.body}});
+    this.setState({
+      openEditForm: false,
+      initialBody: this.state.body
+    });
+  }
+
   openEditMenu() {
     this.setState({ openDropDown: !this.state.openDropDown });
   }
@@ -53,9 +64,10 @@ update() {
     this.setState({ openDropDown: false });
     if (value === "edit") {
       this.setState({ openEditForm: true });
-      console.log("this should have worked");
     } else if (value === "delete") {
-      console.log("hi")
+      console.log("hi");
+    } else if (value === "cancel") {
+      this.setState({ body: this.state.initialBody, openEditForm: false });
     }
   }
 
@@ -69,10 +81,10 @@ update() {
       let commentEditForm = (<div></div>)
       if (this.state.openEditForm === true) {
         commentEditForm = (<div className="edit-form">
-          <form action="">
-            <textarea onChange={this.update()} name="" id="" cols="30" rows="10" value={this.state.body}></textarea>
-            <button>Submit</button>
-            <button>Cancel</button>
+          <form onSubmit={this.handleSubmitComment}>
+            <textarea onChange={this.update()} value={this.state.body}></textarea>
+            <button type="submit" value="Post">Submit</button>
+            <button onClick={() => this.handleClick("cancel")}>Cancel</button>
           </form>
         </div>)
       }
@@ -168,7 +180,7 @@ update() {
           {editMenu}
           {commentEditForm}
           <div className="beneath-comment-text">
-            <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmit} href="">Like</a>
+            <a className="comment-like-link" id={isCommentLiked} onClick={this.handleSubmitLike} href="">Like</a>
             {timeAgoComment}
           </div>
         </div>
