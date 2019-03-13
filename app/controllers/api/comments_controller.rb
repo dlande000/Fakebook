@@ -25,18 +25,12 @@ class Api::CommentsController < ApplicationController
         end 
     end
 
-    # def destroy
-    #     post = Post.find_by(id: params[:id])
-    #     if post.author_id == current_user.id || @post.receiver_id == current_user.id
-    #         post.destroy
-    #         ids = [current_user.id] + current_user.friend_ids
-    #         @posts = Post.where(receiver_id: ids)
-    #             .or(Post.where(author_id: ids))
-    #         render 'api/posts/show'
-    #     else 
-    #         render json: ['Cannot delete post'], status: 401
-    #     end 
-    # end
+    def destroy
+        comment = Comment.find_by(id: params[:id])
+        @posts = Post.where(id: comment.post_id)
+        comment.destroy
+        render 'api/posts/index'
+    end
 
     private
     def comment_params
