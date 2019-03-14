@@ -16,7 +16,7 @@ Connect with family, friends, and the world with Fakebook, a Facebook-inspired s
 
 On Fakebook, the posts on a user's profile (the wall) and the posts seen on the homepage (the feed) are built using the same components; the appropriate posts are filtered based on the logged in user, the user's friends, and the posts the user's friends have received. 
 
-The wall and the feed are populated with posts; users can like and comment on posts. Additionally, users can like comments. 
+The wall and the feed are populated with posts; users can like and comment on posts. Additionally, users can like comments. Authors of posts or comments can edit or delete their content; receivers can delete posts and comments they do not want. 
 
 ### Profiles
 
@@ -34,14 +34,15 @@ Users can send friend requests to other users; once approved, users can see each
 + Ruby on Rails
 + PostgreSQL
 + JavaScript (ES6)
-+ React.js and Redux
-+ HTML and CSS
++ React.js
++ Redux
++ HTML
++ CSS
 
 ## Future Implementations
 WIP features inlude:
 + Receiving notifications via the navbar
 + Accepting friends via the navbar
-+ Editing and deleting posts and comments
 + Listing users who liked posts or comments
 + Allow users to respond to comments
 + Messaging for users
