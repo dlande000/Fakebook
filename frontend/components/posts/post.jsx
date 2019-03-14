@@ -101,15 +101,30 @@ class Post extends React.Component {
         if (this.state.openDropDown === true) {
           if (this.props.post.authorId === this.props.currentUser.id) {
             editMenu = (
-              <ul className="edit-comment-menu">
-                <li onClick={() => this.handleClick("edit")}>Edit Post</li>
-                <li onClick={() => this.handleClick("delete")}>Delete Post</li>
+              <ul className="edit-post-menu">
+                <div onClick={() => this.handleClick("edit")} className="edit-post-option">
+                  <div className="edit-post-menu-icon-div">
+                    <img className="edit-post-menu-icon" src="https://static.thenounproject.com/png/75540-200.png" alt=""/>
+                  </div>
+                  <li>Edit...</li>
+                </div>
+                <div onClick={() => this.handleClick("delete")} className="edit-post-option">
+                  <div className="edit-post-menu-icon-div">
+                    <img className="edit-post-menu-icon" src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                  </div>
+                  <li>Delete...</li>
+                </div>
               </ul>
             )
-          } else if (this.props.currentUser.id === this.props.post.receiverId) {
+          } else if (this.props.currentUser.id === this.props.post.receiverId ) {
             editMenu = (
-              <ul className="edit-comment-menu">
-                <li onClick={() => this.handleClick("delete")}>Delete Post</li>
+              <ul className="edit-post-menu">
+                <div onClick={() => this.handleClick("delete")} className="edit-post-option">
+                  <div className="edit-post-menu-icon-div">
+                    <img className="edit-post-menu-icon"src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                  </div>
+                  <li>Delete...</li>
+                </div>
               </ul>
             )
           }
