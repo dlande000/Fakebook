@@ -42,7 +42,8 @@ export const fetchPost = (id, post) => dispatch => {
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 };
 
-export const deletePost = id => dispatch => (
-    PostsAPIUtil.deletePost(id)
-        .then(post => dispatch(removePost(post)))
-);
+export const deletePost = id => dispatch => {
+    debugger
+    return PostsAPIUtil.deletePost(id)
+        .then(post => dispatch(removePost(post)));
+};

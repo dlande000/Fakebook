@@ -30,7 +30,7 @@ class Api::PostsController < ApplicationController
 
     def destroy
         @posts = Post.where(id: params[:id])
-        @posts.destroy
+        @posts[0].destroy
         render 'api/posts/index'
     end
 
