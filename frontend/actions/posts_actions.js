@@ -43,7 +43,6 @@ export const fetchPost = (id, post) => dispatch => {
 };
 
 export const deletePost = id => dispatch => {
-    debugger
     return PostsAPIUtil.deletePost(id)
         .then(post => dispatch(removePost(post)));
 };
