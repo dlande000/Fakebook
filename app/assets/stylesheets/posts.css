@@ -347,3 +347,27 @@
     position: relative;
     left: 28px;
 }
+
+#edit-post-image {
+    position: absolute;
+}
+
+.edit-form-all {
+    position: absolute;
+    left: 14%;
+    top: 9px;
+}
+
+.edit-form-button {
+    position: relative;
+    left: 61%;
+    background-color: #4267b2;
+    border-color: #4267b2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 22px;
+    padding: 0 16px;
+    font-family: sans-serif;
+    margin-left: 5px;
+}

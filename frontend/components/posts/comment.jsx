@@ -24,7 +24,13 @@ class Comment extends React.Component {
         likedIds.push(like.userId);
     });
     return likedIds.includes(this.props.currentUser.id);
-}
+  }
+
+  componentDidUpdate(oldProps) {
+    if (this.props.comment.body !== oldProps.comment.body) {
+      this.setState({ body: this.props.comment.body, initialBody: this.props.comment.body });
+    }
+  }
 
   update() {
     return e => this.setState({
@@ -81,12 +87,25 @@ class Comment extends React.Component {
       let commentEditForm = (<div></div>)
       if (this.state.openEditForm === true) {
         commentEditForm = (<div className="edit-form">
-          <h5>Edit Comment</h5>
-          <form onSubmit={this.handleSubmitComment}>
-            <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
-            <button type="submit" value="Post">Submit</button>
-            <button onClick={() => this.handleClick("cancel")}>Cancel</button>
-          </form>
+          <div className="edit-form-container">
+            <div className="edit-form-header">
+              <div className="edit-form-header-icon">
+                <img className="edit-form-icon" src="https://image.flaticon.com/icons/svg/39/39681.svg" alt=""/>
+              </div>
+              <h4>Edit Comment</h4>
+            </div>
+            <div className="full-edit-form">
+              <div id="edit-post-image" className="post-image-container">
+                <img className="post-image" src={this.props.currentUser.profile_pic_url}/>
+              </div>
+              <form className="edit-form-all" onSubmit={this.handleSubmitComment}>
+                <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
+                <hr id="horizontal-line-edit-form"/>
+                <button className="edit-form-button" type="submit" value="Post">Submit</button>
+                <button className="edit-form-button" onClick={() => this.handleClick("cancel")}>Cancel</button>
+              </form>
+            </div>
+          </div>
         </div>)
       }
 

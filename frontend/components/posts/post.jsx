@@ -49,6 +49,12 @@ class Post extends React.Component {
         }
     }
 
+    componentDidUpdate(oldProps) {
+        if (this.props.post.body !== oldProps.post.body) {
+          this.setState({ body: this.props.post.body, initialBody: this.props.post.body });
+        }
+      }
+
     handleSubmitPost(e) {
         e.preventDefault();
         this.props.fetchPost(this.props.post.id, { body: this.state.body, receiver_id: this.props.post.receiverId });
@@ -88,12 +94,25 @@ class Post extends React.Component {
         let postEditForm = (<div></div>)
         if (this.state.openEditForm === true) {
           postEditForm = (<div className="edit-form">
-            <h5>Edit Post</h5>
-            <form onSubmit={this.handleSubmitPost}>
-              <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
-              <button type="submit" value="Post">Submit</button>
-              <button onClick={() => this.handleClick("cancel")}>Cancel</button>
-            </form>
+            <div className="edit-form-container">
+              <div className="edit-form-header">
+                <div className="edit-form-header-icon">
+                  <img className="edit-form-icon" src="https://image.flaticon.com/icons/svg/39/39681.svg" alt=""/>
+                </div>
+                <h4>Edit Post</h4>
+              </div>
+              <div className="full-edit-form">
+                <div id="edit-post-image" className="post-image-container">
+                  <img className="post-image" src={this.props.currentUser.profile_pic_url}/>
+                </div>
+                <form className="edit-form-all" onSubmit={this.handleSubmitPost}>
+                  <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
+                  <hr id="horizontal-line-edit-form"/>
+                  <button className="edit-form-button" type="submit" value="Post">Submit</button>
+                  <button className="edit-form-button" onClick={() => this.handleClick("cancel")}>Cancel</button>
+                </form>
+              </div>
+            </div>
           </div>)
         }
 

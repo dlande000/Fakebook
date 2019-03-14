@@ -163,11 +163,15 @@
 
 .edit-form {
     z-index: 3;
-    position: absolute;
-    padding: 0;
     box-shadow: #5285d5 1px 1px 2px 3px;
     width: 400px;
     height: 200px;
+    position: fixed;
+    background: rgba(233, 235, 238, .4);
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 400%;
 }
 
 .edit-form > form {
@@ -203,4 +207,53 @@
 .edit-option > li {
     position: relative;
     left: 35%;
+}
+
+.edit-form-container {
+    position: fixed;
+    top: 35%;
+    left: 27%;
+    background: #f5f6f7;
+    width: 494px;
+    height: 183px;
+    box-shadow: 0px 4px 18px 4px #858585;
+}
+
+.edit-form-icon {
+    height: 22px;
+    padding: 3px 9px;
+}
+
+.edit-form-header > h4 {
+    position: absolute;
+    top: -5px;
+    left: 8%;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #4b4f54;
+}
+
+.full-edit-form {
+    background: #ffffff;
+    position: relative;
+    top: 3px;
+    height: 84%;
+}
+
+.edit-form-all > textarea {
+    height: 92px;
+    font-family: sans-serif;
+    font-size: 13px;
+    border: none;
+    resize: none;
+    width: 419px;
+    outline:0;
+}
+
+#horizontal-line-edit-form {
+    color: #f5f6f7;
+    border: 2px solid;
+    position: relative;
+    left: -69px;
+    width: 115.5%;
 }
