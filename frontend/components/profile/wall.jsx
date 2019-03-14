@@ -12,6 +12,8 @@ class Wall extends React.Component {
                     createComment={this.props.createComment}
                     user={this.props.user}
                     createPost={this.props.createPost}
+                    fetchPost={this.props.fetchPost}
+                    deletePost={this.props.deletePost}
                     correctReceivers={[this.props.user.id]}
                     posts={this.props.posts}
                     friendIds={this.props.friendIds}

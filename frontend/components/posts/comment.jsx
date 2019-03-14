@@ -26,11 +26,11 @@ class Comment extends React.Component {
     return likedIds.includes(this.props.currentUser.id);
 }
 
-update() {
-  return e => this.setState({
-    body: e.target.value
-  });
-}
+  update() {
+    return e => this.setState({
+      body: e.target.value
+    });
+  }
 
   handleSubmitLike(e) {
     e.preventDefault();
@@ -81,8 +81,9 @@ update() {
       let commentEditForm = (<div></div>)
       if (this.state.openEditForm === true) {
         commentEditForm = (<div className="edit-form">
+          <h5>Edit Comment</h5>
           <form onSubmit={this.handleSubmitComment}>
-            <textarea onChange={this.update()} value={this.state.body}></textarea>
+            <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
             <button type="submit" value="Post">Submit</button>
             <button onClick={() => this.handleClick("cancel")}>Cancel</button>
           </form>

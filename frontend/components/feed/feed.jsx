@@ -48,6 +48,8 @@ class Feed extends React.Component {
             deleteLike={this.props.deleteLike}
             user={this.props.currentUser}
             createPost={this.props.createPost}
+            fetchPost={this.props.fetchPost}
+            deletePost={this.props.deletePost}
             correctReceivers={this.props.correctReceivers}
             posts={this.props.posts}
             friendIds={this.props.friendIds}

@@ -36,11 +36,11 @@ export const createPost = post => dispatch => (
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 );
 
-export const fetchPost = post => dispatch => (
-    PostsAPIUtil.updatePost(post)
-        .then(posts => dispatch(receivePosts(posts)),
+export const fetchPost = (id, post) => dispatch => {
+    return PostsAPIUtil.updatePost(id, post)
+        .then(post => dispatch(receivePost(post)),
         errors => dispatch(receivePostErrors(errors.responseJSON)))
-);
+};
 
 export const deletePost = id => dispatch => (
     PostsAPIUtil.deletePost(id)

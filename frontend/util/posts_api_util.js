@@ -13,13 +13,13 @@ export const fetchPosts = () => (
   })
 );
 
-export const updatePost = post => (
-  $.ajax({
+export const updatePost = (id, post) => {
+  return $.ajax({
     method: 'PATCH',
-    url: `/api/posts/${post.id}`,
+    url: `/api/posts/${id}`,
     data: { post }
-  })
-);
+  });
+};
 
 export const deletePost = id => (
   $.ajax({

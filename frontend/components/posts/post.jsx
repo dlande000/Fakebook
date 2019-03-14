@@ -5,9 +5,19 @@ import { Link } from 'react-router-dom';
 class Post extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            openDropDown: false,
+            openEditForm: false,
+            initialBody: this.props.post.body,
+            body: this.props.post.body
+        };
+        this.handleSubmitLike = this.handleSubmitLike.bind(this);
+        this.handleSubmitPost = this.handleSubmitPost.bind(this);
         this.checkLikedIds = this.checkLikedIds.bind(this);
         this.findCommentForm = this.findCommentForm.bind(this);
+        this.openEditMenu = this.openEditMenu.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.update = this.update.bind(this);
     }
 
     checkLikedIds() {
@@ -18,7 +28,13 @@ class Post extends React.Component {
         return likedIds.includes(this.props.currentUser.id);
     }
 
-    handleSubmit(e) {
+    update() {
+        return e => this.setState({
+          body: e.target.value
+        });
+    }
+
+    handleSubmitLike(e) {
         e.preventDefault();
         if (!this.checkLikedIds()) {
             this.props.createLike({like: {likeable_id: this.props.post.id, likeable_type: "Post"}});
@@ -33,6 +49,30 @@ class Post extends React.Component {
         }
     }
 
+    handleSubmitPost(e) {
+        e.preventDefault();
+        this.props.fetchPost(this.props.post.id, { body: this.state.body, receiver_id: this.props.post.receiverId });
+        this.setState({
+          openEditForm: false,
+          initialBody: this.state.body
+        });
+    }
+
+    openEditMenu() {
+        this.setState({ openDropDown: !this.state.openDropDown });
+    }
+
+    handleClick(value) {
+        this.setState({ openDropDown: false });
+        if (value === "edit") {
+          this.setState({ openEditForm: true });
+        } else if (value === "delete") {
+          this.props.deletePost(this.props.post.id);
+        } else if (value === "cancel") {
+          this.setState({ body: this.state.initialBody, openEditForm: false });
+        }
+    }
+
     findCommentForm() {
         const commentForm = document.getElementById(`comment-form-${this.props.post.id}`);
         commentForm.focus();
@@ -44,6 +84,36 @@ class Post extends React.Component {
         const author = this.props.users[this.props.post.authorId];
         let authorName = `${author.first_name} ${author.last_name}`;
         let receiverName = `${receiver.first_name} ${receiver.last_name}`;
+
+        let postEditForm = (<div></div>)
+        if (this.state.openEditForm === true) {
+          postEditForm = (<div className="edit-form">
+            <h5>Edit Post</h5>
+            <form onSubmit={this.handleSubmitPost}>
+              <textarea onChange={this.update()} value={this.state.body}></textarea><br/>
+              <button type="submit" value="Post">Submit</button>
+              <button onClick={() => this.handleClick("cancel")}>Cancel</button>
+            </form>
+          </div>)
+        }
+
+        let editMenu = (<div></div>);
+        if (this.state.openDropDown === true) {
+          if (this.props.post.authorId === this.props.currentUser.id) {
+            editMenu = (
+              <ul className="edit-comment-menu">
+                <li onClick={() => this.handleClick("edit")}>Edit Post</li>
+                <li onClick={() => this.handleClick("delete")}>Delete Post</li>
+              </ul>
+            )
+          } else if (this.props.currentUser.id === this.props.post.receiverId) {
+            editMenu = (
+              <ul className="edit-comment-menu">
+                <li onClick={() => this.handleClick("delete")}>Delete Post</li>
+              </ul>
+            )
+          }
+        }
 
         let authorAndReceiver;
         if (author.id === receiver.id) {
@@ -64,7 +134,7 @@ class Post extends React.Component {
 
         let editIcon;
         if (this.props.currentUser.id == this.props.post.receiverId || this.props.currentUser.id == this.props.post.authorId) {
-            editIcon = () => (<img className="edit-icon" src="https://static.thenounproject.com/png/93425-200.png" alt=""/>)
+            editIcon = () => (<img onClick={this.openEditMenu} className="edit-icon" src="https://static.thenounproject.com/png/93425-200.png" alt=""/>)
         } else {
             editIcon = () => {};
         }
@@ -105,23 +175,16 @@ class Post extends React.Component {
         if (!this.checkLikedIds()) {
             liked = (
                 <div className="like-post-icon-div">
-                    <a onClick={this.handleSubmit} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> <div id="align-vertical">Like</div></a>
+                    <a onClick={this.handleSubmitLike} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> <div id="align-vertical">Like</div></a>
                 </div>
             )
         } else if (this.checkLikedIds()) {
             liked = (
                 <div className="like-post-icon-div">
-                    <a id="liked-link-text-color" onClick={this.handleSubmit} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> <div id="align-vertical">Like</div></a>
+                    <a id="liked-link-text-color" onClick={this.handleSubmitLike} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> <div id="align-vertical">Like</div></a>
                 </div>
             )
         }
-
-        // let commentLink;
-        // if (this.props.type == "Feed") {
-        //     commentLink = `#/home#comment-${this.props.post.id}`;
-        // } else {
-        //     commentLink = `#/home/users/${receiver.id}#comment-${this.props.post.id}`;
-        // }
 
         return (
             <div className="post">
@@ -131,6 +194,8 @@ class Post extends React.Component {
                 {authorAndReceiver()}
                 <p className="post-created">{createdAndEdited}</p>
                 {editIcon()}
+                {editMenu}
+                {postEditForm}
                 <p className="post-body">{this.props.post.body}</p>
                 <div className="like-and-comment-text-div">
                     {likes}

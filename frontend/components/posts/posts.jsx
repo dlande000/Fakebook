@@ -34,6 +34,8 @@ class Posts extends React.Component {
               createComment={this.props.createComment}
               updateComment={this.props.updateComment}
               deleteComment={this.props.deleteComment}
+              fetchPost={this.props.fetchPost}
+              deletePost={this.props.deletePost}
           />);
         }
       });

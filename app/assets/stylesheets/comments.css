@@ -163,13 +163,20 @@
 .edit-form {
     z-index: 3;
     position: absolute;
-    background:rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
+    padding: 0;
+    box-shadow: #5285d5 1px 1px 2px 3px;
+    width: 400px;
+    height: 200px;
+}
+
+.edit-form > form {
+    background: #e9ebee;
+    padding-bottom: 3px;
 }
 
 .edit-form > form > textarea {
-    width: 480px;
-    height: 300px;
+    width: 395px;
+    height: 150px;
     resize: none;
     box-shadow: #1c1d21;
 }

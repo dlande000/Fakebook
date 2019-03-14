@@ -47,6 +47,8 @@ class Profile extends React.Component {
                 updateComment={this.props.updateComment}
                 deleteComment={this.props.deleteComment}
                 createPost={this.props.createPost}
+                fetchPost={this.props.fetchPost}
+                deletePost={this.props.deletePost}
                 user={this.props.user}
                 posts={this.props.posts}
                 friendIds={this.props.user.friendIds}
