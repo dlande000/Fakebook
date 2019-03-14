@@ -62,13 +62,15 @@
 }
 
 .post-form-body {
-    width: 96%;
-    height: 64px;
+    width: 85%;
+    height: 76px;
     resize: none;
     border: none;
-    margin-top: -14px;
+    margin-top: -26px;
     padding: 10px;
     font-size: 14px;
+    position: relative;
+    left: 11%;
 }
 
 .post-form-submit-button {
@@ -296,4 +298,18 @@
     position: absolute;
     top: -6px;
     left: 29px;
+}
+
+#post-image-form {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.forced-background {
+    height: 70px;
+    width: 100px;
+    background: #ffffff;
+    z-index: 0;
+    position: absolute;
 }

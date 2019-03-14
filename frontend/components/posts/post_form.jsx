@@ -46,6 +46,11 @@ class PostForm extends React.Component {
                     <img className="pencil-post-image" src="https://image.flaticon.com/icons/svg/39/39681.svg"/>
                     <h6 className="post-form-header">Create Post</h6>
                 </div>
+                <div className="forced-background">
+                <div id="post-image-form" className="post-image-container">
+                    <img className="post-image" src={this.props.currentUser.profile_pic_url}/>
+                </div>
+                </div>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <textarea onKeyDown={this.checkSubmit} className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
                     <input className="post-form-submit-button" type="submit" value="Post" />
