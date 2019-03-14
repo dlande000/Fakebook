@@ -63,8 +63,8 @@ class Feed extends React.Component {
         <div className="feed-info">
           <h4>What is Fakebook?</h4>
           <p>Fakebook is a single-page website inspired by Facebook and built by David Anderson, a software engineer based in New York, New York. Fakebook uses Ruby on Rails for its back end, and React/Redux for the front end.<br/><br/>
-          On Fakebook, users can send and approve friend requests, post statuses for their friends to see, and write directly to their friends' walls. Additionally, users can comment on posts, like posts, like comments, and search for users in the search bar. Feel free to explore what Fakebook has to offer!<br/><br/>
-          Fakebook's functionality is continually being updated—soon, users will be able to edit and delete posts and comments. Users will also be able to post images and message their friends.<br/><br/>
+          On Fakebook, users can send and approve friend requests, post statuses for their friends to see, and write directly to their friends' walls. Additionally, users can comment on posts, like posts, like comments, and search for users in the search bar. Content authors can edit and delete their posts and comments; content receivers can delete any post or comments left on their wall. Feel free to explore what Fakebook has to offer!<br/><br/>
+          Fakebook's functionality is continually being updated—soon, users will also be able to reply directly to comments, receive notifications, post images, edit account information, and message their friends.<br/><br/>
           If you have any questions about Fakebook, please feel free to get in touch. The GitHub repo for Fakebook can be found <a className="github-link" href="https://github.com/dlande000/Fakebook">here.</a><br/><br/>
           Fakebook's demo profiles were made for characters from 'Arrested Development,' the funniest television show ever made.</p><br/>
           <div className="below-feed-info">Made by David Anderson in 2019. All images belong to their respective owner.</div>
