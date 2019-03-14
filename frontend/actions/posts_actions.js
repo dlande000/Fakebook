@@ -38,7 +38,7 @@ export const createPost = post => dispatch => (
 
 export const fetchPost = (id, post) => dispatch => {
     return PostsAPIUtil.updatePost(id, post)
-        .then(post => dispatch(receivePost(post)),
+        .then(post => dispatch(updatePost(post)),
         errors => dispatch(receivePostErrors(errors.responseJSON)))
 };
 

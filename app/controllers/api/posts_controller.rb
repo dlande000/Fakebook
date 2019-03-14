@@ -20,7 +20,7 @@ class Api::PostsController < ApplicationController
     end
 
     def update
-        @posts = Post.find_by(id: params[:id])
+        @posts = Post.where(id: params[:id])
         if @posts.update(post_params)
             render 'api/posts/index'
         else
@@ -29,9 +29,9 @@ class Api::PostsController < ApplicationController
     end
 
     def destroy
-        @posts = Post.find_by(id: params[:id])
+        @posts = Post.where(id: params[:id])
         @posts.destroy
-        render 'api/posts/show'
+        render 'api/posts/index'
     end
 
     private
