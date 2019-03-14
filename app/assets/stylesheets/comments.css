@@ -155,9 +155,10 @@
     position: absolute;
     z-index: 2;
     background: white;
-    border: 1px solid black;
-    right: -7%;
+    border: 1px solid #7f8183;
+    right: -5%;
     top: 12px;
+    box-shadow: 1px 1px #c0c0c0;
 }
 
 .edit-form {
@@ -179,4 +180,27 @@
     height: 150px;
     resize: none;
     box-shadow: #1c1d21;
+}
+
+.edit-comment-menu-icon {
+    height: 15px;
+    position: absolute;
+}
+
+.edit-option {
+    position: relative;
+    left: -63%;
+    padding: 5px 10px;
+    width: 132%;
+}
+
+.edit-option:hover {
+    cursor: pointer;
+    background: #426097;
+    color: #ffffff;
+}
+
+.edit-option > li {
+    position: relative;
+    left: 35%;
 }

@@ -102,14 +102,29 @@ class Comment extends React.Component {
         if (this.props.comment.authorId === this.props.currentUser.id) {
           editMenu = (
             <ul className="edit-comment-menu">
-              <li onClick={() => this.handleClick("edit")}>Edit Comment</li>
-              <li onClick={() => this.handleClick("delete")}>Delete Comment</li>
+              <div onClick={() => this.handleClick("edit")} className="edit-option">
+                <div className="edit-comment-menu-icon-div">
+                  <img className="edit-comment-menu-icon" src="https://static.thenounproject.com/png/75540-200.png" alt=""/>
+                </div>
+                <li>Edit...</li>
+              </div>
+              <div onClick={() => this.handleClick("delete")} className="edit-option">
+                <div className="edit-comment-menu-icon-div">
+                  <img className="edit-comment-menu-icon" src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                </div>
+                <li>Delete...</li>
+              </div>
             </ul>
           )
         } else if (this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
           editMenu = (
             <ul className="edit-comment-menu">
-              <li onClick={() => this.handleClick("delete")}>Delete Comment</li>
+              <div onClick={() => this.handleClick("delete")} className="edit-option">
+                <div className="edit-comment-menu-icon-div">
+                  <img className="edit-comment-menu-icon"src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                </div>
+                <li>Delete...</li>
+              </div>
             </ul>
           )
         }
