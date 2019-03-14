@@ -15,7 +15,7 @@ class FriendBox extends React.Component {
 
         return (
             <div className="friend-header">
-                <img className="friend-image" src="https://pngimage.net/wp-content/uploads/2018/05/facebook-friends-icon-png-2.png"/>
+                <img className="friend-image" src="https://www.shareicon.net/download/2015/07/31/77852_all.ico"/>
                 <p className="friend-header-text"><b>Friends</b> · {this.props.friendIds.length}</p>
                 <div className="friend-box">
                     {friends}

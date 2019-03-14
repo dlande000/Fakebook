@@ -135,7 +135,7 @@ maeby = User.create(
     current_city: "Orange County, California",
     bio: "Marry me!",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://pbs.twimg.com/profile_images/735520063168483329/Xmhcyenf.jpg"
+    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/6/69/Season_4_Poster_-_Maeby_F%C3%BCnke_01.jpg/revision/latest?cb=20130521213429"
 )
 
 tobias = User.create(
