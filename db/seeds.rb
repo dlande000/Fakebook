@@ -121,7 +121,7 @@ lucille = User.create(
     current_city: "Orange County, California",
     bio: "I don't understand the question, and I won't respond.",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "http://flavorwire.files.wordpress.com/2013/05/lucille4.jpg"
+    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/2/29/2x17_Spring_Breakout_%2810%29.png/revision/latest/scale-to-width-down/1000?cb=20130204205638"
 )
 
 maeby = User.create(
