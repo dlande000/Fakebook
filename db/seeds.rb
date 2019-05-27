@@ -79,7 +79,7 @@ buster = User.create(
     current_city: "Orange County, California",
     bio: "Former and Current Mother Boy",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://flavorwire.files.wordpress.com/2013/05/tumblr_m06al3iedj1rprfgbo1_500.png?w=500"
+    profile_pic_url: "https://media.salon.com/2013/05/tony_hale2.jpg"
 )
 
 lindsay = User.create(
