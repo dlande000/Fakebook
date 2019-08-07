@@ -22,7 +22,7 @@ michael = User.create(
     hometown: "Orange County, California",
     current_city: "Orange County, California",
     bio: "Done with the family.",
-    profile_pic_url: "https://uproxx.files.wordpress.com/2015/01/michael-bluth-reactions.jpg?quality=95&w=650&h=396",
+    profile_pic_url: "https://i2.wp.com/bestlifeonline.com/content/uploads/2018/05/michael-bluth-4-1024x750.jpg?resize=1024%2C750&ssl=1",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 )
 
@@ -107,7 +107,7 @@ franklin = User.create(
     current_city: "Orange County, California",
     bio: "My name is Judge",
     banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://www.empireonline.com/images/uploaded/arres-main.jpg"
+    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/5/54/2x16_Meat_the_Veals_%2840%29.png/revision/latest?cb=20130202002555"
 )
 
 lucille = User.create(
