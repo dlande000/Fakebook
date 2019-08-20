@@ -18,4 +18,6 @@ class Post < ApplicationRecord
 
     has_many :likes,
         as: :likeable
+    
+    has_one_attached :photo
 end
