@@ -13,8 +13,12 @@
             end
         end
 
-        json.photoUrl url_for(post.photo)
-
+        if post.photo.attached?
+            json.photoUrl url_for(post.photo)
+        else
+            json.photoUrl ""
+        end
+        
         json.receiverId post.receiver_id
         json.authorId post.author_id
         json.createdAt post.created_at

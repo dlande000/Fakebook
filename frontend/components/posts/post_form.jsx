@@ -5,7 +5,8 @@ class PostForm extends React.Component {
         super(props);
         this.state = {
           body: '',
-          receiver_id: ''
+          receiver_id: '',
+          photoFile: null
         };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkSubmit = this.checkSubmit.bind(this);
@@ -18,6 +19,10 @@ class PostForm extends React.Component {
             body: '',
             receiver_id: ''
         });
+    }
+
+    handleFile(e) {
+        this.setState({ photoFile: e.currentTarget.files[0] });
     }
 
     update(value) {
@@ -53,6 +58,7 @@ class PostForm extends React.Component {
                 </div>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <textarea onKeyDown={this.checkSubmit} className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
+                    <input type="file" onChange={this.handleFile.bind(this)}></input>
                     <input className="post-form-submit-button" type="submit" value="Post" />
                 </form>
             </div>
