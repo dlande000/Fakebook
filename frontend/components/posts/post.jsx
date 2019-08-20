@@ -173,6 +173,17 @@ class Post extends React.Component {
             editIcon = () => {};
         }
 
+        let postPhoto;
+        if (this.props.post.photoUrl.length !== 0) {
+            postPhoto = (
+              <img src={this.props.post.photoUrl} alt=""/>
+            )
+        } else {
+            postPhoto = (
+              <div></div>
+            )
+        }
+
         let likes;
         if (this.props.post.likes.length === 0) {
             likes = (
@@ -230,9 +241,7 @@ class Post extends React.Component {
                 {editIcon()}
                 {editMenu}
                 {postEditForm}
-                <div>
-                  <img src={this.props.post.photoUrl} alt=""/>
-                </div>
+                {postPhoto}
                 <p className="post-body">{this.props.post.body}</p>
                 <div className="like-and-comment-text-div">
                     {likes}

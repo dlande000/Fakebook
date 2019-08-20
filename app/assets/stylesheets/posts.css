@@ -267,6 +267,7 @@
 
 .number-of-likes-post > p {
     float: right;
+    margin-left: 2px;
 }
 
 .number-of-comments {
