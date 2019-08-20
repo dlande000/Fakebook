@@ -18,11 +18,15 @@ class PostForm extends React.Component {
         const formData = new FormData();
         formData.append('post[body]', this.state.body);
         formData.append('post[receiver_id]', this.state.receiver_id);
-        formData.append('post[photo]', this.state.photoFile);
+        if (this.state.photoFile) {
+            formData.append('post[photo]', this.state.photoFile);
+        }
         this.props.createPost(formData);
         this.setState({
             body: '',
-            receiver_id: ''
+            receiver_id: '',
+            photoFile: null,
+            photoUrl: null
         });
     }
 
