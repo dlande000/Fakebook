@@ -6,7 +6,8 @@ class PostForm extends React.Component {
         this.state = {
           body: '',
           receiver_id: '',
-          photoFile: null
+          photoFile: null,
+          photoUrl: null
         };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkSubmit = this.checkSubmit.bind(this);
@@ -26,7 +27,14 @@ class PostForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({ photoFile: e.currentTarget.files[0] });
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({ photoFile: file, photoUrl: fileReader.result });
+        };
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     update(value) {
@@ -49,6 +57,8 @@ class PostForm extends React.Component {
             placeholderText =  `Write something to ${this.props.user.first_name} ...`;
         }
 
+        let preview = this.state.photoUrl ? <img src={this.state.photoUrl}></img> : null;
+
         return (
             <div className="post-form">
                 <div className="post-form-top">
@@ -65,6 +75,9 @@ class PostForm extends React.Component {
                     <input type="file" onChange={this.handleFile.bind(this)}></input>
                     <input className="post-form-submit-button" type="submit" value="Post" />
                 </form>
+                <div>
+                    {preview}
+                </div>
             </div>
         )
     } 

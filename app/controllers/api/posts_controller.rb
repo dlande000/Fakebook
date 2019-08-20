@@ -2,7 +2,6 @@ class Api::PostsController < ApplicationController
     def create
         post = Post.new(post_params)
         post.author_id = current_user.id
-        debugger
         if post.save
             ids = [current_user.id] + current_user.friend_ids
             @posts = Post.where(receiver_id: ids)
