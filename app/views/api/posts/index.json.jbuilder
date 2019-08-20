@@ -13,6 +13,8 @@
             end
         end
 
+        json.photoUrl url_for(post.photo)
+
         json.receiverId post.receiver_id
         json.authorId post.author_id
         json.createdAt post.created_at
