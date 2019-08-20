@@ -230,6 +230,9 @@ class Post extends React.Component {
                 {editIcon()}
                 {editMenu}
                 {postEditForm}
+                <div>
+                  <img src={this.props.post.photoUrl} alt=""/>
+                </div>
                 <p className="post-body">{this.props.post.body}</p>
                 <div className="like-and-comment-text-div">
                     {likes}

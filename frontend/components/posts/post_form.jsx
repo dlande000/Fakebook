@@ -14,7 +14,11 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createPost({post: this.state});
+        const formData = new FormData();
+        formData.append('post[body]', this.state.body);
+        formData.append('post[receiver_id]', this.state.receiver_id);
+        formData.append('post[photo]', this.state.photoFile);
+        this.props.createPost(formData);
         this.setState({
             body: '',
             receiver_id: ''
