@@ -66,7 +66,7 @@ class PostForm extends React.Component {
         return (
             <div className="post-form">
                 <div className="post-form-top">
-                    <img className="pencil-post-image" src="https://image.flaticon.com/icons/svg/39/39681.svg"/>
+                    <img className="pencil-post-image" src={window.pencilIcon}/>
                     <h6 className="post-form-header">Create Post</h6>
                 </div>
                 <div className="forced-background">

@@ -67,7 +67,7 @@ class Profile extends React.Component {
                 <ProfileLink user={this.props.users[this.props.match.params.userId]}/>
                 <div className="profile-left">
                     <div className="info-box">
-                    <img className="bio-globe-image" src="https://cdn3.iconfinder.com/data/icons/communication-icons-1/32/Earth-512.png"/><h5>Intro</h5>
+                    <img className="bio-globe-image" src={window.globeIcon}/><h5>Intro</h5>
                     <UserBio bio={this.props.user.bio} />
                     <hr className="bio-horizontal-line"/>
                     <MiscInfo hometown={this.props.user.hometown} currentCity={this.props.user.current_city} birthday={this.props.user.birthdate} />

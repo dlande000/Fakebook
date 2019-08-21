@@ -90,7 +90,7 @@ class Comment extends React.Component {
           <div className="edit-form-container">
             <div className="edit-form-header">
               <div className="edit-form-header-icon">
-                <img className="edit-form-icon" src="https://image.flaticon.com/icons/svg/39/39681.svg" alt=""/>
+                <img className="edit-form-icon" src={window.editIcon} alt=""/>
               </div>
               <h4>Edit Comment</h4>
             </div>
@@ -112,7 +112,7 @@ class Comment extends React.Component {
       let commentEditIcon = (<div></div>);
       if (this.props.comment.authorId === this.props.currentUser.id || this.props.currentUser.id === this.props.postAuthorId || this.props.currentUser.id === this.props.postReceiverId) {
         commentEditIcon = (<div className="edit-icon-comment-div">
-          <img onClick={this.openEditMenu} src="https://static.thenounproject.com/png/93425-200.png" alt=""/>
+          <img onClick={this.openEditMenu} src={window.editIcon} alt=""/>
         </div>)
       }
 
@@ -123,13 +123,13 @@ class Comment extends React.Component {
             <ul className="edit-comment-menu">
               <div onClick={() => this.handleClick("edit")} className="edit-option">
                 <div className="edit-comment-menu-icon-div">
-                  <img className="edit-comment-menu-icon" src="https://static.thenounproject.com/png/75540-200.png" alt=""/>
+                  <img className="edit-comment-menu-icon" src={window.editIcon} alt=""/>
                 </div>
                 <li>Edit...</li>
               </div>
               <div onClick={() => this.handleClick("delete")} className="edit-option">
                 <div className="edit-comment-menu-icon-div">
-                  <img className="edit-comment-menu-icon" src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                  <img className="edit-comment-menu-icon" src={window.editIcon} alt=""/>
                 </div>
                 <li>Delete...</li>
               </div>
@@ -140,7 +140,7 @@ class Comment extends React.Component {
             <ul className="edit-comment-menu">
               <div onClick={() => this.handleClick("delete")} className="edit-option">
                 <div className="edit-comment-menu-icon-div">
-                  <img className="edit-comment-menu-icon"src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                  <img className="edit-comment-menu-icon"src={window.editIcon} alt=""/>
                 </div>
                 <li>Delete...</li>
               </div>
@@ -184,7 +184,7 @@ class Comment extends React.Component {
       if (this.props.comment.likes.length > 0) {
         commentLikesNumber = (
           <div className="comment-number-liked">
-            <img src="https://i0.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Facebook-Like.png?resize=300%2C300" alt=""/> <p>{this.props.comment.likes.length}</p>
+            <img src={window.likeCircle} alt=""/> <p>{this.props.comment.likes.length}</p>
           </div>)
       } else {
         commentLikesNumber = (<div></div>);

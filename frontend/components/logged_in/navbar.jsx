@@ -17,7 +17,7 @@ class Navbar extends React.Component {
         <div className="logged-in-navbar">
           <div className="logged-in-container">
             <div className="navbar-left">
-              <Link to={"/home"}><img className="facebook-f" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/F_icon.svg/2000px-F_icon.svg.png" /></Link>
+              <Link to={"/home"}><img className="facebook-f" src={window.fIcon} /></Link>
               <SearchContainer />
             </div>
             <div className="navbar-right">

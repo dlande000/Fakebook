@@ -97,7 +97,7 @@ class Post extends React.Component {
             <div className="edit-form-container">
               <div className="edit-form-header">
                 <div className="edit-form-header-icon">
-                  <img className="edit-form-icon" src="https://image.flaticon.com/icons/svg/39/39681.svg" alt=""/>
+                  <img className="edit-form-icon" src={window.editIcon} alt=""/>
                 </div>
                 <h4>Edit Post</h4>
               </div>
@@ -123,13 +123,13 @@ class Post extends React.Component {
               <ul className="edit-post-menu">
                 <div onClick={() => this.handleClick("edit")} className="edit-post-option">
                   <div className="edit-post-menu-icon-div">
-                    <img className="edit-post-menu-icon" src="https://static.thenounproject.com/png/75540-200.png" alt=""/>
+                    <img className="edit-post-menu-icon" src={window.editIcon} alt=""/>
                   </div>
                   <li>Edit...</li>
                 </div>
                 <div onClick={() => this.handleClick("delete")} className="edit-post-option">
                   <div className="edit-post-menu-icon-div">
-                    <img className="edit-post-menu-icon" src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                    <img className="edit-post-menu-icon" src={window.editIcon} alt=""/>
                   </div>
                   <li>Delete...</li>
                 </div>
@@ -140,7 +140,7 @@ class Post extends React.Component {
               <ul className="edit-post-menu">
                 <div onClick={() => this.handleClick("delete")} className="edit-post-option">
                   <div className="edit-post-menu-icon-div">
-                    <img className="edit-post-menu-icon"src="https://static.thenounproject.com/png/3058-200.png" alt=""/>
+                    <img className="edit-post-menu-icon"src={window.editIcon} alt=""/>
                   </div>
                   <li>Delete...</li>
                 </div>
@@ -168,7 +168,7 @@ class Post extends React.Component {
 
         let editIcon;
         if (this.props.currentUser.id == this.props.post.receiverId || this.props.currentUser.id == this.props.post.authorId) {
-            editIcon = () => (<img onClick={this.openEditMenu} className="edit-icon" src="https://static.thenounproject.com/png/93425-200.png" alt=""/>)
+            editIcon = () => (<img onClick={this.openEditMenu} className="edit-icon" src={window.editIcon} alt=""/>)
         } else {
             editIcon = () => {};
         }
@@ -194,7 +194,7 @@ class Post extends React.Component {
         } else {
             likes = (
                 <div className="number-of-likes-post">
-                    <img className="like-text-icon" src="https://i0.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Facebook-Like.png?resize=300%2C300" alt=""/> <p>{this.props.post.likes.length}</p>
+                    <img className="like-text-icon" src={window.likeCircle} alt=""/> <p>{this.props.post.likes.length}</p>
                 </div>
             )
         }
@@ -222,13 +222,13 @@ class Post extends React.Component {
         if (!this.checkLikedIds()) {
             liked = (
                 <div className="like-post-icon-div">
-                    <a onClick={this.handleSubmitLike} href=""><img id="unliked-icon-post" src="http://cdn.onlinewebfonts.com/svg/img_552457.png" alt=""/> <div id="align-vertical">Like</div></a>
+                    <a onClick={this.handleSubmitLike} href=""><img id="unliked-icon-post" src={window.unlikedThumb} alt=""/> <div id="align-vertical">Like</div></a>
                 </div>
             )
         } else if (this.checkLikedIds()) {
             liked = (
                 <div className="like-post-icon-div">
-                    <a id="liked-link-text-color" onClick={this.handleSubmitLike} href=""><img id="liked-icon-post" src="https://requestreduce.org/images/facebook-clipart-transparent-background-25.jpg" alt=""/> <div id="align-vertical">Like</div></a>
+                    <a id="liked-link-text-color" onClick={this.handleSubmitLike} href=""><img id="liked-icon-post" src={window.likedThumb} alt=""/> <div id="align-vertical">Like</div></a>
                 </div>
             )
         }
@@ -257,7 +257,7 @@ class Post extends React.Component {
                         {liked}
                     </div>
                     <div className="comment-post-icon-div">
-                        <a onClick={this.findCommentForm}><img id="comment-icon-post" src="https://www.shareicon.net/download/2015/08/14/85004_comments_512x512.png" alt=""/> <div id="align-vertical-comment">Comment</div></a>
+                        <a onClick={this.findCommentForm}><img id="comment-icon-post" src={window.commentIcon} alt=""/> <div id="align-vertical-comment">Comment</div></a>
                     </div>
                 </div>
                 <div className="line-holder">
