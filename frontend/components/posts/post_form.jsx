@@ -62,7 +62,7 @@ class PostForm extends React.Component {
             placeholderText =  `Write something to ${this.props.user.first_name} ...`;
         }
 
-        let preview = this.state.photoUrl ? <img src={this.state.photoUrl}></img> : null;
+        let preview = this.state.photoUrl ? <img className="preview-image" src={this.state.photoUrl}></img> : null;
 
         return (
             <div className="post-form">
@@ -73,12 +73,16 @@ class PostForm extends React.Component {
                     </div>
                 </div>
                 <div className="forced-background">
-                <div id="post-image-form" className="post-image-container">
-                    <img className="post-image" src={this.props.currentUser.profile_pic_url}/>
-                </div>
+                    <div id="post-image-form" className="post-image-container">
+                        <img className="post-image" src={this.props.currentUser.profile_pic_url}/>
+                    </div>
                 </div>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <textarea onKeyDown={this.checkSubmit} className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
+                    <div className="preview-div">
+                        {preview}
+                    </div>
+                    <div className="post-form-footer">
                     <div className="photo-file-div">
                         <input type="file" name="photo-file" id="photo-file" className="photo-file" onChange={this.handleFile} />
                         <label htmlFor='photo-file'>
@@ -87,8 +91,6 @@ class PostForm extends React.Component {
                         </label>
                     </div>
                     <input className="post-form-submit-button" type="submit" value="Post" />
-                    <div>
-                        {preview}
                     </div>
                 </form>
             </div>
