@@ -25,7 +25,7 @@ class Feed extends React.Component {
           <p>Enjoying Fakebook? Interested in knowing what features are on the horizon? Get in touch with me, David Anderson, via the links below:</p>
           <ul>
             <li>
-              <img className="email-icon" src="https://cdn1.iconfinder.com/data/icons/education-set-01/512/email-open-512.png" alt=""/>       <a className="feeder" href="mailto:dlande000@gmail.com">Email</a>
+              <img className="email-icon" src={window.mailIcon} alt=""/>       <a className="feeder" href="mailto:dlande000@gmail.com">Email</a>
             </li><br/>
             <li>
               <img className="portfolio-icon" src="https://image.flaticon.com/icons/png/512/93/93618.png" alt=""/>       <a className="feeder" href="http://davidanderson.nyc">Portfolio</a>
