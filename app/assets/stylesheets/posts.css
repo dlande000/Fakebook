@@ -372,3 +372,13 @@
     font-family: sans-serif;
     margin-left: 5px;
 }
+
+.image-post {
+    max-width: 90%;
+    position: relative;
+    top: 43px;
+    display: flex;
+    margin: 0 auto;
+    left: 8px;
+    padding-bottom: 20px;
+}

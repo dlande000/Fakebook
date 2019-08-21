@@ -176,7 +176,9 @@ class Post extends React.Component {
         let postPhoto;
         if (this.props.post.photoUrl.length !== 0) {
             postPhoto = (
-              <img src={this.props.post.photoUrl} alt=""/>
+              <div>
+                <img className="image-post" src={this.props.post.photoUrl} alt=""/>
+              </div>
             )
         } else {
             postPhoto = (
@@ -241,8 +243,8 @@ class Post extends React.Component {
                 {editIcon()}
                 {editMenu}
                 {postEditForm}
-                {postPhoto}
                 <p className="post-body">{this.props.post.body}</p>
+                {postPhoto}
                 <div className="like-and-comment-text-div">
                     {likes}
                     {comments}
