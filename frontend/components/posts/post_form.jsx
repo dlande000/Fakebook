@@ -11,6 +11,7 @@ class PostForm extends React.Component {
         };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkSubmit = this.checkSubmit.bind(this);
+    this.handleFile = this.handleFile.bind(this);
     }
 
     handleSubmit(e) {
@@ -66,8 +67,10 @@ class PostForm extends React.Component {
         return (
             <div className="post-form">
                 <div className="post-form-top">
-                    <img className="pencil-post-image" src={window.pencilIcon}/>
-                    <h6 className="post-form-header">Create Post</h6>
+                    <div>
+                        <img className="pencil-post-image" src={window.pencilIcon}/>
+                        <h6 className="post-form-header">Create Post</h6>
+                    </div>
                 </div>
                 <div className="forced-background">
                 <div id="post-image-form" className="post-image-container">
@@ -76,12 +79,18 @@ class PostForm extends React.Component {
                 </div>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <textarea onKeyDown={this.checkSubmit} className="post-form-body" onChange={this.update('body')} placeholder={placeholderText} value={this.state.body}></textarea>
-                    <input type="file" onChange={this.handleFile.bind(this)}></input>
+                    <div className="photo-file-div">
+                        <input type="file" name="photo-file" id="photo-file" className="photo-file" onChange={this.handleFile} />
+                        <label htmlFor='photo-file'>
+                            <img className="pencil-post-image" src={window.cameraIcon} />
+                            <h6 className="post-form-header" id="photo-header">Add a Photo</h6>
+                        </label>
+                    </div>
                     <input className="post-form-submit-button" type="submit" value="Post" />
+                    <div>
+                        {preview}
+                    </div>
                 </form>
-                <div>
-                    {preview}
-                </div>
             </div>
         )
     } 
