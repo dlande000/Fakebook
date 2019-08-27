@@ -18,6 +18,8 @@ On Fakebook, the posts on a user's profile (the wall) and the posts seen on the 
 
 The wall and the feed are populated with posts; users can like and comment on posts. Additionally, users can like comments. Authors of posts or comments can edit or delete their content; receivers can delete posts and comments they do not want. 
 
+With Amazon Web Services integration, users can also post images. 
+
 ### Profiles
 
 ![profile2](app/assets/images/profile2.png)
@@ -38,6 +40,7 @@ Users can send friend requests to other users; once approved, users can see each
 + Redux
 + HTML
 + CSS
++ Amazon Web Services (AWS)
 
 ## Future Implementations
 WIP features inlude:
@@ -46,4 +49,3 @@ WIP features inlude:
 + Listing users who liked posts or comments
 + Allow users to respond to comments
 + Messaging for users
-+ Integrating Amazon Web Services (AWS) so users can upload images

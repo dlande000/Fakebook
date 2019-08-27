@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token
 
+    has_one_attached :profile_pic
+    has_one_attached :banner_pic
+
     has_many :sent_friend_requests,
         primary_key: :id,
         foreign_key: :sender_id,
