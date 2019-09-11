@@ -1,8 +1,9 @@
 @users.each do |user|
     json.set! user.id do
-        json.extract! user, :first_name, :last_name, :id, :profile_pic_url
+        json.extract! user, :first_name, :last_name, :id
         json.friendIds user.friend_ids
         
+        json.profile_pic_url url_for(user.profile_pic)
 
         pending_friend_ids = []
         user.pending_friend_requests.each do |pending_friend_request|
