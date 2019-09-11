@@ -12,7 +12,7 @@ Post.delete_all
 Friendship.delete_all
 User.delete_all
 
-michael = User.create(
+michael = User.new(
     first_name: "Michael",
     last_name: "Bluth",
     password: "tracyb",
@@ -21,12 +21,24 @@ michael = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "Done with the family.",
-    profile_pic_url: "https://i2.wp.com/bestlifeonline.com/content/uploads/2018/05/michael-bluth-4-1024x750.jpg?resize=1024%2C750&ssl=1",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
+    bio: "Done with the family."
 )
 
-david = User.create(
+michael.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'michael.jpg')),
+  filename: 'michael.jpg',
+  content_type: 'image/jpg'
+)
+
+michael.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-1.jpg')),
+  filename: 'banner-1.jpg',
+  content_type: 'image/jpg'
+)
+
+michael.save!
+
+david = User.new(
     first_name: "David",
     last_name: "Anderson",
     password: "theSimpsonsIsTheBestShowEver",
@@ -35,12 +47,24 @@ david = User.create(
     gender: "Male",
     hometown: "Madison, Wisconsin",
     current_city: "New York, New York",
-    bio: "Thank you for visiting Fakebook!",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://avatars3.githubusercontent.com/u/44009893?s=460&v=4"
+    bio: "Thank you for visiting Fakebook!"
 )
 
-gm = User.create(
+david.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'david.jpeg')),
+  filename: 'david.jpeg',
+  content_type: 'image/jpeg'
+)
+
+david.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-2.jpg')),
+  filename: 'banner-2.jpg',
+  content_type: 'image/jpg'
+)
+
+david.save!
+
+gm = User.new(
     first_name: "George Michael",
     last_name: "Bluth",
     password: "lescousinsdangereux",
@@ -49,12 +73,24 @@ gm = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Irvine, California",
-    bio: "Mr. Manager.",
-    profile_pic_url: "http://2.bp.blogspot.com/-4nYM1gB9DHo/TbIvxACcX3I/AAAAAAAAARI/-x4EHCeNayY/s1600/Picture+3.png",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
+    bio: "Mr. Manager."
 )
 
-gob = User.create(
+gm.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'george-michael.png')),
+  filename: 'george-michael.png',
+  content_type: 'image/png'
+)
+
+gm.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-3.jpeg')),
+  filename: 'banner-3.jpg',
+  content_type: 'image/jpeg'
+)
+
+gm.save!
+
+gob = User.new(
     first_name: "GOB",
     last_name: "Bluth",
     password: "hugemistake",
@@ -63,12 +99,24 @@ gob = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "BEEDS?!",
-    profile_pic_url: "https://thesipadvisor.files.wordpress.com/2013/04/gob-bluth.jpg",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
+    bio: "BEEDS?!"
 )
 
-buster = User.create(
+gob.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'gob.jpg')),
+  filename: 'gob.jpg',
+  content_type: 'image/jpg'
+)
+
+gob.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-5.jpg')),
+  filename: 'banner-5.jpg',
+  content_type: 'image/jpg'
+)
+
+gob.save!
+
+buster = User.new(
     first_name: "Buster",
     last_name: "Bluth",
     password: "mother",
@@ -77,12 +125,24 @@ buster = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "Former and Current Mother Boy",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://media.salon.com/2013/05/tony_hale2.jpg"
+    bio: "Former and Current Mother Boy"
 )
 
-lindsay = User.create(
+buster.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'buster.jpg')),
+  filename: 'buster.jpg',
+  content_type: 'image/jpg'
+)
+
+buster.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-6.jpeg')),
+  filename: 'banner-6.jpeg',
+  content_type: 'image/jpeg'
+)
+
+buster.save!
+
+lindsay = User.new(
     first_name: "Lindsay",
     last_name: "Bluth Funke",
     password: "guccichanel",
@@ -91,12 +151,24 @@ lindsay = User.create(
     gender: "Female",
     hometown: "Orange County, California",
     current_city: "Baja California Peninsula, Mexico",
-    bio: "These salon wars have got to stop.",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://amp.businessinsider.com/images/517955e9eab8eae75a000008-750-563.jpg"
+    bio: "These salon wars have got to stop."
 )
 
-franklin = User.create(
+lindsay.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'lindsay.jpg')),
+  filename: 'lindsay.jpg',
+  content_type: 'image/jpg'
+)
+
+lindsay.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-7.jpg')),
+  filename: 'banner-7.jpg',
+  content_type: 'image/jpg'
+)
+
+lindsay.save!
+
+franklin = User.new(
     first_name: "Franklin Delano",
     last_name: "Bluth",
     password: "itainteasybeing",
@@ -105,12 +177,24 @@ franklin = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "My name is Judge",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/5/54/2x16_Meat_the_Veals_%2840%29.png/revision/latest?cb=20130202002555"
+    bio: "My name is Judge"
 )
 
-lucille = User.create(
+franklin.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'franklin.png')),
+  filename: 'franklin.png',
+  content_type: 'image/png'
+)
+
+franklin.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-8.jpg')),
+  filename: 'banner-8.jpg',
+  content_type: 'image/jpg'
+)
+
+franklin.save!
+
+lucille = User.new(
     first_name: "Lucille",
     last_name: "Bluth",
     password: "buildthewall",
@@ -119,12 +203,24 @@ lucille = User.create(
     gender: "Female",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "I don't understand the question, and I won't respond.",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/2/29/2x17_Spring_Breakout_%2810%29.png/revision/latest/scale-to-width-down/1000?cb=20130204205638"
+    bio: "I don't understand the question, and I won't respond."
 )
 
-maeby = User.create(
+lucille.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'lucille.png')),
+  filename: 'lucille.png',
+  content_type: 'image/png'
+)
+
+lucille.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-9.jpg')),
+  filename: 'banner-9.jpg',
+  content_type: 'image/jpg'
+)
+
+lucille.save!
+
+maeby = User.new(
     first_name: "Maeby",
     last_name: "Funke",
     password: "marryme",
@@ -133,12 +229,24 @@ maeby = User.create(
     gender: "Female",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "Marry me!",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "http://s3.thingpic.com/images/qN/UmG2zx7KyzmuxDuJPecGyqN3.jpeg"
+    bio: "Marry me!"
 )
 
-tobias = User.create(
+maeby.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'maeby.jpeg')),
+  filename: 'maeby.jpeg',
+  content_type: 'image/jpeg'
+)
+
+maeby.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-10.jpg')),
+  filename: 'banner-10.jpg',
+  content_type: 'image/jpg'
+)
+
+maeby.save!
+
+tobias = User.new(
     first_name: "Tobias",
     last_name: "Funke",
     password: "blueman",
@@ -147,12 +255,24 @@ tobias = User.create(
     gender: "Male",
     hometown: "Janesville, Wisconsin",
     current_city: "Orange County, California",
-    bio: "There are dozens of us! Dozens!",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://i.imgur.com/8tGPcQI.jpg"
+    bio: "There are dozens of us! Dozens!"
 )
 
-narrator = User.create(
+tobias.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'tobias.jpg')),
+  filename: 'tobias.jpg',
+  content_type: 'image/jpg'
+)
+
+tobias.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-11.jpg')),
+  filename: 'banner-11.jpg',
+  content_type: 'image/jpg'
+)
+
+tobias.save!
+
+narrator = User.new(
     first_name: "Omniscient",
     last_name: "Narrator",
     password: "ronhoward",
@@ -161,12 +281,24 @@ narrator = User.create(
     gender: "Male",
     hometown: "Duncan, Oklahoma",
     current_city: "Los Angeles, California",
-    bio: "Now the story of a wealthy family who lost everything...",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+    bio: "Now the story of a wealthy family who lost everything..."
 )
 
-ann = User.create(
+narrator.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'default-profile-picture.jpg')),
+  filename: 'default-profile-picture.jpg',
+  content_type: 'image/jpg'
+)
+
+narrator.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-12.jpeg')),
+  filename: 'banner-12.jpeg',
+  content_type: 'image/jpg'
+)
+
+narrator.save!
+
+ann = User.new(
     first_name: "Ann",
     last_name: "Veal",
     password: "heregg",
@@ -175,12 +307,24 @@ ann = User.create(
     gender: "Female",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "In the yearbook as 'not pictured'.",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+    bio: "In the yearbook as 'not pictured'."
 )
 
-gene = User.create(
+ann.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'default-profile-picture.jpg')),
+  filename: 'default-profile-picture.jpg',
+  content_type: 'image/jpg'
+)
+
+ann.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-13.jpg')),
+  filename: 'banner-13.jpg',
+  content_type: 'image/jpg'
+)
+
+ann.save!
+
+gene = User.new(
     first_name: "Gene",
     last_name: "Parmesan",
     password: "ahhhhhhhhhhhhhh",
@@ -189,12 +333,24 @@ gene = User.create(
     gender: "Male",
     hometown: "San Francisco, California",
     current_city: "Orange County, California",
-    bio: "Private Detective for Hire",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://i2.wp.com/www.geekbinge.com/wp-content/uploads/2012/09/GeneParmesan_HOWYADOIN.png"
+    bio: "Private Detective for Hire"
 )
 
-oam = User.create(
+gene.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'gene.png')),
+  filename: 'gene.png',
+  content_type: 'image/png'
+)
+
+gene.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-14.jpeg')),
+  filename: 'banner-14.jpeg',
+  content_type: 'image/jpeg'
+)
+
+gene.save!
+
+oam = User.new(
     first_name: "J Walter",
     last_name: "Weatherman",
     password: "alwaysleaveanote",
@@ -203,12 +359,24 @@ oam = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "I help teach lessons.",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/6/6c/1x10_Pier_Pressure_%2842%29.png/revision/latest?cb=20120229061749"
+    bio: "I help teach lessons."
 )
 
-annyong = User.create(
+oam.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'one-armed-man.png')),
+  filename: 'one-armed-man.png',
+  content_type: 'image/png'
+)
+
+oam.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-15.jpg')),
+  filename: 'banner-15.jpg',
+  content_type: 'image/jpg'
+)
+
+oam.save!
+
+annyong = User.new(
     first_name: "Annyong",
     last_name: "Bluth",
     password: "helloo",
@@ -217,12 +385,24 @@ annyong = User.create(
     gender: "Male",
     hometown: "Seoul, South Korea",
     current_city: "Orange County, California",
-    bio: "안녕",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/8/8a/2x03_Annyong.png/revision/latest?cb=20120105071309"
+    bio: "안녕"
 )
 
-steveholt = User.create(
+annyong.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'annyong.png')),
+  filename: 'annyong.png',
+  content_type: 'image/png'
+)
+
+annyong.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-16.jpg')),
+  filename: 'banner-16.jpg',
+  content_type: 'image/jpg'
+)
+
+annyong.save!
+
+steveholt = User.new(
     first_name: "Steve",
     last_name: "Holt",
     password: "steveholt",
@@ -231,12 +411,24 @@ steveholt = User.create(
     gender: "Male",
     hometown: "Orange County, California",
     current_city: "Orange County, California",
-    bio: "Steve Holt!",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://i.kinja-img.com/gawker-media/image/upload/s--J3qVF5cI--/c_scale,f_auto,fl_progressive,q_80,w_800/ehx291eknz5xu24vyqwo.jpg"
+    bio: "Steve Holt!"
 )
 
-carlweathers = User.create(
+steveholt.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'steve-holt.png')),
+  filename: 'steve-holt.png',
+  content_type: 'image/png'
+)
+
+steveholt.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-17.png')),
+  filename: 'banner-17.png',
+  content_type: 'image/png'
+)
+
+steveholt.save!
+
+carlweathers = User.new(
     first_name: "Carl",
     last_name: "Weathers",
     password: "gotastew",
@@ -245,10 +437,22 @@ carlweathers = User.create(
     gender: "Male",
     hometown: "New Orleans, Louisiana",
     current_city: "Los Angeles, California",
-    bio: "$1,100 is exactly what I charge for acting classes.",
-    banner_pic_url: "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058",
-    profile_pic_url: "https://imgc.allpostersimages.com/img/print/posters/carl-weathers-predator_a-G-9786659-13198925.jpg"
+    bio: "$1,100 is exactly what I charge for acting classes."
 )
+
+carlweathers.profile_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'carl-weathers.jpg')),
+  filename: 'carl-weathers.jpg',
+  content_type: 'image/jpg'
+)
+
+carlweathers.banner_pic.attach(
+  io: File.open(Rails.root.join('app', 'assets', 'images', 'banner-17.png')),
+  filename: 'banner-17.png',
+  content_type: 'image/png'
+)
+
+carlweathers.save!
 
 User.all.each do |user1|
     User.all.each do |user2|
