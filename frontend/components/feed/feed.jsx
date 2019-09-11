@@ -15,11 +15,7 @@ class Feed extends React.Component {
     return (
       <div className="full-feed">
         <div className="feed-links">
-          <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}>
-            <div className="feed-pic-container">
-              <img className="feed-profile-pic" src={this.props.currentUser.profile_pic_url}/>
-            </div>
-          </Link>
+          <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}><div className="feed-pic-container"><img className="feed-profile-pic" src={this.props.currentUser.profile_pic_url}/></div></Link>
           <Link className="feed-link" to={`/home/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</Link>
           <p>Enjoying Fakebook? Interested in knowing what features are on the horizon? Get in touch with me, David Anderson, via the links below:</p>
           <ul>
