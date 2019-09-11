@@ -85,7 +85,6 @@ class Post extends React.Component {
     }
 
     render() {
-
         const receiver = this.props.users[this.props.post.receiverId];
         const author = this.props.users[this.props.post.authorId];
         let authorName = `${author.first_name} ${author.last_name}`;

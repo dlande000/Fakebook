@@ -7,14 +7,16 @@ class Api::UsersController < ApplicationController
         @user.profile_pic_url = "https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
         @user.banner_pic_url = "https://vignette.wikia.nocookie.net/arresteddevelopment/images/3/3c/2013_Home_Beautiful_-_Lucille_Bluth%27s_Penthouse_01.png/revision/latest?cb=20130523033058"
 
-        david = User.find_by(email: "dlande000@gmail.com")
+        friend_arr = [User.find_by(email: "dlande000@gmail.com"), User.find_by(email: "michael@bluthcompany.com")]
 
         if @user.save
-            Friendship.create(
-                receiver_id: @user.id,
-                sender_id: david.id,
-                status: "Friends"
-            )
+            friend_arr.each do |friend|
+                Friendship.create(
+                    receiver_id: @user.id,
+                    sender_id: friend.id,
+                    status: "Friends"
+                )
+            end
             login(@user)
             render 'api/users/show'
         else 
