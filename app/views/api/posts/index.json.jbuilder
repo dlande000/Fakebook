@@ -29,11 +29,19 @@
 
         json.receiverFirstName receiver.first_name
         json.receiverLastName receiver.last_name
-        json.receiverProfilePic receiver.profile_pic_url
+        if receiver.profile_pic.attached?
+            json.receiverProfilePic url_for(receiver.profile_pic)
+        else
+            json.receiverProfilePic receiver.profile_pic_url
+        end
 
         json.authorFirstName author.first_name
         json.authorLastName author.last_name
-        json.authorProfilePic author.profile_pic_url
+        if author.profile_pic.attached?
+            json.authorProfilePic url_for(author.profile_pic)
+        else
+            json.authorProfilePic author.profile_pic_url
+        end
 
         json.likes post.likes.each do |like|
                 json.userId like.user_id
