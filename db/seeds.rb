@@ -727,11 +727,67 @@ c1 = Comment.create(
     body: "GOB had not mailed the letter."
 )
 
+image_post4 = Post.new(
+    author_id: gm.id,
+    receiver_id: gm.id,
+    body: "One of those days."
+)
+
+image_post4.photo.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'gm-gif.gif')),
+    filename: 'gm-gif.gif',
+    content_type: 'image/gif'
+)
+
+image_post4.save!
+
+image_post3 = Post.new(
+    author_id: lucille.id,
+    receiver_id: gene.id,
+    body: "AHHHHH!!!!"
+)
+
+image_post3.photo.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'lucille-gif.gif')),
+    filename: 'lucille-gif.gif',
+    content_type: 'image/gif'
+)
+
+image_post3.save!
+
 p1 = Post.create(
     author_id: david.id,
     receiver_id: david.id,
     body: "Thank you for checking out Fakebook! If you have any questions, please feel free to get in touch."
 )
+
+image_post1 = Post.new(
+    author_id: gob.id,
+    receiver_id: gob.id,
+    body: "I've made a huge mistake ..."
+)
+
+image_post1.photo.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'gob-gif.gif')),
+    filename: 'gob-gif.gif',
+    content_type: 'image/gif'
+)
+
+image_post1.save!
+
+image_post2 = Post.new(
+    author_id: michael.id,
+    receiver_id: michael.id,
+    body: "Memories!"
+)
+
+image_post2.photo.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'michael-gm.jpg')),
+    filename: 'michael-gm.jpg',
+    content_type: 'image/jpg'
+)
+
+image_post2.save!
 
 User.all.each do |user|
     Like.create(
