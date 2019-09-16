@@ -132,3 +132,7 @@ li > a {
     font-size: 12px;
     margin-left: -5px;
 }
+
+.loading-gif {
+    width: 100%;
+}

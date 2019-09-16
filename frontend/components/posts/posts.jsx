@@ -39,16 +39,21 @@ class Posts extends React.Component {
           />);
         }
       });
-
-      return (
-        <div className="posts-header">
-          <h5>POSTS</h5>
-          <div className="posts">
-            {formattedPosts}
+      if (Object.values(this.props.posts).length > 0) {
+        return (
+          <div className="posts-header">
+            <h5>POSTS</h5>
+            <div className="posts">
+              {formattedPosts}
+            </div>
           </div>
-        </div>
-        )
-    }
+          )
+      } else {
+        return (<div>
+            <img className="loading-gif" src={window.facebookGif} alt=""/>
+          </div>)
+      }
+  } 
 }
 
 export default Posts;
