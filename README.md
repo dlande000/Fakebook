@@ -14,7 +14,38 @@ Connect with family, friends, and the world with Fakebook, a Facebook-inspired s
 
 ![wall](app/assets/images/wall.png)
 
-On Fakebook, the posts on a user's profile (the wall) and the posts seen on the homepage (the feed) are built using the same components; the appropriate posts are filtered based on the logged in user, the user's friends, and the posts the user's friends have received. 
+On Fakebook, the posts on a user's profile (the wall) and the posts seen on the homepage (the feed) are built using the same components; the appropriate posts are filtered based on the logged in user, the user's friends, and the posts the user's friends have received. Additional render information at the specific location for each `PostsAllComponents` component is specified by the `type` prop.
+
+```javascript
+// in the profile component, which renders a user's profile
+class Wall extends React.Component {
+    render() {
+        return (
+            <div className="wall">
+                <PostsAllComponents 
+                    type={"Wall"}
+                    // additional props passed down with names agnostic to parent component
+                />
+            </div>
+        )
+    }
+}
+
+// Feed component, which renders the feed one sees upon login.
+class Feed extends React.Component {
+    // ...
+    render() {
+        return (
+            // ... 
+            <PostsAllComponents
+                type={"Feed"}
+                // additional props passed down with names agnostic to parent component
+            />
+            // ...
+        )
+    };
+}
+```
 
 The wall and the feed are populated with posts; users can like and comment on posts. Additionally, users can like comments. Authors of posts or comments can edit or delete their content; receivers can delete posts and comments they do not want. 
 
