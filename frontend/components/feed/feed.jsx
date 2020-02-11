@@ -32,7 +32,7 @@ class Feed extends React.Component {
               <img className="github-icon" src={window.githubIcon} alt=""/>       <a className="feeder" href="http://github.com/dlande000">GitHub</a>
             </li><br/>
             <li>
-              <img className="angellist-icon" src={window.angellistIcon} alt=""/>     <a className="feeder-angellist" href="#">AngelList</a>
+              <img className="angellist-icon" src={window.angellistIcon} alt=""/>     <a className="feeder-angellist" href="https://angel.co/david-anderson-109">AngelList</a>
             </li>
           </ul>
         </div>
