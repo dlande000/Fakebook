@@ -12,6 +12,7 @@ class Feed extends React.Component {
   }
 
   render() {
+    // className="feed-link"
     return (
       <div className="full-feed">
         <div className="feed-links">
