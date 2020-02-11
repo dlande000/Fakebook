@@ -245,16 +245,16 @@
 }
 
 .like-and-comment-text-div {
-    height: 20px;
-    position: absolute;
+    margin-left: 32px;
+    position: relative;
+    top: 21px;
     width: 100%;
-    margin-top: 22px;
-    margin-left: 16px;
+    padding-top: 3px;
 }
 
 .number-of-likes-post {
     position: absolute;
-    left: 1%;
+    left: -2%;
 }
 
 .number-of-likes-post > img {
